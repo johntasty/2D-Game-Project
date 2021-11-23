@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"Object1","path":"objects/Object1/Object1.yy",},"order":0,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -41,7 +42,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.6.595",
+    "IDEVersion": "2.3.4.583",
   },
   "resourceVersion": "1.4",
   "name": "testinggit",
