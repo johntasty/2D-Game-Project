@@ -8,7 +8,11 @@
 draw_line_width(l_shoulder_x,l_shoulder_y,l_elbow_x,l_elbow_y,6);
 draw_line_width(l_elbow_x, l_elbow_y, l_hand_x, l_hand_y, 6);
 
+/*for (var i = 0; i<sprite_get_number(Sprite1_strip8); i++){
 
+	draw_sprite_ext(Sprite1_strip8, i, x-hspeed, y-vspeed - 8 - i, 1, 1, direction, image_blend, image_alpha);
+	
+ }   */
 
 var draw_weapon = function()
 {
@@ -33,10 +37,10 @@ var draw_weapon = function()
 }
 //set order of drawing
 var draw_order = [draw_self, draw_weapon]
-/*if(weapon_dir< 180)
+if(weapon_dir< 180)
 {
 	draw_order = [draw_weapon, draw_self];
-}*/
+}
 for (var i = 0; i<array_length(draw_order); i++)
 {
 	draw_order[i]();
@@ -58,18 +62,7 @@ draw_line_width(l_hip_x,l_hip_y,l_knee_x,l_knee_y,12);
 //calf
 draw_line_width(l_knee_x, l_knee_y, l_foot_x, l_foot_y, 6);
 
-/*for (var i = 0; i<sprite_get_number(spr_head); i++){
 
-	draw_sprite_ext(spr_head, i, x-hspeed, y-vspeed - 8 - i, 1, 1, direction, image_blend, image_alpha);
-	
- }*/   
-
-/*if (look_direction > 91 && look_direction < 265){
-	
-	draw_sprite_ext(spr_head, 0, x-hspeed, y-vspeed - 2, -1, 1, 0, image_blend, image_alpha);
-}else{
-	draw_sprite_ext(spr_head, 0, x-hspeed, y-vspeed - 2, 1, 1, 0, image_blend, image_alpha);
-}*/
 
 //physics_world_draw_debug(phy_debug_render_shapes);	
 
