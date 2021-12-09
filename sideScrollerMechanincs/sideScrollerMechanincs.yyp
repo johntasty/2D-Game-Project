@@ -18,6 +18,7 @@
     {"id":{"name":"spr_arm_gun","path":"sprites/spr_arm_gun/spr_arm_gun.yy",},"order":6,},
     {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},"order":3,},
     {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},"order":1,},
+    {"id":{"name":"spr_test","path":"sprites/spr_test/spr_test.yy",},"order":16,},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},"order":3,},
     {"id":{"name":"spr_flamethrower","path":"sprites/spr_flamethrower/spr_flamethrower.yy",},"order":10,},
     {"id":{"name":"Path1","path":"paths/Path1/Path1.yy",},"order":15,},
