@@ -1,0 +1,1 @@
+draw_sprite_ext(spr_pickup,0,x + 30,bbox_top - 16 + sin(current_time/100), 1, 1, 0, c_white, ui_alpha);
