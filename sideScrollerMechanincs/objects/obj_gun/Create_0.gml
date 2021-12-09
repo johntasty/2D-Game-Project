@@ -1,7 +1,7 @@
 gun_init();
 
 
-var guntype = choose(gun_set_pistol, gun_set_laser);
+guntype = choose(gun_set_pistol, gun_set_laser, gun_set_shotgun);
 guntype();
 
 ui_show = false;

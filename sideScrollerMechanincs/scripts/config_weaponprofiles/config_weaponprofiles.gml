@@ -4,7 +4,7 @@ function gun_set_pistol()
 }
 function gun_set_shotgun()
 {
-	gun_set(spr_arm_gun,1,bullet_shotgun,8,0.1,20);
+	gun_set(spr_arm_gun,1,bullet_shotgun,0,0.1,0);
 }
 function gun_set_laser()
 {
@@ -16,7 +16,7 @@ function gun_set_laser()
 	global.__fire = part_system_create();
 	global.__flame = part_type_create();
 	global.__smoke = part_type_create();
-	//global.__smoke = part_type_create();
+	
 	dirc = 0;
 
 	global.__em = part_emitter_create(global.__fire);
