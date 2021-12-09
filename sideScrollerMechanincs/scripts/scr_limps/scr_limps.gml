@@ -1,9 +1,10 @@
-function set_limps (_yy,_bcl, _frl, _thl, _cll)
+function set_limps (_yy,__xx,_bcl, _frl, _thl, _cll)
 {
-	///@ function set_limps (shoulders_placement,biceplength, forearm_length, thigh_length, calf_legth)
+	///@ function set_limps (shoulders_placement, hips_placement,biceplength, forearm_length, thigh_length, calf_legth)
 	
 	//arms
 	displacement =   _yy;
+	hip_place = __xx;
 	bicep_length = _bcl;
 	forearm_length = _frl;
 	//legs
@@ -32,21 +33,21 @@ function set_limps (_yy,_bcl, _frl, _thl, _cll)
 	r_move = 0;
 
 	r_hip_x = x;
-	r_hip_y = y;
+	r_hip_y = y - hip_place;
 	r_knee_x = x;
-	r_knee_y = y;
+	r_knee_y = y - hip_place;
 	r_foot_x = x;
-	r_foot_y = y;
+	r_foot_y = y - hip_place;
 
 	//left leg
 	l_move = 90;
 
 	l_hip_x = x;
-	l_hip_y = y;
+	l_hip_y = y - hip_place;
 	l_knee_x = x;
-	l_knee_y = y;
+	l_knee_y = y - hip_place;
 	l_foot_x = x;
-	l_foot_y = y;
+	l_foot_y = y - hip_place;
 
 }
 function set_limps_moving (_armspeed, _shoulder, _hip,_legspeed )
@@ -103,10 +104,10 @@ function set_limps_moving (_armspeed, _shoulder, _hip,_legspeed )
 		//hips
 		var _hipoffset = _hip;
 		r_hip_x = x+lengthdir_x(_hipoffset,look_direction );
-		r_hip_y = y+lengthdir_y(_hipoffset,look_direction );
+		r_hip_y = (y-hip_place)+lengthdir_y(_hipoffset,look_direction );
 	
 		l_hip_x = x-lengthdir_x(_hipoffset,look_direction );
-		l_hip_y = y-lengthdir_y(_hipoffset,look_direction );
+		l_hip_y = (y-hip_place)-lengthdir_y(_hipoffset,look_direction );
 	
 		// right leg
 		//knee
@@ -187,10 +188,10 @@ function set_limps_stop (_shoulder,_hip,_armlerp,_leglerp)
 	//make legs stop moving
 	var _hipoffset = _hip;
 	r_hip_x = x+lengthdir_x(_hipoffset,look_direction + 90);
-	r_hip_y = y+lengthdir_y(_hipoffset,look_direction + 90);
+	r_hip_y = (y-hip_place)+lengthdir_y(_hipoffset,look_direction + 90);
 	
 	l_hip_x = x-lengthdir_x(_hipoffset,look_direction + 90);
-	l_hip_y = y-lengthdir_y(_hipoffset,look_direction + 90);
+	l_hip_y = (y-hip_place)-lengthdir_y(_hipoffset,look_direction + 90);
 	var _lerpspd = _leglerp;
 	r_knee_x = lerp(r_knee_x,r_hip_x,_lerpspd);
 	r_knee_y = lerp(r_knee_y,r_hip_y + thigh_length,_lerpspd);

@@ -12,7 +12,7 @@ moving = false;
 weapon = -1;
 weapon_dir = 0;
 
-set_limps(30,35,30,35,30);
+set_limps(94,64,35,30,35,30);
 
 //look direction
 look_direction = 0;

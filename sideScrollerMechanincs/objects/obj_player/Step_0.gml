@@ -11,8 +11,19 @@ var r_sht_rel = mouse_check_button_released(mb_right);
 hspeed = lerp(hspeed, _hor * 4,0.3);
 
 if(vsp < 10) vsp += grv;
-if(place_meeting(x,y + 55,obj_ground) || place_meeting(x,y + 55,obj_wall) ){	
-		vsp = key_jump * - jumpspeed;	
+if(place_meeting(x,y+vsp,obj_ground) ){	
+	while (!place_meeting(x,y+sign(vsp),obj_ground))
+	{
+		y = y+ sign(vsp);
+	}
+	vsp = key_jump * - jumpspeed;
+}
+if place_meeting(x+hspeed,y,obj_ground){
+	while (!place_meeting(x+hspeed,y,obj_ground))
+	{
+		x = x+ sign(hspeed);
+	}
+	hspeed = 0;
 }
 if place_meeting(x+hspeed,y,obj_wall){
 	while (!place_meeting(x+hspeed,y,obj_wall))
@@ -26,10 +37,11 @@ if (place_meeting(x,y+vsp,obj_wall)) {
 	{
 		y = y+ sign(vsp);
 	}
-	vsp = 0;
+	vsp = key_jump * - jumpspeed;
 }
-if (place_meeting(x,y-sprite_height,obj_ceiling)){
-	
+
+
+if (place_meeting(x,y-sprite_height*0.5,obj_ceiling)){	
 	vsp += grv;
 }
 y += vsp;
