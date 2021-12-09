@@ -5,12 +5,13 @@ var _hor = (keyboard_check(ord("D")) - keyboard_check(ord("A")) );
 key_jump = keyboard_check_pressed(vk_space);
 var pickup = keyboard_check_pressed(ord("F"));
 global.__sht = mouse_check_button(mb_left);
+global.__shtpress = mouse_check_button_pressed(mb_left);
 var r_sht = mouse_check_button(mb_right);
 var r_sht_rel = mouse_check_button_released(mb_right);
 hspeed = lerp(hspeed, _hor * 4,0.3);
 
 if(vsp < 10) vsp += grv;
-if(place_meeting(obj_player.x,obj_player.y + 20,obj_ground)){	
+if(place_meeting(x,y + 55,obj_ground) || place_meeting(x,y + 55,obj_wall) ){	
 		vsp = key_jump * - jumpspeed;	
 }
 if place_meeting(x+hspeed,y,obj_wall){
@@ -20,29 +21,36 @@ if place_meeting(x+hspeed,y,obj_wall){
 	}
 	hspeed = 0;
 }
-if place_meeting(x,y+vsp,obj_wall){
+if (place_meeting(x,y+vsp,obj_wall)) {
 	while (!place_meeting(x,y+sign(vsp),obj_wall))
 	{
 		y = y+ sign(vsp);
 	}
 	vsp = 0;
 }
+if (place_meeting(x,y-sprite_height,obj_ceiling)){
+	
+	vsp += grv;
+}
 y += vsp;
 //point weapon
-weapon_dir = point_direction(x,y,mouse_x,mouse_y);
+weapon_dir = point_direction(r_elbow_x,r_elbow_y,r_hand_x,r_hand_y);
 dirc = point_direction(x,y,mouse_x,mouse_y);
 //if trigger pressed make bullets
 bul_type_set_scale(bullet_pistol, 1, 1, global.__bulletsize, 0);
 
 if(weapon)
 {
+	
 	weapon.parent = id;
 	weapon.shoot = global.__sht;
 	weapon.direction= weapon_dir;
+	
+
 	if (r_sht)
 	{
 		global.__bulletsize += (0.2/room_speed);
-		show_debug_message(global.__bulletsize);
+		
 		if (global.__bulletsize >= 0.5)
 		{
 			weapon.shoot = 1;
@@ -60,7 +68,7 @@ if(weapon)
 
 //weapon pick up
 var weapon_list = ds_list_create();
-var weapon_col = collision_circle_list(x,y,sprite_width*0.5,obj_weapon_par,false,true,weapon_list,true);
+var weapon_col = collision_circle_list(x,y,sprite_width*5,obj_weapon_par,false,true,weapon_list,true);
 if (weapon_col > 0){
 	for (var i = 0; i<weapon_col; i++){
 		var w = weapon_list[|i];
@@ -109,3 +117,4 @@ if(keyboard_check(ord("D")) || keyboard_check(ord("A"))){
 	set_limps_stop (1,1,0.1,0.3);
 }
 
+		

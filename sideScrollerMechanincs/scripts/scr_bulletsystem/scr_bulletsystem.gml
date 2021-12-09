@@ -112,7 +112,7 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			var d = sdir - (i * adiv);
 			var xx = _x + lengthdir_x(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, d);
 			var yy = _y + lengthdir_y(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, d);
-			var bul = instance_create_layer(xx, yy, layer, bullet_object);
+			var bul = instance_create_layer(xx, yy, "Instances", bullet_object);
 			
 			bul.direction = d;
 			bul.image_angle = d;
@@ -151,7 +151,7 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			
 			var xxx = _x + lengthdir_x(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
 			var yyy = _y + lengthdir_y(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
-			var bul = instance_create_layer(xxx, yyy, layer, bullet_object);
+			var bul = instance_create_layer(xxx, yyy, "Instances", bullet_object);
 			with(bul){
 		
 			owner = other.id;
@@ -170,7 +170,7 @@ function bul_type_create(ind, _x, _y, dir, spd)
 	{
 		var xx = _x + lengthdir_x(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
 		var yy = _y + lengthdir_y(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
-		var bul = instance_create_layer(xx, yy, layer, bullet_object);
+		var bul = instance_create_layer(xx, yy, "Instances", bullet_object);
 		with(bul){
 		
 			owner = other.id;

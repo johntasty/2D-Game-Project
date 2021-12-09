@@ -24,6 +24,7 @@ function gun_update()
 		var ldx2 = lengthdir_x(parent.sprite_width*0.75,direction);
 		var ldy2 = lengthdir_y(parent.sprite_width*0.75, direction);
 		
+		
 		x = parent.r_elbow_x + ldx - ldx2;
 		y = parent.r_elbow_y + ldy + ldy2;
 		
@@ -49,6 +50,7 @@ function gun_update()
 	recoil_step = lerp(recoil_step,0,trigger_speed);
 	
 	//sprite handle
+	
 	image_angle = direction;
 	image_yscale = 1;
 	if(image_angle> 90 && image_angle < 270){

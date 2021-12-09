@@ -3,7 +3,7 @@
 if (instance_exists(obj_enemy)){
 	if (health_bar <= 0){
 				instance_destroy();	
-				//instance_destroy(obj_gun_enemy);	
+				
 	}
 
 	

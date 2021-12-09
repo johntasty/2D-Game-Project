@@ -6,7 +6,7 @@
 //draw weapon
 
 draw_line_width(l_shoulder_x,l_shoulder_y,l_elbow_x,l_elbow_y,6);
-draw_line_width(l_elbow_x, l_elbow_y, l_hand_x, l_hand_y, 6);
+//draw_line_width(l_elbow_x, l_elbow_y, l_hand_x, l_hand_y, 6);
 
 /*for (var i = 0; i<sprite_get_number(Sprite1_strip8); i++){
 
@@ -19,18 +19,7 @@ var draw_weapon = function()
 	if (weapon)
 	{
 		with(weapon){
-			draw_sprite_ext(
-			//weapon shadow
-				sprite_index,
-				image_index,
-				other.x ,
-				other.y,
-				image_xscale,
-				image_yscale,
-				image_angle,
-				c_black,
-				1
-			)
+			
 			draw_self();
 		}
 	}
@@ -63,12 +52,5 @@ draw_line_width(l_hip_x,l_hip_y,l_knee_x,l_knee_y,12);
 draw_line_width(l_knee_x, l_knee_y, l_foot_x, l_foot_y, 6);
 
 
-
-//physics_world_draw_debug(phy_debug_render_shapes);	
-
-
-
-
-//draw_sprite_ext(spr_arm_gun, 0, r_elbow_x, r_elbow_y, 1, 1, weapon_dir, image_blend, image_alpha);
 draw_set_color(c_black);
 draw_line_width(r_shoulder_x,r_shoulder_y,r_elbow_x,r_elbow_y,6);

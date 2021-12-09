@@ -14,12 +14,8 @@ for(var i =0; i<global.__bullettypemax; i++){
 bul_type_set_life(bullet_pistol, -1);
 bul_type_set_sprite(bullet_pistol,spr_bullet,0,0,true);
 bul_type_set_scale(bullet_pistol, 1, 1, global.__bulletsize, 0);
-
+bul_type_set_damage (bullet_pistol,5);
 //shotgun
-bul_type_set_life(bullet_shotgun, 60);
-bul_type_set_sprite(bullet_shotgun,spr_bullet,0,0,true);
-bul_type_set_scale(bullet_shotgun, 10, 1, 0, 0.1);
-bul_type_set_color(bullet_shotgun, c_black);
 
 
 //flamethrower
@@ -27,5 +23,5 @@ bul_type_set_life(bullet_laser,50);
 bul_type_set_sprite(bullet_laser, spr_bullet, 0, 0,false);
 bul_type_set_flame(bullet_laser,true);
 bul_type_set_scale(bullet_laser, 3, 1, 0.1, 0.1);
-
+bul_type_set_damage(bullet_laser,0.5);
 
