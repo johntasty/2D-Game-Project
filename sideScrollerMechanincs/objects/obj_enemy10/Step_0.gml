@@ -1,12 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (instance_exists(obj_enemy)){
+
 	if (health_bar <= 0){
 				instance_destroy();	
-				//instance_destroy(obj_gun_enemy);	
+				
 	}
-
-	
 		
 	var shoot = 0;
 	var enemy_detect = collision_circle(x,y,360,obj_player,false,true);
@@ -19,7 +17,7 @@ if (instance_exists(obj_enemy)){
 			
 			if  collision_circle(x,y,16,obj_bullet,false,true){
 					var bullet_int = collision_circle(x,y,32,obj_bullet,1,1);
-					if !collision_line(x,y,bullet_int.x, bullet_int.y, obj_ground , 1, 1){	
+					if instance_exists(bullet_int){	
 						if(bullet_int.owner != id){
 							clr = c_red;	
 							health_bar -= bullet_int.damage;
@@ -36,4 +34,3 @@ if (instance_exists(obj_enemy)){
 	}	
 	
 	}
-}

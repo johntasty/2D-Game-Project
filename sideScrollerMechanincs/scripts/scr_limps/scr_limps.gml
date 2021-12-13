@@ -53,7 +53,7 @@ function set_limps (_yy,__xx,_bcl, _frl, _thl, _cll)
 function set_limps_moving (_armspeed, _shoulder, _hip,_legspeed )
 {
 	///@function set-limps_moving (arm_movement, space_between_shoulders, space_between_hips, speed_legs)
-	var _movearm = _armspeed;
+		var _movearm = _armspeed;
 		r_arm_move += _movearm;
 		l_arm_move += _movearm;
 	
@@ -64,17 +64,7 @@ function set_limps_moving (_armspeed, _shoulder, _hip,_legspeed )
 	
 		l_shoulder_x = x-lengthdir_x(_shoulderoffset,look_direction);
 		l_shoulder_y = (y-displacement) - lengthdir_y(_shoulderoffset,look_direction);
-		if(global.__sht){
-		//right arm
-		r_elbow_x = r_shoulder_x + lengthdir_x(bicep_length,look_direction_arm);
 		
-		r_elbow_y = r_shoulder_y  + (lengthdir_y( bicep_length,look_direction_arm));
-		r_elbow_y = clamp(r_elbow_y, (y-displacement)-bicep_length,(y-displacement)+bicep_length);
-		//right hand
-		r_hand_x = r_elbow_x + lengthdir_x(bicep_length, look_direction_arm);
-		r_hand_y = r_elbow_y + (lengthdir_y( bicep_length, look_direction_arm)); // + sin(r_arm_move / 10) * forearm_length/2) + forearm_length/2;
-		r_hand_y = clamp(r_hand_y, (y-displacement)-(bicep_length+forearm_length),(y-displacement)+(bicep_length+forearm_length));
-		}else{
 		//right arm
 		r_elbow_x = r_shoulder_x - lengthdir_x(cos(r_arm_move/10) * bicep_length,look_direction);
 		r_elbow_y = r_shoulder_y  - lengthdir_y(cos(r_arm_move/10)* bicep_length,look_direction) + bicep_length;
@@ -83,7 +73,7 @@ function set_limps_moving (_armspeed, _shoulder, _hip,_legspeed )
 		r_hand_x = r_elbow_x + lengthdir_x(abs(cos(r_arm_move / 10)) * bicep_length, look_direction);
 		r_hand_y = r_elbow_y - (lengthdir_y(cos(r_arm_move/10) * bicep_length, look_direction) + sin(r_arm_move / 10) * forearm_length/2) + forearm_length/2;
 		r_hand_y = clamp(r_hand_y, (y-displacement)-(bicep_length+forearm_length),(y-displacement)+(bicep_length+forearm_length));
-		}
+		
 		
 		//left arm
 		l_elbow_x = l_shoulder_x - lengthdir_x(cos(l_arm_move/10) * bicep_length,look_direction);
@@ -134,37 +124,8 @@ function set_limps_moving (_armspeed, _shoulder, _hip,_legspeed )
 function set_limps_stop (_shoulder,_hip,_armlerp,_leglerp)
 {
 	///@function set_limps_stop (shoulder_whenstop,hip_when_stop,speed_off_stoping_legs,speed_of_stoping_arms)
-	//arm shoot stationary
-	var attack_frames = 0;
-	if(global.__shtpress){
-		var attack_frames = 10;
-	}
-	while (attack_frames > 0){
-		var _lerpspdpunch = 0.2;
-		//right arm
-		r_elbow_x = lerp(r_elbow_x,r_shoulder_x + (lengthdir_x(bicep_length,look_direction_arm)),_lerpspdpunch);
-		r_elbow_y = lerp(r_elbow_y, r_shoulder_y+(lengthdir_y( bicep_length,look_direction_arm)),_lerpspdpunch);
-		r_elbow_y = clamp(r_elbow_y, (y-displacement)-bicep_length,(y-displacement)+bicep_length);
-		//right hand
-		r_hand_x = lerp(r_hand_x, r_elbow_x + lengthdir_x(bicep_length*2, look_direction_arm),_lerpspdpunch);
-		r_hand_y = lerp(r_hand_y, r_elbow_y + (lengthdir_y( bicep_length*2, look_direction_arm)),_lerpspdpunch);
-		
 
-		
-		/// All your movement code goes here		
-		r_hand_y = clamp(r_hand_y, (y-displacement)-(bicep_length+forearm_length),(y-displacement)+(bicep_length+forearm_length));
-		
-		xprev=r_hand_x;
-		yprev=r_hand_y;
-		var p_dir = point_direction(r_hand_x,r_hand_y,xprev,yprev)
-		//part_type_direction(global.__sword_part,r_elbow_x,r_hand_x,0,0);
-		part_type_orientation(global.__shine, p_dir, p_dir, 1, 0, 0);
-		part_particles_create(global.__sword_part,r_hand_x,r_hand_y,global.__shine,2)
-	
 
-		attack_frames -= 1;
-	}
-	
 	//make hands stop moving
 	var _shoulderoffset = _shoulder;
 	r_shoulder_x = x+lengthdir_x(_shoulderoffset,look_direction + 90);
@@ -172,6 +133,7 @@ function set_limps_stop (_shoulder,_hip,_armlerp,_leglerp)
 	
 	l_shoulder_x = x-lengthdir_x(_shoulderoffset,look_direction + 90);
 	l_shoulder_y = (y-displacement)-lengthdir_y(_shoulderoffset,look_direction + 90);
+
 	var _lerpspd = _armlerp;
 	r_elbow_x = lerp(r_elbow_x,r_shoulder_x,_lerpspd);
 	r_elbow_y = lerp(r_elbow_y,r_shoulder_y + bicep_length,_lerpspd);
