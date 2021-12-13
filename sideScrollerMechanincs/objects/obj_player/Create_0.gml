@@ -12,7 +12,18 @@ moving = false;
 weapon = -1;
 weapon_dir = 0;
 
+spd = 0;
 set_limps(94,64,35,30,35,30);
 
+dir = 0;
+cooldown = 0;
+
+
 //look direction
+
 look_direction = 0;
+look_direction_arm = 0;
+global.__particle = 1;
+
+
+

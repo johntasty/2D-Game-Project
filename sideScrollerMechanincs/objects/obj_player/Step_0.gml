@@ -1,16 +1,28 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var _hor = (keyboard_check(ord("D")) - keyboard_check(ord("A")) );
-key_jump = keyboard_check_pressed(vk_space);
-var pickup = keyboard_check_pressed(ord("F"));
-global.__sht = mouse_check_button(mb_left);
-global.__shtpress = mouse_check_button_pressed(mb_left);
-var r_sht = mouse_check_button(mb_right);
-var r_sht_rel = mouse_check_button_released(mb_right);
-hspeed = lerp(hspeed, _hor * 4,0.3);
+scr_input();
+spd = lerp(spd, _hor * 4,0.3);
 
+look_direction = point_direction(x,y,mouse_x,mouse_y);
+look_direction_arm = point_direction(x,y - 94,mouse_x,mouse_y);
+
+if (global.__dash_key && cooldown == 0){ 
+	
+	set_dash();	
+	alarm[0] = room_speed;
+	cooldown = 10;
+}
 if(vsp < 10) vsp += grv;
+if (place_meeting(x,y,obj_ladder))
+{	while(!place_meeting(x,y,obj_ladder))
+	{
+		y = y + sign(vsp);	
+		
+	}	
+	vsp = lerp(vsp, _ver * 4,0.3);	
+	grv = 0;
+}else{grv = 0.3;}
 if(place_meeting(x,y+vsp,obj_ground) ){	
 	while (!place_meeting(x,y+sign(vsp),obj_ground))
 	{
@@ -18,19 +30,21 @@ if(place_meeting(x,y+vsp,obj_ground) ){
 	}
 	vsp = key_jump * - jumpspeed;
 }
-if place_meeting(x+hspeed,y,obj_ground){
-	while (!place_meeting(x+hspeed,y,obj_ground))
+if place_meeting(x+spd,y,obj_ground){
+	while (!place_meeting(x+spd,y,obj_ground))
 	{
-		x = x+ sign(hspeed);
+		x = x + sign(spd);
 	}
-	hspeed = 0;
+	spd = 0;
+
 }
-if place_meeting(x+hspeed,y,obj_wall){
-	while (!place_meeting(x+hspeed,y,obj_wall))
+if place_meeting(x+spd,y,obj_wall){
+	while (!place_meeting(x+spd,y,obj_wall))
 	{
-		x = x+ sign(hspeed);
+		x = x+ sign(spd);
 	}
-	hspeed = 0;
+	spd = 0;
+	
 }
 if (place_meeting(x,y+vsp,obj_wall)) {
 	while (!place_meeting(x,y+sign(vsp),obj_wall))
@@ -40,40 +54,65 @@ if (place_meeting(x,y+vsp,obj_wall)) {
 	vsp = key_jump * - jumpspeed;
 }
 
-
 if (place_meeting(x,y-sprite_height*0.5,obj_ceiling)){	
 	vsp += grv;
 }
 y += vsp;
+x += spd;
 //point weapon
 weapon_dir = point_direction(r_elbow_x,r_elbow_y,r_hand_x,r_hand_y);
 dirc = point_direction(x,y,mouse_x,mouse_y);
 //if trigger pressed make bullets
+
 bul_type_set_scale(bullet_pistol, 1, 1, global.__bulletsize, 0);
+bul_type_set_damage (bullet_pistol,global.__bullet_dmg);
 
 if(weapon)
 {
 	
 	weapon.parent = id;
-	weapon.shoot = global.__sht;
+	if(weapon.weapon_directory == 2){
+		weapon.shoot = global.__sht;
+	}else{weapon.shoot = global.__shtrelease;}
 	weapon.direction= weapon_dir;
 	
-
-	if (r_sht)
+		if (weapon.weapon_directory != 3){	
+			
+			if(spd > 0.1 || spd < -0.1){	
+			set_limps_moving(1,1,1,1);
+			scr_aim();
+			}else {
+			set_limps_stop (1,1,0.1,0.3);
+			scr_aim();
+			}
+			
+		}else{
+			if(spd > 0.1 || spd < -0.1){	
+			set_limps_moving(1,1,1,1);
+			scr_melee();
+			}else {
+			set_limps_stop (1,1,0.1,0.3);
+			scr_melee();
+			}			
+	}
+	if (global.__r_sht)
 	{
 		global.__bulletsize += (0.2/room_speed);
-		
+		global.__bullet_dmg +=0.3;
+		weapon.direction= weapon_dir;
 		if (global.__bulletsize >= 0.5)
 		{
 			weapon.shoot = 1;
 			global.__bulletsize = 0;
+			global.__bullet_dmg = 5;
 		}
 		
 	}
-	if (r_sht_rel)
+	if (global.__r_sht_rel)
 	{
-		weapon.shoot = r_sht_rel;
+		weapon.shoot = global.__r_sht_rel;
 		global.__bulletsize = 0;
+		global.__bullet_dmg = 5;
 	}
 	
 }
@@ -81,6 +120,7 @@ if(weapon)
 //weapon pick up
 var weapon_list = ds_list_create();
 var weapon_col = collision_circle_list(x,y,sprite_width*5,obj_weapon_par,false,true,weapon_list,true);
+
 if (weapon_col > 0){
 	for (var i = 0; i<weapon_col; i++){
 		var w = weapon_list[|i];
@@ -109,24 +149,21 @@ if (weapon_col > 0){
 
 
 
-look_direction = point_direction(x,y,mouse_x,mouse_y);
-look_direction_arm = point_direction(x,y,mouse_x,mouse_y);
+
+
 if (look_direction < 90 || look_direction > 275){
 		look_direction = 0;
 	}
 	else {
 		look_direction = 180;
 	}
-
-
-	
-if(keyboard_check(ord("D")) || keyboard_check(ord("A"))){
-	
-	set_limps_moving(1,1,1,2);
-		
-		
-}else {
-	set_limps_stop (1,1,0.1,0.3);
+if(!weapon){	
+if(spd > 0.1 || spd < -0.1){	
+		set_limps_moving(1,1,1,1);			
+	}else {
+		set_limps_stop (1,1,0.1,0.3);		
 }
+}
+
 
 		
