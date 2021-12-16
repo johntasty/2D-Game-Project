@@ -1,29 +1,32 @@
 //particle creator
-
+global.__particle = 1;
 global.__sword_part = part_system_create();
 ps_above = part_system_create();
 
 particle_below = part_system_create();
 #region
 	particle_shadow = part_type_create();
-	part_type_sprite(particle_shadow,Sprite4,0, 0, 1);
+	part_type_sprite(particle_shadow,MainCharacterNoLimbs,0, 0, 0);
 	part_type_size(particle_shadow, 1, 1, 0, 0);
+	part_type_scale(particle_shadow, 1, 1);
 	part_type_life (particle_shadow,20,20);
 	part_type_color1(particle_shadow,c_white);
+	part_type_direction(particle_shadow, 0, 0, 0, 0);
+	part_type_orientation(particle_shadow, 0, 0, 0, 0, 0);
 	part_type_alpha3(particle_shadow,0.5,0.3,0.1);
 #endregion
 #region
 pt_flare_particles = part_type_create();
 
 part_type_shape(pt_flare_particles, pt_shape_line);
-part_type_size(pt_flare_particles, 0.30, 0.30, -0.01, 0);
+part_type_size(pt_flare_particles, 0.30, 0.30, -0.02, 0);
 part_type_scale(pt_flare_particles, 1, 3);
 part_type_orientation(pt_flare_particles, 0, 0, 0, 0, 0);
 part_type_color3(pt_flare_particles, 16777215, 16776960, 16776960);
 part_type_alpha3(pt_flare_particles, 1, 1, 0);
 part_type_blend(pt_flare_particles, 1);
 part_type_life(pt_flare_particles, 30, 40);
-part_type_speed(pt_flare_particles, 1, 1, 0, 0);
+part_type_speed(pt_flare_particles, 2, 2, 0, 0);
 part_type_direction(pt_flare_particles, 0, 0, 0, 0);
 part_type_gravity(pt_flare_particles, 0, 0);
 
