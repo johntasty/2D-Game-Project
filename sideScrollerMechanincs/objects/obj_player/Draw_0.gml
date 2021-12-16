@@ -6,7 +6,7 @@
 //draw weapon
 
 draw_line_width(l_shoulder_x,l_shoulder_y,l_elbow_x,l_elbow_y,6);
-//draw_line_width(l_elbow_x, l_elbow_y, l_hand_x, l_hand_y, 6);
+
 
 /*for (var i = 0; i<sprite_get_number(Sprite1_strip8); i++){
 
@@ -40,7 +40,7 @@ draw_set_color(c_black);
 //thigh
 draw_line_width(r_hip_x,r_hip_y,r_knee_x,r_knee_y,12);
 
-draw_line_width(r_elbow_x, r_elbow_y, r_hand_x, r_hand_y, 6);
+
 //calf
 draw_line_width(r_knee_x, r_knee_y, r_foot_x, r_foot_y, 6);
 
