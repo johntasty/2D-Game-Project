@@ -1,17 +1,46 @@
 /// @description Insert description here
-// You can write your code in this editor
 
 scr_input();
 spd = lerp(spd, _hor * 4,0.3);
-
+dir = point_direction(0,0,x,y);
 look_direction = point_direction(x,y,mouse_x,mouse_y);
+
+look_direction_draw = point_direction(x,y,mouse_x,mouse_y);
 look_direction_arm = point_direction(x,y - 94,mouse_x,mouse_y);
+if (look_direction < 90 || look_direction > 275){
+		look_direction = 0;
+	}
+	else {
+		look_direction = 180;
+	}
+if(!weapon){	
+if(spd > 0.1 || spd < -0.1){	
+	set_limps_moving(1,0,0,1);
+	scr_aim();
+}else {
+	set_limps_stop (1,0,0.1,0.3);
+	scr_aim();
+	}
+}
+
+switch state {
+	case playerStates.idle : {
+		set_limps_stop (1,0,0.1,0.3);
+	}; break;	
+	case playerStates.attacking : {				
+		scr_melee();
+	}; break;
+	case playerStates.dash : {
+		set_dash();
+	}; break;
+	
+}
 
 if (global.__dash_key && cooldown == 0){ 
-	
-	set_dash();	
+	set_dash();
+	//state = playerStates.dash;
 	alarm[0] = room_speed;
-	cooldown = 10;
+	cooldown = 1;
 }
 if(vsp < 10) vsp += grv;
 if (place_meeting(x,y,obj_ladder))
@@ -61,7 +90,7 @@ y += vsp;
 x += spd;
 //point weapon
 weapon_dir = point_direction(r_elbow_x,r_elbow_y,r_hand_x,r_hand_y);
-dirc = point_direction(x,y,mouse_x,mouse_y);
+
 //if trigger pressed make bullets
 
 bul_type_set_scale(bullet_pistol, 1, 1, global.__bulletsize, 0);
@@ -76,23 +105,29 @@ if(weapon)
 	}else{weapon.shoot = global.__shtrelease;}
 	weapon.direction= weapon_dir;
 	
-		if (weapon.weapon_directory != 3){	
-			
+		if (weapon.weapon_directory != 3){			
 			if(spd > 0.1 || spd < -0.1){	
-			set_limps_moving(1,1,1,1);
-			scr_aim();
+				set_limps_moving(1,5,1,1);
+				scr_aim();
 			}else {
-			set_limps_stop (1,1,0.1,0.3);
-			scr_aim();
+				set_limps_stop (1,5,0.1,0.3);
+				scr_aim();
 			}
 			
-		}else{
+		}else{			
 			if(spd > 0.1 || spd < -0.1){	
-			set_limps_moving(1,1,1,1);
-			scr_melee();
+				set_limps_moving(1,5,1,1);
+				if (global.__shtpress){		
+					
+					state = playerStates.attacking;					
+					alarm[1] = room_speed/6;}
 			}else {
-			set_limps_stop (1,1,0.1,0.3);
-			scr_melee();
+				set_limps_stop (1,5,0.1,0.3);
+				if (global.__shtpress && melee_cooldown == 0){	
+					melee_cooldown = 1;
+					state = playerStates.attacking;
+					
+					alarm[1] = room_speed/6;}
 			}			
 	}
 	if (global.__r_sht)
@@ -121,7 +156,8 @@ if(weapon)
 var weapon_list = ds_list_create();
 var weapon_col = collision_circle_list(x,y,sprite_width*5,obj_weapon_par,false,true,weapon_list,true);
 
-if (weapon_col > 0){
+if (weapon_col > 0)
+{
 	for (var i = 0; i<weapon_col; i++){
 		var w = weapon_list[|i];
 		if (w == weapon){continue; }
@@ -145,25 +181,6 @@ if (weapon_col > 0){
 	}
 }
 
-
-
-
-
-
-
-if (look_direction < 90 || look_direction > 275){
-		look_direction = 0;
-	}
-	else {
-		look_direction = 180;
-	}
-if(!weapon){	
-if(spd > 0.1 || spd < -0.1){	
-		set_limps_moving(1,1,1,1);			
-	}else {
-		set_limps_stop (1,1,0.1,0.3);		
-}
-}
 
 
 		
