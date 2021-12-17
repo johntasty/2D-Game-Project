@@ -15,10 +15,6 @@ var _p = part_type_create();
 
 	
 global.__shine = _p;
-
-
-
-
 /*
 //trail
 var _p = part_type_create();
