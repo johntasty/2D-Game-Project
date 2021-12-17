@@ -1,7 +1,7 @@
 /// @description foot variables
 curveAsset = animPlayerMelee;
 curvePosition = 0;
-curveSpeed = 0.1;
+curveSpeed = 0.05;
 
 vsp = 0;
 grv = 0.3;
@@ -17,7 +17,7 @@ weapon = -1;
 weapon_dir = 0;
 
 spd = 0;
-set_limps(43,25,13,10,7,10,7);
+set_limps(43,25,13,30,20,10,7);
 
 dir = 0;
 cooldown = 0;
@@ -26,7 +26,7 @@ cooldown = 0;
 
 look_direction = 0;
 look_direction_arm = 0;
-global.__particle = 1;
+__particle = 1;
 
 
 state = playerStates.idle;

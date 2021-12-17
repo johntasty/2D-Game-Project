@@ -18,15 +18,15 @@ particle_below = part_system_create();
 #region
 pt_flare_particles = part_type_create();
 
-part_type_shape(pt_flare_particles, pt_shape_line);
-part_type_size(pt_flare_particles, 0.30, 0.30, -0.02, 0);
-part_type_scale(pt_flare_particles, 1, 3);
+part_type_sprite(pt_flare_particles,spr_melee_particle,0, 0, 0);
+part_type_size(pt_flare_particles, 0.3, 0.3, 0, 0);
+part_type_scale(pt_flare_particles, 16, 1);
 part_type_orientation(pt_flare_particles, 0, 0, 0, 0, 0);
 part_type_color3(pt_flare_particles, 16777215, 16776960, 16776960);
 part_type_alpha3(pt_flare_particles, 1, 1, 0);
 part_type_blend(pt_flare_particles, 1);
-part_type_life(pt_flare_particles, 30, 40);
-part_type_speed(pt_flare_particles, 2, 2, 0, 0);
+part_type_life(pt_flare_particles, 60, 60);
+part_type_speed(pt_flare_particles, 0, 0, 0, 0);
 part_type_direction(pt_flare_particles, 0, 0, 0, 0);
 part_type_gravity(pt_flare_particles, 0, 0);
 

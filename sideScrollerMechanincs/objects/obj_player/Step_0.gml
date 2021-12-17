@@ -3,6 +3,7 @@
 scr_input();
 spd = lerp(spd, _hor * 4,0.3);
 dir = point_direction(0,0,x,y);
+
 look_direction = point_direction(x,y,mouse_x,mouse_y);
 
 look_direction_draw = point_direction(x,y,mouse_x,mouse_y);
@@ -18,8 +19,17 @@ if(spd > 0.1 || spd < -0.1){
 	set_limps_moving(1,0,0,1);
 	scr_aim();
 }else {
+	
 	set_limps_stop (1,0,0.1,0.3);
-	scr_aim();
+	
+	if (global.__shtpress && melee_cooldown == 0){	
+					
+					melee_cooldown = 1;
+					//scr_melee();
+					state = playerStates.attacking;
+					
+					alarm[1] = room_speed;}
+	//scr_aim();
 	}
 }
 
@@ -52,20 +62,22 @@ if (place_meeting(x,y,obj_ladder))
 	vsp = lerp(vsp, _ver * 4,0.3);	
 	grv = 0;
 }else{grv = 0.3;}
-if(place_meeting(x,y+vsp,obj_ground) ){	
-	while (!place_meeting(x,y+sign(vsp),obj_ground))
-	{
-		y = y+ sign(vsp);
-	}
-	vsp = key_jump * - jumpspeed;
-}
+
 if place_meeting(x+spd,y,obj_ground){
 	while (!place_meeting(x+spd,y,obj_ground))
 	{
 		x = x + sign(spd);
 	}
+	
 	spd = 0;
 
+}
+if(place_meeting(x,y+vsp,obj_ground) ){	
+	while (!place_meeting(x,y+sign(vsp),obj_ground))
+	{
+		y = y+ sign(vsp);
+	}	
+	vsp = key_jump * - jumpspeed;
 }
 if place_meeting(x+spd,y,obj_wall){
 	while (!place_meeting(x+spd,y,obj_wall))
@@ -75,11 +87,13 @@ if place_meeting(x+spd,y,obj_wall){
 	spd = 0;
 	
 }
-if (place_meeting(x,y+vsp,obj_wall)) {
+else if (place_meeting(x,y+vsp,obj_wall)) {
 	while (!place_meeting(x,y+sign(vsp),obj_wall))
 	{
 		y = y+ sign(vsp);
-	}
+		
+		show_debug_message("collision");
+	}	
 	vsp = key_jump * - jumpspeed;
 }
 
@@ -120,14 +134,14 @@ if(weapon)
 				if (global.__shtpress){		
 					
 					state = playerStates.attacking;					
-					alarm[1] = room_speed/6;}
+					alarm[1] = room_speed;}
 			}else {
 				set_limps_stop (1,5,0.1,0.3);
 				if (global.__shtpress && melee_cooldown == 0){	
 					melee_cooldown = 1;
 					state = playerStates.attacking;
 					
-					alarm[1] = room_speed/6;}
+					alarm[1] = room_speed;}
 			}			
 	}
 	if (global.__r_sht)
