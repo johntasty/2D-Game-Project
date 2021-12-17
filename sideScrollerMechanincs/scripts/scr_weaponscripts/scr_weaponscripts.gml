@@ -7,7 +7,7 @@ function gun_init()
 	recoil = 10;
 	recoil_step = 0.2;
 	shoot = false;
-	
+	damage_melee = 50;
 	image_index = 0;
 	image_speed = 0;	
 	
@@ -21,12 +21,12 @@ function gun_update()
 		var ldx = lengthdir_x(recoil_step,direction+180);
 		var ldy = lengthdir_y(recoil_step, direction+180);
 		
-		var ldx2 = lengthdir_x(parent.sprite_width*0.75,direction);
-		var ldy2 = lengthdir_y(parent.sprite_width*0.75, direction);
+		//var ldx2 = lengthdir_x(parent.sprite_width*0.75,direction);
+		//var ldy2 = lengthdir_y(parent.sprite_width*0.75, direction);
 		
 		
-		x = parent.r_elbow_x + ldx - ldx2;
-		y = parent.r_elbow_y + ldy + ldy2;
+		x = parent.r_elbow_x; //+ ldx - ldx2;
+		y = parent.r_elbow_y; //+ ldy + ldy2;
 		
 		visible = false;
 	}
