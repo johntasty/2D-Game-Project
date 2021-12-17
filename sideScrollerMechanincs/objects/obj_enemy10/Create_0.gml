@@ -16,4 +16,4 @@ bul_type_set_scale(bullet, 3, 1, 0.1, 0.1);
 bul_type_set_damage (bullet, 0.2);
 bullet_speed = 5;
 
-path_start(Path1,2,path_action_reverse,true)
+path_start(Path1,4,path_action_reverse,true)
