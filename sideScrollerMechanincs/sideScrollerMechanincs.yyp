@@ -114,6 +114,7 @@
   ],
   "IncludedFiles": [
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-16bit.ttf","resourceType":"GMIncludedFile",},
+ Marteen
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-3x3-monospaced.ttf","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-extended.ttf","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-sans-serif.ttf","resourceType":"GMIncludedFile",},
@@ -123,6 +124,12 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-extended.ttf","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-sans-serif.ttf","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-serif.ttf","resourceType":"GMIncludedFile",},
+
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-serif.ttf","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-3x3-monospaced.ttf","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-sans-serif.ttf","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-extended.ttf","resourceType":"GMIncludedFile",},
+ Development
   ],
   "MetaData": {
     "IDEVersion": "2.3.7.603",
