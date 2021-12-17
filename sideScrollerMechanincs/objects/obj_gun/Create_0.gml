@@ -1,10 +1,8 @@
 gun_init();
 
 
-guntype = gun_set_pistol;
+guntype = choose(gun_set_pistol, gun_set_laser, gun_set_shotgun);
 guntype();
-weapon_directory = 0;
+
 ui_show = false;
 ui_alpha = 0;
-
-
