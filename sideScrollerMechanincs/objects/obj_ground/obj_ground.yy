@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "stone",
-    "path": "sprites/stone/stone.yy",
+    "name": "Basic11",
+    "path": "sprites/Basic11/Basic11.yy",
   },
   "solid": false,
   "visible": true,
@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "enviroment objects",
+    "path": "folders/Objects/enviroment objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_ground",

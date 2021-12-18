@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "test sprites",
+    "path": "folders/Sprites/test sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "Sprite5",

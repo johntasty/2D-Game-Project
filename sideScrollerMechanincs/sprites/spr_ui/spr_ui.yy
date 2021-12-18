@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "ui sprites",
+    "path": "folders/Sprites/ui sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_ui",

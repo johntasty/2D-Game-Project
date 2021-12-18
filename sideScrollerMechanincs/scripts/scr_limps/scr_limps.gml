@@ -65,7 +65,7 @@ function set_limps_moving (_armspeed, _shoulder, _hip,_legspeed )
 	
 		l_shoulder_x = (x) + lengthdir_x(_shoulderoffset+shoulder_dis,look_direction);
 		l_shoulder_y = (y-displacement) - lengthdir_y(_shoulderoffset,look_direction);
-		show_debug_message(lengthdir_x(_shoulderoffset+shoulder_dis,look_direction));
+		
 		//right arm
 		r_elbow_x = r_shoulder_x + lengthdir_x(cos(r_arm_move/10) * bicep_length,look_direction);
 		r_elbow_y = r_shoulder_y  + lengthdir_y(cos(r_arm_move/10)* bicep_length,look_direction) + bicep_length;

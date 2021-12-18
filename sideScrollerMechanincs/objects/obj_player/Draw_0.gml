@@ -4,7 +4,7 @@ arm_dir = point_direction(r_shoulder_x,r_shoulder_y,r_elbow_x,r_elbow_y);
 arm_dir_l = point_direction(l_shoulder_x,l_shoulder_y,l_elbow_x,l_elbow_y);
 leg_dir = point_direction(r_hip_x,r_hip_y,r_knee_x,r_knee_y);
 leg_dir_l = point_direction(l_hip_x,l_hip_y,l_knee_x,l_knee_y);
-draw_line_width_color(r_elbow_x,r_elbow_y,r_hand_x,r_hand_y,6,c_red,c_red);
+draw_line_width_color(r_shoulder_x,r_shoulder_y,r_elbow_x,r_elbow_y,6,c_red,c_red);
 //draw_line_width_color(l_hip_x,l_hip_y,l_knee_x,l_knee_y,6,c_black,c_black);
 draw_circle(r_elbow_x,r_elbow_y,6,c_black);
 if (look_direction < 90 || look_direction > 275){
@@ -34,7 +34,7 @@ var draw_side = function(){
 		draw_side_way = draw_sprite_ext(MainCharacterNoLimbs,0,x,y,1,-1,look_direction,image_blend,image_alpha);
 		
 	}
-	return draw_side_way;
+	//return draw_side_way;
 }
 		
 
