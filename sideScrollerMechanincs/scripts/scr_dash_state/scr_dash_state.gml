@@ -11,7 +11,7 @@ function set_dash(){
 	if(len == 0){len = dash_dis*(4*3);}
 	else{len = spd * 3;}	
 	//hspd =  lengthdir_x(len, dir);
-	//show_debug_message(hspd);
+	
 	//set frames of dashing, and distance
 	var dash_frames = 10;
 	var dash_resolution = len;
