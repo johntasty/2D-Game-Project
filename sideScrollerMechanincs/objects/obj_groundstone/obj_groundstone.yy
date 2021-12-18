@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "Basic11",
-    "path": "sprites/Basic11/Basic11.yy",
+    "name": "stone_half",
+    "path": "sprites/stone_half/stone_half.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_ground",
+    "path": "objects/obj_ground/obj_ground.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -33,7 +36,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_ground",
+  "name": "obj_groundstone",
   "tags": [],
   "resourceType": "GMObject",
 }
