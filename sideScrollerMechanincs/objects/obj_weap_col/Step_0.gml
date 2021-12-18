@@ -13,22 +13,24 @@ if collision_rectangle(x-200,y-100,x+200,y+100,obj_player,false,true){
 if collision_circle(x,y,32,obj_gun,false,true){
 	
 	nearest_gun = instance_nearest(x, y, obj_gun);
-	var melee = collision_circle(x,y,32,obj_gun,false,true);
 	
-	if(attacked == 0){
-		knockback_dir = point_direction(nearest_gun.x, nearest_gun.y,x,y);	
-		x += lengthdir_x(knockback,knockback_dir);
-		y += lengthdir_y(knockback, knockback_dir);
-		stuned = 1;
-		attacked = 1;
-		clr = c_red;	
+	var melee = collision_circle(x,y,32,obj_gun,false,true);
+	if (nearest_gun.weapon_directory == 3){
+		if(attacked == 0){
+			knockback_dir = point_direction(nearest_gun.x, nearest_gun.y,x,y);	
+			x += lengthdir_x(knockback,knockback_dir);
+			y += lengthdir_y(knockback, knockback_dir);
+			stuned = 1;
+			attacked = 1;
+			clr = c_red;	
 			
-		health_bar -= melee.damage_melee;
+			health_bar -= melee.damage_melee;
 		
-		alarm[0] = room_speed/6;
-		alarm[1] = room_speed/2;
+			alarm[0] = room_speed/6;
+			alarm[1] = room_speed/2;
 		
-		}		
+			}	
+	}
 }else{
 	clr = c_white;
 }
