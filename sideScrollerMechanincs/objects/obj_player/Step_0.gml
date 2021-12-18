@@ -25,8 +25,8 @@ if(spd > 0.1 || spd < -0.1){
 	if (global.__shtpress && melee_cooldown == 0){	
 					
 					melee_cooldown = 1;
-					//scr_melee();
-					state = playerStates.attacking;
+					scr_melee();
+					//state = playerStates.attacking;
 					
 					alarm[1] = room_speed;}
 	//scr_aim();
@@ -72,13 +72,6 @@ if place_meeting(x+spd,y,obj_ground){
 	spd = 0;
 
 }
-if(place_meeting(x,y+vsp,obj_ground) ){	
-	while (!place_meeting(x,y+sign(vsp),obj_ground))
-	{
-		y = y+ sign(vsp);
-	}	
-	vsp = key_jump * - jumpspeed;
-}
 if place_meeting(x+spd,y,obj_wall){
 	while (!place_meeting(x+spd,y,obj_wall))
 	{
@@ -87,12 +80,20 @@ if place_meeting(x+spd,y,obj_wall){
 	spd = 0;
 	
 }
-else if (place_meeting(x,y+vsp,obj_wall)) {
+x += spd;
+if(place_meeting(x,y+vsp,obj_ground) ){	
+	while (!place_meeting(x,y+sign(vsp),obj_ground))
+	{
+		y = y+ sign(vsp);
+	}	
+	vsp = key_jump * - jumpspeed;
+}
+if (place_meeting(x,y+vsp,obj_wall)) {
 	while (!place_meeting(x,y+sign(vsp),obj_wall))
 	{
 		y = y+ sign(vsp);
 		
-		show_debug_message("collision");
+		
 	}	
 	vsp = key_jump * - jumpspeed;
 }
@@ -101,7 +102,7 @@ if (place_meeting(x,y-sprite_height*0.5,obj_ceiling)){
 	vsp += grv;
 }
 y += vsp;
-x += spd;
+
 //point weapon
 weapon_dir = point_direction(r_elbow_x,r_elbow_y,r_hand_x,r_hand_y);
 
