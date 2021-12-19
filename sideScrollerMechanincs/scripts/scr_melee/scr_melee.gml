@@ -5,6 +5,13 @@ function scr_melee(){
 			
 			
 			
+			r_elbow_x = r_shoulder_x + lengthdir_x(bicep_length,look_direction_draw);
+			r_elbow_y = r_shoulder_y  + (lengthdir_y( bicep_length,look_direction_draw));
+			r_elbow_y = clamp(r_elbow_y, (y-displacement)-bicep_length,(y-displacement)+bicep_length);
+			//right hand
+			r_hand_x = r_elbow_x + lengthdir_x(bicep_length, look_direction_draw);
+			r_hand_y = r_elbow_y + (lengthdir_y( bicep_length, look_direction_draw)); // + sin(r_arm_move / 10) * forearm_length/2) + forearm_length/2;
+			r_hand_y = clamp(r_hand_y, (y-displacement)-(bicep_length+forearm_length),(y-displacement)+(bicep_length+forearm_length));
 		/*for (var i = 0; i < attack_frames; i++){
 			var _lerpspdpunch = 0.2;
 			//right arm
@@ -21,9 +28,9 @@ function scr_melee(){
 				
 
 				
-			}	
-			*/
-				
+			}	*/
+			
+			/*	
 			curvePosition += curveSpeed;
 			__particle += 1;
 			
@@ -44,12 +51,17 @@ function scr_melee(){
 
 					/// All your movement code goes here
 			
-			var p_dir = point_direction(250,250,x,y);
-			var orient = point_direction(xprev,yprev,mouse_x,mouse_y);
-			show_debug_message(p_dir);
+			var p_dir = point_direction(xprev,yprev,r_elbow_x,r_elbow_y);
+			var orient = point_direction(xprev,yprev,mouse_x,mouse_y);*/
+			var direction_face = point_direction(x,y,mouse_x,mouse_y);
+			if(direction_face <91 || direction_face > 275 ){
+				direction_face = 1;
+			}
+			else{direction_face = -1;}
 			
-			part_type_scale(obj_particle_controller.pt_flare_particles, 10,10);
-			part_type_orientation(obj_particle_controller.pt_flare_particles, 255, 255,10, 0, 0);
+			
+			part_type_scale(obj_particle_controller.pt_flare_particles, 5*direction_face,5);
+			part_type_orientation(obj_particle_controller.pt_flare_particles, 255*direction_face, 255*direction_face,10*direction_face, 0, 1);
 			//part_type_direction(obj_particle_controller.pt_flare_particles, 359, 90, 9, 0);
 			
 			part_particles_create(obj_particle_controller.ps_above,r_elbow_x ,r_elbow_y,obj_particle_controller.pt_flare_particles,1)
