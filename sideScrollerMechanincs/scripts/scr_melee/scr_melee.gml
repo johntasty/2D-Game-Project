@@ -44,12 +44,17 @@ function scr_melee(){
 
 					/// All your movement code goes here
 			
-			var p_dir = point_direction(250,250,x,y);
+			var p_dir = point_direction(xprev,yprev,r_elbow_x,r_elbow_y);
 			var orient = point_direction(xprev,yprev,mouse_x,mouse_y);
-			show_debug_message(p_dir);
+			var direction_face = point_direction(x,y,mouse_x,mouse_y);
+			if(direction_face <91 || direction_face > 275 ){
+				direction_face = 1;
+			}
+			else{direction_face = -1;}
+			show_debug_message(orient);
 			
-			part_type_scale(obj_particle_controller.pt_flare_particles, 10,10);
-			part_type_orientation(obj_particle_controller.pt_flare_particles, 255, 255,10, 0, 0);
+			part_type_scale(obj_particle_controller.pt_flare_particles, 5*direction_face,5);
+			part_type_orientation(obj_particle_controller.pt_flare_particles, 255*direction_face, 255*direction_face,10*direction_face, 0, 1);
 			//part_type_direction(obj_particle_controller.pt_flare_particles, 359, 90, 9, 0);
 			
 			part_particles_create(obj_particle_controller.ps_above,r_elbow_x ,r_elbow_y,obj_particle_controller.pt_flare_particles,1)
