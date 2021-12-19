@@ -22,14 +22,8 @@ if(spd > 0.1 || spd < -0.1){
 	
 	set_limps_stop (1,0,0.1,0.3);
 	
-	if (global.__shtpress && melee_cooldown == 0){	
-					
-					melee_cooldown = 1;
-					scr_melee();
-					//state = playerStates.attacking;
-					
-					alarm[1] = room_speed;}
-	//scr_aim();
+	
+	scr_aim();
 	}
 }
 
@@ -132,15 +126,20 @@ if(weapon)
 		}else{			
 			if(spd > 0.1 || spd < -0.1){	
 				set_limps_moving(1,5,1,1);
-				if (global.__shtpress){		
+				if (global.__shtpress && melee_cooldown == 0){	
 					
-					state = playerStates.attacking;					
+					melee_cooldown = 1;
+					scr_melee();
+					//state = playerStates.attacking;
+					
 					alarm[1] = room_speed;}
 			}else {
 				set_limps_stop (1,5,0.1,0.3);
 				if (global.__shtpress && melee_cooldown == 0){	
+					
 					melee_cooldown = 1;
-					state = playerStates.attacking;
+					scr_melee();
+					//state = playerStates.attacking;
 					
 					alarm[1] = room_speed;}
 			}			
