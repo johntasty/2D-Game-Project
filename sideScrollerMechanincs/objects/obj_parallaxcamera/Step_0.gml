@@ -1,4 +1,4 @@
-/// @parallax camera control
+/// @ Parallax camera control
 
 var near = layer_get_id("Factories");
 var far = layer_get_id("Bridge");
