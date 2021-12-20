@@ -63,7 +63,7 @@ function scr_melee(){
 			part_type_scale(obj_particle_controller.pt_flare_particles, 5*direction_face,5);
 			part_type_orientation(obj_particle_controller.pt_flare_particles, 255*direction_face, 255*direction_face,10*direction_face, 0, 1);
 			//part_type_direction(obj_particle_controller.pt_flare_particles, 359, 90, 9, 0);
-			
+			part_type_direction(obj_particle_controller.pt_flare_particles_trail, 270, 270, 0, 0);
 			part_particles_create(obj_particle_controller.ps_above,r_elbow_x ,r_elbow_y,obj_particle_controller.pt_flare_particles,1)
 			
 			
