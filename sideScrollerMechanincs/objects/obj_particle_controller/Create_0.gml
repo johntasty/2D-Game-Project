@@ -3,7 +3,7 @@ global.__particle = 1;
 global.__sword_part = part_system_create();
 ps_above = part_system_create();
 
-particle_below = part_system_create();
+particle_below = part_system_create_layer("Instances_below", false);
 #region
 	particle_shadow = part_type_create();
 	part_type_sprite(particle_shadow,MainCharacterNoLimbs,0, 0, 0);
@@ -17,21 +17,21 @@ particle_below = part_system_create();
 #endregion
 #region
 
-/*pt_flare_particles_trail = part_type_create();
-
+pt_flare_particles_trail = part_type_create();
+part_type_sprite(pt_flare_particles_trail,wormhole_line,0, 0, 0);
 //part_type_sprite(pt_flare_particles,spr_melee_particle,0, 0, 0);
-part_type_shape(pt_flare_particles_trail, pt_shape_line);
-part_type_size(pt_flare_particles_trail, 0.3, 0.3, 0, 0);
-part_type_scale(pt_flare_particles_trail, 1, 4);
+//part_type_shape(pt_flare_particles_trail, pt_shape_sphere);
+part_type_size(pt_flare_particles_trail, 0.3, 0.3, -0.1, 0);
+part_type_scale(pt_flare_particles_trail, 1, 2);
 part_type_orientation(pt_flare_particles_trail, 0, 0, 0, 0, 0);
 part_type_color3(pt_flare_particles_trail, 16777215, 16776960, 16776960);
-part_type_alpha3(pt_flare_particles_trail, 1, 1, 0);
+part_type_alpha3(pt_flare_particles_trail, 0.8, 0.5, 0);
 part_type_blend(pt_flare_particles_trail, 1);
-part_type_life(pt_flare_particles_trail, 12, 12);
+part_type_life(pt_flare_particles_trail, 5, 5);
 part_type_speed(pt_flare_particles_trail, 0, 0, 0, 0);
 part_type_direction(pt_flare_particles_trail, 0, 0, 0, 0);
 part_type_gravity(pt_flare_particles_trail, 0, 0);
-*/
+
 pt_flare_particles = part_type_create();
 
 part_type_sprite(pt_flare_particles,spr_melee_particle,0, 0, 0);
@@ -42,14 +42,13 @@ part_type_orientation(pt_flare_particles, 0, 0, 0, 0, 0);
 part_type_color3(pt_flare_particles, 16777215, 16776960, 16776960);
 part_type_alpha3(pt_flare_particles, 1, 1, 0);
 part_type_blend(pt_flare_particles, 1);
-part_type_life(pt_flare_particles, 10, 10);
-part_type_speed(pt_flare_particles, 0, 0, 0, 0);
+part_type_life(pt_flare_particles, 30, 30);
+part_type_speed(pt_flare_particles, 2, 2, 0, 0);
 part_type_direction(pt_flare_particles, 0, 0, 0, 0);
 part_type_gravity(pt_flare_particles, 0, 0);
-//part_type_step(pt_flare_particles,10,pt_flare_particles_trail);
+part_type_step(pt_flare_particles,1,pt_flare_particles_trail);
 
 #endregion
-
 #region
 global.__flame_lifemin = 40;
 	global.__flame_lifemax = 50;
@@ -80,4 +79,24 @@ global.__flame_lifemin = 40;
 	part_type_size(global.__smoke,0.15,0.2,0.016,0.003);
 	part_type_alpha3(global.__smoke,1,0.8,0);
 	part_type_blend(global.__smoke,0);	
+#endregion
+#region
+
+
+em_sword = part_emitter_create(particle_below);
+pt_flare_particles_testing = part_type_create();
+
+part_type_sprite(pt_flare_particles_testing,wormhole_line,0, 0, 0);
+//part_type_shape(pt_flare_particles_testing, pt_shape_line);
+part_type_size(pt_flare_particles_testing, 0.3, 0.3, -0.005, 0);
+part_type_scale(pt_flare_particles_testing, 1, 1);
+part_type_orientation(pt_flare_particles_testing, 0, 0, 0, 0, 0);
+part_type_color3(pt_flare_particles_testing, 16777215, 16776960, 16776960);
+part_type_alpha3(pt_flare_particles_testing, 0.8, 0.5, 0);
+part_type_blend(pt_flare_particles_testing, 1);
+part_type_life(pt_flare_particles_testing, 50, 50);
+part_type_speed(pt_flare_particles_testing,1,1,0,0);
+part_type_direction(pt_flare_particles_testing, 0, 0, 0, 0);
+part_type_gravity(pt_flare_particles_testing, 0, 0);
+//part_type_step(pt_flare_particles_testing,1,pt_flare_particles_trail);
 #endregion
