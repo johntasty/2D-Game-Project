@@ -274,7 +274,11 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_NPC","path":"objects/obj_NPC/obj_NPC.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":128.0,"y":800.0,"resourceVersion":"1.0","name":"inst_58110E86","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_NPC","path":"objects/obj_NPC/obj_NPC.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2496.0,"y":928.0,"resourceVersion":"1.0","name":"inst_5624EEA8","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":576.0,"y":192.0,"resourceVersion":"1.0","name":"inst_73339D0A","tags":[],"resourceType":"GMRInstance",},
-        {"properties":[],"isDnd":false,"objectId":{"name":"obj_parallaxcamera","path":"objects/obj_parallaxcamera/obj_parallaxcamera.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":64.0,"y":96.0,"resourceVersion":"1.0","name":"inst_4FE7E324","tags":[],"resourceType":"GMRInstance",},
+
+        {"properties":[],"isDnd":false,"objectId":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":480.0,"y":832.0,"resourceVersion":"1.0","name":"inst_6EE8A00C","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"obj_weap_col","path":"objects/obj_weap_col/obj_weap_col.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1344.0,"y":1248.0,"resourceVersion":"1.0","name":"inst_5CB282D9","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"obj_weap_col","path":"objects/obj_weap_col/obj_weap_col.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":928.0,"y":1248.0,"resourceVersion":"1.0","name":"inst_20C60CAB","tags":[],"resourceType":"GMRInstance",},
+
       ],"visible":true,"depth":100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[],"visible":true,"depth":200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances_below","tags":[],"resourceType":"GMRInstanceLayer",},
     {"spriteId":{"name":"spr_bridge","path":"sprites/spr_bridge/spr_bridge.yy",},"colour":4294967295,"x":0,"y":790,"htiled":true,"vtiled":false,"hspeed":0.0,"vspeed":0.0,"stretch":false,"animationFPS":30.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":300,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Bridge","tags":[],"resourceType":"GMRBackgroundLayer",},
@@ -544,7 +548,11 @@
     {"name":"inst_58110E86","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_5624EEA8","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_73339D0A","path":"rooms/Room1/Room1.yy",},
-    {"name":"inst_4FE7E324","path":"rooms/Room1/Room1.yy",},
+
+    {"name":"inst_6EE8A00C","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_5CB282D9","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_20C60CAB","path":"rooms/Room1/Room1.yy",},
+
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

@@ -42,7 +42,7 @@ function scr_melee(){
 	part_type_scale(obj_particle_controller.pt_flare_particles_testing, 1,2);
 	part_type_orientation(obj_particle_controller.pt_flare_particles_testing, look_direction_draw+(_value*direction_face), look_direction_draw+(_value*direction_face),0, 0, 0);
 	//part_type_orientation(obj_particle_controller.pt_flare_particles_trail, _value,_value, 0, 0, 0);
-	part_type_direction(obj_particle_controller.pt_flare_particles_testing,look_direction_draw+(_value*direction_face),look_direction_draw+(_value*direction_face),0,0);
+	part_type_direction(obj_particle_controller.pt_flare_particles_testing,(_value*direction_face)-90,(_value*direction_face)-90,0,0);
 	part_particles_create(obj_particle_controller.particle_below,xprev,yprev,obj_particle_controller.pt_flare_particles_testing,1);
 			
 			

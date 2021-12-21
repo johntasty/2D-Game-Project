@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 clr = c_white;
-attack_dis = 360;
+attack_dis = 180;
 max_hp = 100;
 health_bar  = 100;
 
