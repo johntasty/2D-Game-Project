@@ -1,74 +1,52 @@
 function scr_melee(){
 	
-			var attack_frames = 10;				
-			var bicep_arc = bicep_length
+	//r_hand_x = lerp(r_hand_x,r_elbow_x,0.9);
+	//r_hand_y = lerp(r_hand_y,r_elbow_y + forearm_length,0.9);
 			
 			
 			
-			r_elbow_x = r_shoulder_x + lengthdir_x(bicep_length,look_direction_draw);
-			r_elbow_y = r_shoulder_y  + (lengthdir_y( bicep_length,look_direction_draw));
-			r_elbow_y = clamp(r_elbow_y, (y-displacement)-bicep_length,(y-displacement)+bicep_length);
-			//right hand
-			r_hand_x = r_elbow_x + lengthdir_x(bicep_length, look_direction_draw);
-			r_hand_y = r_elbow_y + (lengthdir_y( bicep_length, look_direction_draw)); // + sin(r_arm_move / 10) * forearm_length/2) + forearm_length/2;
-			r_hand_y = clamp(r_hand_y, (y-displacement)-(bicep_length+forearm_length),(y-displacement)+(bicep_length+forearm_length));
-		/*for (var i = 0; i < attack_frames; i++){
-			var _lerpspdpunch = 0.2;
-			//right arm
-				r_elbow_x = lerp(r_elbow_x,r_shoulder_x + (lengthdir_x(bicep_arc,look_direction_draw)),_lerpspdpunch);
-				r_elbow_y = lerp(r_elbow_y, r_shoulder_y-(lengthdir_y( bicep_arc,look_direction_draw)),_lerpspdpunch);
-				//r_elbow_y = clamp(r_elbow_y, (y-displacement)-bicep_arc,(y-displacement)+bicep_arc);
-				//right hand
-				r_hand_x = lerp(r_hand_x, r_elbow_x + lengthdir_x(bicep_arc, look_direction_draw),_lerpspdpunch);
-				r_hand_y = lerp(r_hand_y, r_elbow_y - (lengthdir_y( bicep_arc, look_direction_draw)),_lerpspdpunch);	
-				//r_hand_y = clamp(r_hand_y, (y-displacement)-(bicep_arc*2+forearm_length),(y-displacement)+(bicep_arc*2+forearm_length));
-				
-				bicep_arc -= i;		
-				
-				
-
-				
-			}	*/
-			
-			/*	
-			curvePosition += curveSpeed;
-			__particle += 1;
-			
-			var curveStruct = animcurve_get(curveAsset);
-			var _channel = animcurve_get_channel(curveStruct,"x");
-			var _value_x = animcurve_channel_evaluate(_channel,curvePosition);
-			xstart = r_elbow_x;
-			r_elbow_x = xstart + lengthdir_x(_value_x,look_direction_draw);
-			
-			var _channel = animcurve_get_channel(curveStruct,"y");
-			var _value_y = animcurve_channel_evaluate(_channel,curvePosition);
-			ystart = r_elbow_y;
-			r_elbow_y = ystart +_value_y;
-			
-			//r_hand_y = clamp(r_hand_y, (y-displacement)-(bicep_length+forearm_length),(y-displacement)+(bicep_length+forearm_length));
-			xprev=xstart;
-			yprev=ystart;
-
-					/// All your movement code goes here
-			
-			var p_dir = point_direction(xprev,yprev,r_elbow_x,r_elbow_y);
-			var orient = point_direction(xprev,yprev,mouse_x,mouse_y);*/
-			var direction_face = point_direction(x,y,mouse_x,mouse_y);
-			if(direction_face <91 || direction_face > 275 ){
-				direction_face = 1;
-			}
-			else{direction_face = -1;}
-			
-			
-			part_type_scale(obj_particle_controller.pt_flare_particles, 5*direction_face,5);
-			part_type_orientation(obj_particle_controller.pt_flare_particles, 255*direction_face, 255*direction_face,10*direction_face, 0, 1);
-			//part_type_direction(obj_particle_controller.pt_flare_particles, 359, 90, 9, 0);
-			part_type_direction(obj_particle_controller.pt_flare_particles_trail, 270, 270, 0, 0);
-			part_particles_create(obj_particle_controller.ps_above,r_elbow_x ,r_elbow_y,obj_particle_controller.pt_flare_particles,1)
-			
-			
-			
+	time += timeSpeed;
+	time = time mod 1;
+	var direction_face = point_direction(x,y,mouse_x,mouse_y);
+	if(direction_face <91 || direction_face > 275 ){
+		direction_face = 1;
 	}
+	else{direction_face = -1;}
+
+	var _curveStruct = animcurve_get(channel_test);
+	var _channel = animcurve_get_channel(_curveStruct, "x");
+	var _value = animcurve_channel_evaluate(_channel,time);
+
+	xstart = r_shoulder_x;
+
+	r_elbow_x = xstart +lengthdir_x(30,look_direction_draw+(_value*direction_face));
+	r_hand_x = r_elbow_x + lengthdir_x(abs(cos(r_arm_move / 10)) * bicep_length, look_direction_draw+(_value*direction_face));
+
+
+	//r_hand_x = xstart +lengthdir_x(80,look_direction_draw+(_value));
+
+	var _curveStruct = animcurve_get(channel_test);
+	var _channel = animcurve_get_channel(_curveStruct, "y");
+	var _value = animcurve_channel_evaluate(_channel,time);
+	ystart = r_shoulder_y;
+	r_elbow_y = ystart + lengthdir_y(30,look_direction_draw+(_value*direction_face));
+	r_hand_y = r_elbow_y - (lengthdir_y(cos(r_arm_move/10) * bicep_length, look_direction_draw+(_value*direction_face)) + sin(r_arm_move / 10) * forearm_length/2) + forearm_length/2;
+	//r_hand_y = ystart +lengthdir_x(80,look_direction_draw+(_value));
+
+	image_angle = look_direction_draw + (_value*direction_face) ;
+
+
+	xprev = r_elbow_x;
+	yprev = r_elbow_y;
+
+	part_type_scale(obj_particle_controller.pt_flare_particles_testing, 1,2);
+	part_type_orientation(obj_particle_controller.pt_flare_particles_testing, look_direction_draw+(_value*direction_face), look_direction_draw+(_value*direction_face),0, 0, 0);
+	//part_type_orientation(obj_particle_controller.pt_flare_particles_trail, _value,_value, 0, 0, 0);
+	part_type_direction(obj_particle_controller.pt_flare_particles_testing,look_direction_draw+(_value*direction_face),look_direction_draw+(_value*direction_face),0,0);
+	part_particles_create(obj_particle_controller.particle_below,xprev,yprev,obj_particle_controller.pt_flare_particles_testing,1);
+			
+			
+}
 		
 	
 

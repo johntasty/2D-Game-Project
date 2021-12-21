@@ -113,6 +113,7 @@
     {"id":{"name":"Basic21","path":"sprites/Basic21/Basic21.yy",},"order":32,},
     {"id":{"name":"X3","path":"sprites/X3/X3.yy",},"order":40,},
     {"id":{"name":"config_bulletprofiles","path":"scripts/config_bulletprofiles/config_bulletprofiles.yy",},"order":1,},
+    {"id":{"name":"test_stretc","path":"sprites/test_stretc/test_stretc.yy",},"order":28,},
     {"id":{"name":"obj_ladder","path":"objects/obj_ladder/obj_ladder.yy",},"order":2,},
     {"id":{"name":"obj_state_control","path":"objects/obj_state_control/obj_state_control.yy",},"order":1,},
     {"id":{"name":"scr_weaponscripts","path":"scripts/scr_weaponscripts/scr_weaponscripts.yy",},"order":2,},

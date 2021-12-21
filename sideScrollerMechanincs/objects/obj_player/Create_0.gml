@@ -8,6 +8,9 @@ grv = 0.3;
 jumpspeed = 10;
 
 //animation
+time= 0;
+timeSpeed = 0.1;
+channel_test = animCurveTest;
 anim = new animation();
 anim.sprite_index = sprite_index;
 anim.bind(true);
@@ -17,7 +20,7 @@ weapon = -1;
 weapon_dir = 0;
 
 spd = 0;
-set_limps(43,25,13,30,20,10,7);
+set_limps(43,25,13,20,7,20,7);
 
 dir = 0;
 cooldown = 0;

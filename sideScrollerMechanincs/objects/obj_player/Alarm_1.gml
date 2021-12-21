@@ -5,3 +5,5 @@ global.__particle = 1;
 melee_cooldown = 0;
 curvePosition = 0;
 __particle= 1;
+time = 0;
+image_angle = 0;
