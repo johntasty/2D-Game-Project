@@ -9,7 +9,8 @@ function gun_init()
 	shoot = false;
 	damage_melee = 50;
 	image_index = 0;
-	image_speed = 0;	
+	image_speed = 0;
+	
 	
 }
 
