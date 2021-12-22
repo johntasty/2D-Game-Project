@@ -1,12 +1,12 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description enemy that moves on set path
+knockback = 5;
+attacked = 0;
 clr = c_white;
-
+health_bar = 100;
 max_hp = 100;
-health_bar  = 100;
-
-clr_col = c_white;
-cclr_coll = c_white;
+attack_dis = 180;
+knockingback = false;
+bounce_back = false;
 
 bullet = new bul_type();
 bul_type_set_life(bullet,50);

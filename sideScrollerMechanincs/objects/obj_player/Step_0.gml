@@ -29,7 +29,8 @@ switch state {
 	case playerStates.idle : {
 		set_limps_stop (1,0,0.1,0.3);
 	}; break;	
-	case playerStates.attacking : {				
+	case playerStates.attacking : {	
+		
 		scr_melee();
 	}; break;
 	case playerStates.dash : {
@@ -69,8 +70,7 @@ if place_meeting(x+spd,y,obj_wall){
 	{
 		x = x+ sign(spd);
 	}
-	spd = 0;
-	
+	spd = 0;	
 }
 x += spd;
 if(place_meeting(x,y+vsp,obj_ground) ){	
@@ -125,6 +125,7 @@ if(weapon)
 			if(spd > 0.1 || spd < -0.1){	
 				set_limps_moving(1,5,1,1);
 				if (global.__shtpress && melee_cooldown == 0){	
+					
 					set_limps_stop (1,5,0.1,0.3);
 					melee_cooldown = 1;
 					//scr_melee();

@@ -1,13 +1,13 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description enemy that fires bullets, set the type of bullets your want
+knockback = 5;
+attacked = 0;
 clr = c_white;
-attack_dis = 180;
+health_bar = 100;
 max_hp = 100;
-health_bar  = 100;
-
-clr_col = c_white;
-cclr_coll = c_white;
-
+attack_dis = 180;
+knockingback = false;
+bounce_back = false;
+//create type of bullet to shoot
 bullet = new bul_type();
 bul_type_set_life(bullet,50);
 bul_type_set_sprite(bullet, spr_bullet, 0, 0,false);
