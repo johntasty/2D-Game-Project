@@ -54,12 +54,12 @@ function scr_melee(){
 function scr_aim(){
 		if(global.__sht) || (global.__r_sht){
 		//right arm
-		r_elbow_x = r_shoulder_x + lengthdir_x(bicep_length,look_direction_arm);
-		r_elbow_y = r_shoulder_y  + (lengthdir_y( bicep_length,look_direction_arm));
+		r_elbow_x = r_shoulder_x + lengthdir_x(bicep_length,look_direction_draw);
+		r_elbow_y = r_shoulder_y  + (lengthdir_y( bicep_length,look_direction_draw));
 		r_elbow_y = clamp(r_elbow_y, (y-displacement)-bicep_length,(y-displacement)+bicep_length);
 		//right hand
-		r_hand_x = r_elbow_x + lengthdir_x(bicep_length, look_direction_arm);
-		r_hand_y = r_elbow_y + (lengthdir_y( bicep_length, look_direction_arm)); // + sin(r_arm_move / 10) * forearm_length/2) + forearm_length/2;
+		r_hand_x = r_elbow_x + lengthdir_x(bicep_length, look_direction_draw);
+		r_hand_y = r_elbow_y + (lengthdir_y( bicep_length, look_direction_draw)); // + sin(r_arm_move / 10) * forearm_length/2) + forearm_length/2;
 		r_hand_y = clamp(r_hand_y, (y-displacement)-(bicep_length+forearm_length),(y-displacement)+(bicep_length+forearm_length));
 		}
 }
