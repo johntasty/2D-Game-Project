@@ -24,6 +24,7 @@
     {"id":{"name":"room_dialogue_test","path":"rooms/room_dialogue_test/room_dialogue_test.yy",},"order":0,},
     {"id":{"name":"obj_b9_ground21","path":"objects/obj_b9_ground21/obj_b9_ground21.yy",},"order":20,},
     {"id":{"name":"spr_flame","path":"sprites/spr_flame/spr_flame.yy",},"order":8,},
+    {"id":{"name":"spr_spider","path":"sprites/spr_spider/spr_spider.yy",},"order":10,},
     {"id":{"name":"Basic31","path":"sprites/Basic31/Basic31.yy",},"order":35,},
     {"id":{"name":"animCurveTest","path":"animcurves/animCurveTest/animCurveTest.yy",},"order":1,},
     {"id":{"name":"spr_bridge","path":"sprites/spr_bridge/spr_bridge.yy",},"order":0,},
@@ -186,7 +187,7 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-serif.ttf","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.7.603",
+    "IDEVersion": "2.3.7.606",
   },
   "resourceVersion": "1.4",
   "name": "sideScrollerMechanincs",
