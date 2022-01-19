@@ -1,7 +1,7 @@
 /// @description collision melee
 
 if (health_bar <= 0){
-				instance_destroy();	
+	instance_destroy();	
 }				
 
 if collision_rectangle(x-400,y-100,x+400,y+100,obj_player,false,true){

@@ -25,3 +25,21 @@ for (var i = 0; i< dash_frames; i++){
 		}
 	}
 }
+
+function set_charge (){
+	
+	var point_towards = point_direction(x,y,obj_player.x,obj_player.y);
+	var boss_spd = lengthdir_x(1,point_towards);
+
+	var charge_resolution =  sign(boss_spd);
+	
+	var spd = lerp(charge_spd, charge_resolution*4,0.3);
+	var charge_frames = 50;
+	for (var i = 0; i < charge_frames; i++)
+	{
+		if((!place_meeting(x+spd,y,obj_ground) && !place_meeting(x+spd,y,obj_wall))){
+			x += spd;
+		}
+	}
+		
+}

@@ -1,4 +1,4 @@
-if (keyboard_check(ord("1"))){
+/*if (keyboard_check(ord("1"))){
 		guntype = gun_set_pistol;
 		guntype();
 		weapon_directory = 1;
@@ -13,9 +13,9 @@ if (keyboard_check(ord("1"))){
 		guntype = gun_set_shotgun;
 		guntype();
 		weapon_directory = 3;
-		
-		}
 
+		}
+*/
 gun_update(); 
 ui_show = false;
  if (collision_circle(x,y,sprite_width , obj_player, false , true))
