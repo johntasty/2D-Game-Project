@@ -7,4 +7,5 @@ global.__sht = mouse_check_button(mb_left);
 global.__shtrelease = mouse_check_button_released(mb_left);
 global.__shtpress = mouse_check_button_pressed(mb_left);
 global.__r_sht = mouse_check_button(mb_right);
+global.__r_sht_hook = mouse_check_button_pressed(mb_right);
 global.__r_sht_rel = mouse_check_button_released(mb_right);

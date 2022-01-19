@@ -1,12 +1,22 @@
 /// @description foot variables
-curveAsset = animPlayerMelee;
+
 curvePosition = 0;
-curveSpeed = 0.05;
+
+hp = 100;
+flash = false;
+col = image_blend;
+
+blink_number = 10;
+blink_counter = 0;
+blink_duration = 3;
 
 vsp = 0;
-grv = 0.3;
+grav = 0.5;
 jumpspeed = 10;
-
+spd = 0;
+//graple
+active = false;
+weapon_hook = false;
 //animation
 time= 0;
 timeSpeed = 0.1;
@@ -18,12 +28,17 @@ moving = false;
 //weapon handler
 weapon = -1;
 weapon_dir = 0;
+//inventory
+inventory = ds_list_create();
+active_weapon = noone;
 
-spd = 0;
 set_limps(43,25,13,20,7,20,7);
 
 dir = 0;
 cooldown = 0;
+
+global.__spdex = 0;
+global.__vsdex = 0;
 
 //look direction
 
