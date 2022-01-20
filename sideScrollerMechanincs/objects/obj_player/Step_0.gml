@@ -17,7 +17,7 @@ if (look_direction < 90 || look_direction > 275){
 	else {
 		look_direction = 180;
 	}
-if(!weapon){	
+if(weapon == -1){	
 if(spd > 0.1 || spd < -0.1){	
 	set_limps_moving(1,0,0,1);
 	scr_aim();
@@ -112,6 +112,7 @@ bul_type_set_damage (bullet_pistol,global.__bullet_dmg);
 
 if(weapon)
 {
+	
 	active_weapon = (weapon.image_index);
 	weapon.parent = id;
 	if(weapon.weapon_directory == 2){
@@ -200,23 +201,9 @@ if (weapon_col > 0)
 		
 		if (w == weapon){continue; }
 		if(pickup) {			
-			var _size = ds_list_size(inventory);
-
-			//get rid of current 
-			/*if(weapon != -1)
-			{	
-				
-				//weapon.parent = noone;
-				//weapon.direction = random(360);
-				//weapon.speed = 1;
-				weapon = -1;
-				
-			}*/
-			//equip new						
-			//weapon = w;
+			//var _size = ds_list_size(inventory);			
 			w.parent = id;
-			/*w.direction = weapon_dir;
-			w.image_angle = weapon_dir;*/
+
 			var _find = ds_list_find_index(inventory,w);	
 			if (_find == -1){
 				ds_list_add(inventory,w);
@@ -231,10 +218,12 @@ if (weapon_col > 0)
 	}
 	
 }
+
+
 if (!ds_list_empty(inventory)){
 	if(keyboard_check(ord("1"))){
 		weapon = inventory[|0];
-		
+				
 	}
 	if(keyboard_check(ord("2")) && !ds_list_find_index(inventory,1)){
 		weapon = inventory[|1];	

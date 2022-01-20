@@ -1,11 +1,11 @@
 /// @description foot variables
 
 curvePosition = 0;
-
+exist = true;
 hp = 100;
 flash = false;
 col = image_blend;
-
+parent = -1;
 blink_number = 10;
 blink_counter = 0;
 blink_duration = 3;
@@ -31,7 +31,7 @@ weapon_dir = 0;
 //inventory
 inventory = ds_list_create();
 active_weapon = noone;
-
+testing_list = noone;
 set_limps(43,25,13,20,7,20,7);
 
 dir = 0;

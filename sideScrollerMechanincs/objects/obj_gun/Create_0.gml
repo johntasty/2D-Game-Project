@@ -7,4 +7,4 @@ weapon_directory = 1;
 ui_show = false;
 ui_alpha = 0;
 
-
+exist = false;
