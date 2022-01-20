@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "Sprite3",
-    "path": "sprites/Sprite3/Sprite3.yy",
+    "name": "Basic11",
+    "path": "sprites/Basic11/Basic11.yy",
   },
   "solid": false,
   "visible": true,
@@ -26,11 +26,13 @@
     {"x":-1.0,"y":64.0,},
   ],
   "eventList": [],
-  "properties": [],
+  "properties": [
+    {"varType":1,"value":"0","rangeEnabled":true,"rangeMin":0.0,"rangeMax":1.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"moveable","tags":[],"resourceType":"GMObjectProperty",},
+  ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "enviroment objects",
+    "path": "folders/Objects/enviroment objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_ground",

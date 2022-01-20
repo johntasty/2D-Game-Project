@@ -9,7 +9,8 @@ function gun_init()
 	shoot = false;
 	damage_melee = 50;
 	image_index = 0;
-	image_speed = 0;	
+	image_speed = 0;
+	
 	
 }
 
@@ -25,8 +26,8 @@ function gun_update()
 		//var ldy2 = lengthdir_y(parent.sprite_width*0.75, direction);
 		
 		
-		x = parent.r_elbow_x; //+ ldx - ldx2;
-		y = parent.r_elbow_y; //+ ldy + ldy2;
+		x = obj_player.r_elbow_x; //+ ldx; //- ldx2;
+		y = obj_player.r_elbow_y; //+ ldy; // + ldy2;
 		
 		visible = false;
 	}

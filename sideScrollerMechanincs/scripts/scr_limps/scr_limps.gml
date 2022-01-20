@@ -61,11 +61,11 @@ function set_limps_moving (_armspeed, _shoulder, _hip,_legspeed )
 		//shoulder
 		var _shoulderoffset = _shoulder;
 		r_shoulder_x = (x ) + lengthdir_x(_shoulderoffset,look_direction);		
-		r_shoulder_y = (y-displacement)+lengthdir_y(_shoulderoffset,look_direction);
+		r_shoulder_y = (y+(vsp/2)-displacement)+lengthdir_y(_shoulderoffset,look_direction);
 	
 		l_shoulder_x = (x) + lengthdir_x(_shoulderoffset+shoulder_dis,look_direction);
-		l_shoulder_y = (y-displacement) - lengthdir_y(_shoulderoffset,look_direction);
-		show_debug_message(lengthdir_x(_shoulderoffset+shoulder_dis,look_direction));
+		l_shoulder_y = (y+(vsp/2)-displacement) - lengthdir_y(_shoulderoffset,look_direction);
+		
 		//right arm
 		r_elbow_x = r_shoulder_x + lengthdir_x(cos(r_arm_move/10) * bicep_length,look_direction);
 		r_elbow_y = r_shoulder_y  + lengthdir_y(cos(r_arm_move/10)* bicep_length,look_direction) + bicep_length;
@@ -97,10 +97,10 @@ function set_limps_moving (_armspeed, _shoulder, _hip,_legspeed )
 		//hips
 		var _hipoffset = _hip;
 		r_hip_x = x+lengthdir_x(_hipoffset+(shoulder_dis/1.5),look_direction );
-		r_hip_y = (y-hip_place)+lengthdir_y(_hipoffset,look_direction );
+		r_hip_y = (y+vsp-hip_place)+lengthdir_y(_hipoffset,look_direction );
 		
 		l_hip_x = x-lengthdir_x(_hipoffset-(shoulder_dis/3),look_direction);
-		l_hip_y = (y-hip_place)-lengthdir_y(_hipoffset,look_direction );
+		l_hip_y = (y+vsp-hip_place)-lengthdir_y(_hipoffset,look_direction );
 	
 		// right leg
 		//knee
@@ -132,10 +132,10 @@ function set_limps_stop (_shoulder,_hip,_armlerp,_leglerp)
 	//make hands stop moving
 	var _shoulderoffset = _shoulder;
 	r_shoulder_x = (x)+lengthdir_x(_shoulderoffset,look_direction );
-	r_shoulder_y = (y-displacement)+lengthdir_y(_shoulderoffset,look_direction );
+	r_shoulder_y = (y+(vsp/2)-displacement)+lengthdir_y(_shoulderoffset,look_direction );
 	
 	l_shoulder_x = (x)+lengthdir_x(_shoulderoffset+shoulder_dis,look_direction );
-	l_shoulder_y = (y-displacement)-lengthdir_y(_shoulderoffset,look_direction);
+	l_shoulder_y = (y+(vsp/2)-displacement)-lengthdir_y(_shoulderoffset,look_direction);
 
 	var _lerpspd = _armlerp;
 	r_elbow_x = lerp(r_elbow_x,r_shoulder_x,_lerpspd);
@@ -153,10 +153,10 @@ function set_limps_stop (_shoulder,_hip,_armlerp,_leglerp)
 	//make legs stop moving
 	var _hipoffset = _hip;
 	r_hip_x = x+lengthdir_x(_hipoffset+(shoulder_dis/1.5),look_direction);
-	r_hip_y = (y-hip_place)+lengthdir_y(_hipoffset,look_direction );
+	r_hip_y = (y+vsp-hip_place)+lengthdir_y(_hipoffset,look_direction );
 	
 	l_hip_x = x-lengthdir_x(_hipoffset-(shoulder_dis/3),look_direction );
-	l_hip_y = (y-hip_place)-lengthdir_y(_hipoffset,look_direction);
+	l_hip_y = (y+vsp-hip_place)-lengthdir_y(_hipoffset,look_direction);
 	var _lerpspd = _leglerp;
 	r_knee_x = lerp(r_knee_x,r_hip_x,_lerpspd);
 	r_knee_y = lerp(r_knee_y,r_hip_y + thigh_length,_lerpspd);

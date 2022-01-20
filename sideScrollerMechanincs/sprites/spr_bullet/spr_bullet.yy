@@ -93,8 +93,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "bullet sprites and particles",
+    "path": "folders/Sprites/bullet sprites and particles.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_bullet",
