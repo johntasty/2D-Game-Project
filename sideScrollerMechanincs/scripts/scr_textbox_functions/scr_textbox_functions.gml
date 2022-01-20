@@ -83,12 +83,6 @@ function scr_text(_text){
 					snd[page_number] = snd_voice_low;
 					break;
 				
-				//ethel
-				case "ethel":
-					txtb_spr[page_number] = spr_textbox;
-					snd[page_number] = snd_voice_mid;
-					break;
-				
 				//npc 1
 				case "npc_1_talk":
 					speaker_sprite[page_number] = spr_npc_1_talk;
