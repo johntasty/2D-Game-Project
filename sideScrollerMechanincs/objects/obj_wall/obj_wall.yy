@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_wall",
-    "path": "sprites/spr_wall/spr_wall.yy",
+    "name": "crate",
+    "path": "sprites/crate/crate.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "enviroment objects",
+    "path": "folders/Objects/enviroment objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_wall",

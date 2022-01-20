@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "controllers",
+    "path": "folders/Objects/player objects/controllers.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_state_control",
