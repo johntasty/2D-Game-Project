@@ -216,7 +216,27 @@ if (weapon_col > 0)
 		}
 		
 	}
+
+}
+
+//dialogue interact
+var interact_list = ds_list_create();
+var interact_col = collision_circle_list(x,y,sprite_width*0.5,obj_NPC,false,true,interact_list,true);
+
+if (interact_col > 0)
+{
+	for (var i = 0; i<interact_col; i++)
+	{
+	var w = interact_list[|i];
 	
+		if(interact) 
+		{			
+			with(w)
+			{
+				create_textbox("ethel");
+			}
+		}
+	}
 }
 
 
