@@ -229,7 +229,7 @@ if (interact_col > 0)
 	{
 	var w = interact_list[|i];
 	
-		if(interact) 
+		if(interact)
 		{			
 			with(w)
 			{
