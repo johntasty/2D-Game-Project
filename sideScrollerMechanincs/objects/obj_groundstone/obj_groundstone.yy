@@ -32,8 +32,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "floor tiles",
+    "path": "folders/Objects/floor tiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_groundstone",
