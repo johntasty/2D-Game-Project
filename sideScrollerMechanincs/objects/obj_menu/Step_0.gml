@@ -35,12 +35,8 @@ if (_select)
 					global.__load = true;
 					scr_load_room();
 					break;	
+
 				case 2:
-				//options
-					submenu_index = 1;
-					menu_index = 0;
-					break;
-				case 3:
 					//exit
 					game_end();
 					break;
@@ -55,13 +51,9 @@ if (_select)
 				case 1:
 				//sound					
 					break;
+
 				case 2:
-					//controls					
-					break;
-				case 3:
 					//back
-					submenu_index = 0;
-					menu_index = 1;
 					break;
 			}break;
 	} 

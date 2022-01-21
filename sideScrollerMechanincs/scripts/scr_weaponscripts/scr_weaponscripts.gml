@@ -21,13 +21,9 @@ function gun_update()
 	{
 		var ldx = lengthdir_x(recoil_step,direction+180);
 		var ldy = lengthdir_y(recoil_step, direction+180);
-		
-		//var ldx2 = lengthdir_x(parent.sprite_width*0.75,direction);
-		//var ldy2 = lengthdir_y(parent.sprite_width*0.75, direction);
-		
-		
-		x = obj_player.r_elbow_x; //+ ldx; //- ldx2;
-		y = obj_player.r_elbow_y; //+ ldy; // + ldy2;
+				
+		x = obj_player.r_shoulder_x; 
+		y = obj_player.r_shoulder_y; 
 		
 		visible = false;
 	}

@@ -1,14 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
 //impose gravity
+if (max_health <= 0){
+	instance_destroy();
+}
 if(verspd < 10) verspd += grav;
 dir = point_direction(boss_r_shoulder, boss_r_shoulder_y, obj_player.r_shoulder_x, obj_player.r_shoulder_y);
 
 var hit_box = collision_circle(boss_r_hand_x,boss_r_hand_y,16,obj_ground,0,1);
 if (hit_box)
 {
+	obj_falling_rocks.falling_rock = true;
 	scr_screenshake(10, 5, 0.25);	
-}
+}//else{obj_falling_rocks.falling_rock = false;}
 
 switch (state_boss)
 {
@@ -27,7 +31,11 @@ switch(boss_phases_state)
 {
 	case boss_phases.phase_one: scr_boss_phase_one();
 	case boss_phases.phase_two: scr_boss_phase_two();
+	case boss_phases.phase_three: scr_boss_phase_three();
+	case boss_phases.phase_four: scr_boss_phase_four();
 }
+
+
 if (max_health >= 80)
 {
 	boss_phases_state = boss_phases.phase_one;
@@ -35,6 +43,14 @@ if (max_health >= 80)
 if (max_health <= 79 && max_health >= 59)
 {
 	boss_phases_state = boss_phases.phase_two;
+}
+if (max_health <= 58 && max_health >= 28)
+{
+	boss_phases_state = boss_phases.phase_three;
+}
+if (max_health <= 27)
+{
+	boss_phases_state = boss_phases.phase_four;
 }
 
 //charge attack	

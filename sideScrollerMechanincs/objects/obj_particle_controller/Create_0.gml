@@ -160,12 +160,19 @@ part_type_gravity(pt_flare_particles_testing, 0, 0);
 	part_type_shape(box_part, pt_shape_pixel);
 #endregion
 #region
-	star_dazed = part_system_create();
+	dust = part_system_create();
+	part_system_automatic_draw(dust, false);
 	
-	star_parts = part_type_create();
-	part_type_size(star_parts,1,1,0,0);
-	part_type_scale(star_parts,1,1);
-	part_type_life(star_parts,20,20);
-	part_type_speed(star_parts,2,2,0,0);
+	dust_part = part_type_create();
+	part_type_size(dust_part,1,1,-0.03,0);
+	part_type_scale(dust_part,1,1);
+	part_type_life(dust_part,40,40);
+	part_type_speed(dust_part,1,6,-0.1,0);
+	part_type_gravity(dust_part,0.2,270);
+	part_type_direction(dust_part,60,120,0,0);
+	part_type_blend(dust_part,1);
+	part_type_alpha3(dust_part,1,1,0); // 1,1,0
+	part_type_color3(dust_part,c_grey, c_grey, c_grey);
+	part_type_shape(dust_part, pt_shape_cloud);
 
 #endregion
