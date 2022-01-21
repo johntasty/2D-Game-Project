@@ -1,4 +1,6 @@
 /// @description Insert description here
+global.__cooldown = cooldown;
+
 
 scr_input();
 spd = lerp(spd, _hor * 4,0.3);
@@ -18,17 +20,11 @@ if (look_direction < 90 || look_direction > 275){
 		look_direction = 180;
 	}
 if(weapon == -1){	
-if(spd > 0.1 || spd < -0.1){	
-	set_limps_moving(1,0,0,1);
 	scr_aim();
-	
-}else {
-	
-	set_limps_stop (1,0,0.1,0.3);	
-	scr_aim();
-	}
 }
-
+if(spd > 0.1 || spd < -0.1){	
+		set_limps_moving(1,0,0,1);
+}else{set_limps_stop (1,0,0.1,0.3);}
 switch state {
 	case playerStates.idle : {
 		set_limps_stop (1,0,0.1,0.3);
@@ -42,13 +38,14 @@ switch state {
 	}; break;
 	
 }
-
-if (global.__dash_key && cooldown == 0){ 
+cooldown += 0.1;
+if(cooldown >= 10){cooldown = 10;}
+if (global.__dash_key && cooldown == 10){ 
 	set_dash();
 	
 	//state = playerStates.dash;
 	alarm[0] = room_speed;
-	cooldown = 1;
+	cooldown = 0;
 }
 if(vsp <= 10) vsp += grav;
 if (place_meeting(x,y,obj_ladder))
@@ -57,7 +54,7 @@ if (place_meeting(x,y,obj_ladder))
 		y = y + sign(vsp);	
 		
 	}	
-	vsp = lerp(vsp, _ver * 4,0.3);	
+	vsp = _ver*4 //lerp(vsp, _ver * 4,0.3);	
 	grv = 0;
 }else{grv = 0.3;}
 
@@ -103,6 +100,7 @@ global.__vsdex = vsp;
 
 //point weapon
 weapon_dir = point_direction(r_elbow_x,r_elbow_y,mouse_x,mouse_y);
+weapon_dir_idle = point_direction(r_shoulder_x,r_shoulder_y,r_elbow_x,r_elbow_y);
 
 
 //if trigger pressed make bullets
@@ -113,7 +111,7 @@ bul_type_set_damage (bullet_pistol,global.__bullet_dmg);
 if(weapon)
 {
 	
-	active_weapon = (weapon.image_index);
+	active_weapon = (weapon.weapon_directory);
 	weapon.parent = id;
 	if(weapon.weapon_directory == 2){
 		weapon.shoot = global.__sht;
@@ -124,47 +122,34 @@ if(weapon)
 	else{
 		weapon.shoot = global.__shtrelease;
 		}
+	if(weapon.shoot){	
 	weapon.direction= weapon_dir;
+	}else{
+		weapon.direction = weapon_dir_idle;
+	}
 	
 	if (weapon.weapon_directory != 3){
 		weapon_hook = false;
-		if(spd > 0.1 || spd < -0.1){	
-			set_limps_moving(1,0,0,1);
-			scr_aim();
-		}else {
-			set_limps_stop (1,0,0.1,0.3);
-			scr_aim();
-		}
-			
+		scr_aim();
+		
 	}else{		
 		weapon_hook = true;
-		if(spd > 0.1 || spd < -0.1){	
-			set_limps_moving(1,0,1,1);
+
 			if (global.__shtpress && melee_cooldown == 0){	
 					
 				melee_cooldown = 1;					
 				state = playerStates.attacking;					
 				alarm[1] = room_speed/30;
 			}
-			/*if (global.__r_sht_hook && melee_cooldown == 0){					
-					active = true;					
-					scr_aim();
-					bul_type_create(bullet_graplling, r_elbow_x, r_elbow_y , weapon_dir, 20);
-				}*/
-			}else {
-				set_limps_stop (1,3,0.1,0.3);
+
 				if (global.__shtpress && melee_cooldown == 0){	
 					
 					melee_cooldown = 1;					
 					state = playerStates.attacking;					
 					alarm[1] = room_speed/30;
 					}
-				/*if (global.__r_sht_hook && melee_cooldown == 0){
-					active = true;
-					scr_aim();
-					bul_type_create(bullet_graplling, r_elbow_x, r_elbow_y , weapon_dir, 20);
-				}*/if(global.__r_sht_rel) {active = false;}		
-			}			
+				
+				if(global.__r_sht_rel) {active = false;}				
 	}
 	if (weapon.weapon_directory == 1){
 		if (global.__r_sht)

@@ -80,7 +80,8 @@ function scr_moving_state()
 		if(shake_ground && !jumping)
 		{	
 			state_boss = boss_state.landing;
-			scr_screenshake(20, 5, 0.25);			
+			scr_screenshake(20, 5, 0.25);
+			
 		}	
 	}
 	
@@ -152,6 +153,7 @@ function scr_attacking_state()
 	{
 		mask_index = BossJumpAscend;
 		state_boss = boss_state.moving;
+		alarm[6] = room_speed*3;
 	}
 
 }
@@ -187,12 +189,12 @@ function scr_charging_state()
 function scr_hook()
 {
 	scr_hook_create(spr_graple, boss_r_shoulder, boss_r_shoulder_y, dir, 10);
-	state_boss = boss_state.moving;
+	state_boss = boss_state.attacking;
+	
 }
  function scr_hook_create(_ind, _x, _y, dir, spd) 
  {
 	 ///@func bul_type_create(bullet_id, x, y, direction, speed)
-	//
 	var xx = _x + lengthdir_x(sprite_get_width(_ind.sprite_index) * 0.5 *_ind.image_xscale, dir);
 	var yy = _y + lengthdir_y(sprite_get_width(_ind.sprite_index) * 0.5 *_ind.image_xscale, dir);
 	if (instance_exists(obj_hook)){
@@ -220,7 +222,8 @@ function scr_hook()
 	var _angle_x = 1;
 	if (_attacks_rampage >= 6){
 		_attacks_rampage = 0;
-		state_boss = boss_state.moving;}
+		state_boss = boss_state.moving;
+		alarm[6] = room_speed*3;}
 	if (_side == 0){
 		_angle_rampage += _attck;
 	}else{
@@ -321,6 +324,7 @@ function scr_hook()
 		{
 			jumping = true;
 			state_boss = boss_state.moving;
+			alarm[6] = room_speed*3;
 	}
 		
  }
@@ -333,11 +337,13 @@ function scr_hook()
 	if(image_index > image_number -1)
 		{
 			state_boss = boss_state.moving;
+			alarm[6] = room_speed*3;
 	}
  }
  function scr_dazed_state()
  {	
 	sprite_index = BossJumpLanding;			
 	image_index = 1;
+	alarm[6] = room_speed*3;
 	
  }

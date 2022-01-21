@@ -1,3 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-scr_load_game();
+if(obj_enemy_boss.state_boss == boss_state.charging){
+
+	scr_got_hit(10);
+}

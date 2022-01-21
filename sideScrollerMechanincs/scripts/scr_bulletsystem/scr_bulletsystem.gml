@@ -159,26 +159,36 @@ function bul_type_create(ind, _x, _y, dir, spd)
 		var yy = y + lengthdir_y(400, look_direction_draw);
 		var ldx = lengthdir_x(sprite_width*0.75, direction);		
 		var ldy = lengthdir_y(sprite_width*0.75, direction);
-		if(collision_line(obj_gun.x,obj_gun.y, xx, yy, obj_ground, true, true)){
-			var _list = ds_list_create();
-			var _ground = collision_line_list(obj_gun.x,obj_gun.y, xx, yy, obj_ground, false, true,_list, true);
+		/*if(collision_line(obj_gun.x,obj_gun.y, xx, yy, obj_wall, true, true)){
+			var _list_ = ds_list_create();
+			var _ground = collision_line_list(obj_gun.x,obj_gun.y, xx, yy, obj_wall, false, true,_list_, true);
 			if (_ground > 0){
-				for (var i = 0; i < _ground; i++){
-					
-					collision_found = (distance_to_object(_list[|0]));
-					
+				for (var i = 0; i < _ground; i++){					
+					collision_found = (distance_to_object(_list_[|0]));					
 				}
-			}
-			
-			
+			}					
+			show_debug_message("wall");
 			var life_min = ((collision_found)/7);
 			var life_max = ((collision_found)/7);
 			part_type_life(global.__flame,life_min,life_max);
 			part_type_life(global.__smoke,life_min,life_max);
-			ds_list_destroy(_list);
-			
-		}
-		
+			ds_list_destroy(_list_);
+			}*/
+		if(collision_line(obj_gun.x,obj_gun.y, xx, yy, obj_ground, true, true)){
+			var _list = ds_list_create();
+			var _ground = collision_line_list(obj_gun.x,obj_gun.y, xx, yy, obj_ground, false, true,_list, true);
+			if (_ground > 0){
+				for (var i = 0; i < _ground; i++){					
+					collision_found = (distance_to_object(_list[|0]));					
+				}
+			}		
+
+			var life_min = ((collision_found)/7);
+			var life_max = ((collision_found)/7);
+			part_type_life(global.__flame,life_min,life_max);
+			part_type_life(global.__smoke,life_min,life_max);
+			ds_list_destroy(_list);		
+		}		
 		else{
 			
 			part_type_life(global.__flame,global.__flame_lifemin,global.__flame_lifemax);
