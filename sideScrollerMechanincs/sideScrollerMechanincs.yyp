@@ -9,15 +9,13 @@
     {"id":{"name":"obj_dash","path":"objects/obj_dash/obj_dash.yy",},"order":14,},
     {"id":{"name":"spr_rooftile1L","path":"sprites/spr_rooftile1L/spr_rooftile1L.yy",},"order":11,},
     {"id":{"name":"spr_head","path":"sprites/spr_head/spr_head.yy",},"order":0,},
-
-    {"id":{"name":"spr_squarelight","path":"sprites/spr_squarelight/spr_squarelight.yy",},"order":7,},   
+    {"id":{"name":"spr_squarelight","path":"sprites/spr_squarelight/spr_squarelight.yy",},"order":7,},
     {"id":{"name":"spr_doordownstairs","path":"sprites/spr_doordownstairs/spr_doordownstairs.yy",},"order":5,},
     {"id":{"name":"obj_hook","path":"objects/obj_hook/obj_hook.yy",},"order":7,},
     {"id":{"name":"wormhole_connect","path":"sprites/wormhole_connect/wormhole_connect.yy",},"order":4,},
     {"id":{"name":"spr_boss_attack","path":"sprites/spr_boss_attack/spr_boss_attack.yy",},"order":6,},
     {"id":{"name":"scr_bulletsystem","path":"scripts/scr_bulletsystem/scr_bulletsystem.yy",},"order":3,},
     {"id":{"name":"scr_limps","path":"scripts/scr_limps/scr_limps.yy",},"order":3,},
-
     {"id":{"name":"obj_c_groundUR","path":"objects/obj_c_groundUR/obj_c_groundUR.yy",},"order":29,},
     {"id":{"name":"obj_groundstone","path":"objects/obj_groundstone/obj_groundstone.yy",},"order":36,},
     {"id":{"name":"obj_weapon_par","path":"objects/obj_weapon_par/obj_weapon_par.yy",},"order":5,},
@@ -42,14 +40,11 @@
     {"id":{"name":"overhead_hitbox","path":"sprites/overhead_hitbox/overhead_hitbox.yy",},"order":9,},
     {"id":{"name":"scr_boss_states","path":"scripts/scr_boss_states/scr_boss_states.yy",},"order":1,},
     {"id":{"name":"obj_b9_ground21","path":"objects/obj_b9_ground21/obj_b9_ground21.yy",},"order":20,},
-
     {"id":{"name":"spr_lantern","path":"sprites/spr_lantern/spr_lantern.yy",},"order":8,},
-    
     {"id":{"name":"spr_spideridle","path":"sprites/spr_spideridle/spr_spideridle.yy",},"order":10,},
     {"id":{"name":"start","path":"sprites/start/start.yy",},"order":22,},
     {"id":{"name":"spr_flame","path":"sprites/spr_flame/spr_flame.yy",},"order":2,},
     {"id":{"name":"Basic31","path":"sprites/Basic31/Basic31.yy",},"order":35,},
-
     {"id":{"name":"animCurveTest","path":"animcurves/animCurveTest/animCurveTest.yy",},"order":1,},
     {"id":{"name":"spr_bridge","path":"sprites/spr_bridge/spr_bridge.yy",},"order":0,},
     {"id":{"name":"Classic_10_strip","path":"sprites/Classic_10_strip/Classic_10_strip.yy",},"order":2,},
@@ -59,7 +54,7 @@
     {"id":{"name":"maskguy","path":"sprites/maskguy/maskguy.yy",},"order":50,},
     {"id":{"name":"BossOverheadSwing","path":"sprites/BossOverheadSwing/BossOverheadSwing.yy",},"order":8,},
     {"id":{"name":"obj_b1_ground1","path":"objects/obj_b1_ground1/obj_b1_ground1.yy",},"order":30,},
-    {"id":{"name":"Script18","path":"scripts/Script18/Script18.yy",},"order":0,},
+    {"id":{"name":"enemy_state_animations","path":"scripts/enemy_state_animations/enemy_state_animations.yy",},"order":0,},
     {"id":{"name":"obj_load","path":"objects/obj_load/obj_load.yy",},"order":2,},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"order":7,},
     {"id":{"name":"spr_spiderdeath","path":"sprites/spr_spiderdeath/spr_spiderdeath.yy",},"order":13,},
@@ -84,19 +79,14 @@
     {"id":{"name":"stone","path":"sprites/stone/stone.yy",},"order":28,},
     {"id":{"name":"spr_ladder","path":"sprites/spr_ladder/spr_ladder.yy",},"order":16,},
     {"id":{"name":"side_wall_","path":"sprites/side_wall_/side_wall_.yy",},"order":27,},
-
-
     {"id":{"name":"spr_pipe","path":"sprites/spr_pipe/spr_pipe.yy",},"order":6,},
-   
     {"id":{"name":"spr_window","path":"sprites/spr_window/spr_window.yy",},"order":18,},
- 
     {"id":{"name":"scr_melee","path":"scripts/scr_melee/scr_melee.yy",},"order":4,},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},"order":0,},
     {"id":{"name":"scr_textbox_functions","path":"scripts/scr_textbox_functions/scr_textbox_functions.yy",},"order":6,},
     {"id":{"name":"Basic33","path":"sprites/Basic33/Basic33.yy",},"order":37,},
     {"id":{"name":"obj_falling_rocks","path":"objects/obj_falling_rocks/obj_falling_rocks.yy",},"order":19,},
     {"id":{"name":"obj_save_game","path":"objects/obj_save_game/obj_save_game.yy",},"order":1,},
-
     {"id":{"name":"spr_textbox","path":"sprites/spr_textbox/spr_textbox.yy",},"order":3,},
     {"id":{"name":"obj_enemy_boss","path":"objects/obj_enemy_boss/obj_enemy_boss.yy",},"order":16,},
     {"id":{"name":"spr_menu","path":"sprites/spr_menu/spr_menu.yy",},"order":26,},
@@ -117,12 +107,8 @@
     {"id":{"name":"spr_flamethrower","path":"sprites/spr_flamethrower/spr_flamethrower.yy",},"order":3,},
     {"id":{"name":"obj_testing_animation","path":"objects/obj_testing_animation/obj_testing_animation.yy",},"order":0,},
     {"id":{"name":"crate","path":"sprites/crate/crate.yy",},"order":24,},
-
     {"id":{"name":"spr_rooftile2R","path":"sprites/spr_rooftile2R/spr_rooftile2R.yy",},"order":13,},
-
-
     {"id":{"name":"spr_roundlight","path":"sprites/spr_roundlight/spr_roundlight.yy",},"order":14,},
-
     {"id":{"name":"obj_melee_bul","path":"objects/obj_melee_bul/obj_melee_bul.yy",},"order":6,},
     {"id":{"name":"CornerLL","path":"sprites/CornerLL/CornerLL.yy",},"order":44,},
     {"id":{"name":"Path1","path":"paths/Path1/Path1.yy",},"order":15,},
@@ -133,7 +119,6 @@
     {"id":{"name":"obj_bY_ground3","path":"objects/obj_bY_ground3/obj_bY_ground3.yy",},"order":35,},
     {"id":{"name":"obj_camerashake","path":"objects/obj_camerashake/obj_camerashake.yy",},"order":12,},
     {"id":{"name":"Alternative_1_03_copy","path":"sprites/Alternative_1_03_copy/Alternative_1_03_copy.yy",},"order":2,},
-
     {"id":{"name":"spr_factories","path":"sprites/spr_factories/spr_factories.yy",},"order":1,},
     {"id":{"name":"X1","path":"sprites/X1/X1.yy",},"order":15,},
     {"id":{"name":"snd_voice_low","path":"sounds/snd_voice_low/snd_voice_low.yy",},"order":1,},
@@ -161,13 +146,9 @@
     {"id":{"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},"order":29,},
     {"id":{"name":"spr_textbox_arrow","path":"sprites/spr_textbox_arrow/spr_textbox_arrow.yy",},"order":10,},
     {"id":{"name":"obj_b9_ground32","path":"objects/obj_b9_ground32/obj_b9_ground32.yy",},"order":24,},
-
     {"id":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},"order":2,},
-
     {"id":{"name":"spr_chimney1","path":"sprites/spr_chimney1/spr_chimney1.yy",},"order":16,},
- 
     {"id":{"name":"spr_planks","path":"sprites/spr_planks/spr_planks.yy",},"order":1,},
-
     {"id":{"name":"scr_got_hit","path":"scripts/scr_got_hit/scr_got_hit.yy",},"order":1,},
     {"id":{"name":"Basic22","path":"sprites/Basic22/Basic22.yy",},"order":33,},
     {"id":{"name":"Basic11","path":"sprites/Basic11/Basic11.yy",},"order":29,},
@@ -188,7 +169,6 @@
     {"id":{"name":"spr_spideridle_strip2","path":"sprites/spr_spideridle_strip2/spr_spideridle_strip2.yy",},"order":6,},
     {"id":{"name":"spr_npc_1_sad","path":"sprites/spr_npc_1_sad/spr_npc_1_sad.yy",},"order":12,},
     {"id":{"name":"spr_ui_e","path":"sprites/spr_ui_e/spr_ui_e.yy",},"order":15,},
-
     {"id":{"name":"spr_npc_1_talk","path":"sprites/spr_npc_1_talk/spr_npc_1_talk.yy",},"order":11,},
     {"id":{"name":"part_init","path":"scripts/part_init/part_init.yy",},"order":0,},
     {"id":{"name":"obj_gun_flame","path":"objects/obj_gun_flame/obj_gun_flame.yy",},"order":9,},
@@ -199,14 +179,9 @@
     {"id":{"name":"Shader1","path":"shaders/Shader1/Shader1.yy",},"order":0,},
     {"id":{"name":"obj_gun","path":"objects/obj_gun/obj_gun.yy",},"order":3,},
     {"id":{"name":"Sprite16","path":"sprites/Sprite16/Sprite16.yy",},"order":15,},
-
-
-    {"id":{"name":"test_stretc","path":"sprites/test_stretc/test_stretc.yy",},"order":28,},
+    {"id":{"name":"test_stretc","path":"sprites/test_stretc/test_stretc.yy",},"order":7,},
     {"id":{"name":"spr_pipewithhat","path":"sprites/spr_pipewithhat/spr_pipewithhat.yy",},"order":15,},
-
     {"id":{"name":"spr_statue","path":"sprites/spr_statue/spr_statue.yy",},"order":4,},
-
-
     {"id":{"name":"Basic13","path":"sprites/Basic13/Basic13.yy",},"order":31,},
     {"id":{"name":"Basic12","path":"sprites/Basic12/Basic12.yy",},"order":30,},
     {"id":{"name":"wormhole_linetest","path":"sprites/wormhole_linetest/wormhole_linetest.yy",},"order":3,},
@@ -216,23 +191,18 @@
     {"id":{"name":"shd_hit_flash","path":"shaders/shd_hit_flash/shd_hit_flash.yy",},"order":2,},
     {"id":{"name":"config_bulletprofiles","path":"scripts/config_bulletprofiles/config_bulletprofiles.yy",},"order":0,},
     {"id":{"name":"inventory_gunSelect","path":"sprites/inventory_gunSelect/inventory_gunSelect.yy",},"order":18,},
-    {"id":{"name":"test_stretc","path":"sprites/test_stretc/test_stretc.yy",},"order":7,},
     {"id":{"name":"obj_ladder","path":"objects/obj_ladder/obj_ladder.yy",},"order":2,},
     {"id":{"name":"obj_state_control","path":"objects/obj_state_control/obj_state_control.yy",},"order":1,},
     {"id":{"name":"scr_weaponscripts","path":"scripts/scr_weaponscripts/scr_weaponscripts.yy",},"order":5,},
     {"id":{"name":"spr_fire","path":"sprites/spr_fire/spr_fire.yy",},"order":1,},
     {"id":{"name":"CornerUR","path":"sprites/CornerUR/CornerUR.yy",},"order":47,},
-
     {"id":{"name":"obj_speakblock","path":"objects/obj_speakblock/obj_speakblock.yy",},"order":8,},
     {"id":{"name":"spr_rooftile2L","path":"sprites/spr_rooftile2L/spr_rooftile2L.yy",},"order":12,},
     {"id":{"name":"spr_ui","path":"sprites/spr_ui/spr_ui.yy",},"order":14,},
     {"id":{"name":"spr_right_arm","path":"sprites/spr_right_arm/spr_right_arm.yy",},"order":20,},
     {"id":{"name":"obj_weap_col","path":"objects/obj_weap_col/obj_weap_col.yy",},"order":15,},
-
     {"id":{"name":"spr_barrel","path":"sprites/spr_barrel/spr_barrel.yy",},"order":19,},
-
     {"id":{"name":"BossChargeactive","path":"sprites/BossChargeactive/BossChargeactive.yy",},"order":7,},
-
     {"id":{"name":"obj_b9_ground23","path":"objects/obj_b9_ground23/obj_b9_ground23.yy",},"order":22,},
     {"id":{"name":"obj_textbox","path":"objects/obj_textbox/obj_textbox.yy",},"order":5,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
@@ -283,10 +253,7 @@
     {"folderPath":"folders/Sprites/test sprites.yy","order":9,"resourceVersion":"1.0","name":"test sprites","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/player objects/controllers.yy","order":4,"resourceVersion":"1.0","name":"controllers","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/testing group.yy","order":38,"resourceVersion":"1.0","name":"testing group","tags":[],"resourceType":"GMFolder",},
-
-
     {"folderPath":"folders/Sprites/houses.yy","order":29,"resourceVersion":"1.0","name":"houses","tags":[],"resourceType":"GMFolder",},
-
     {"folderPath":"folders/Sprites/background sprites.yy","order":51,"resourceVersion":"1.0","name":"background sprites","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/bullet sprites and particles/melee_strip.yy","order":8,"resourceVersion":"1.0","name":"melee_strip","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/enemy sprites/boss_sprites.yy","order":2,"resourceVersion":"1.0","name":"boss_sprites","tags":[],"resourceType":"GMFolder",},
@@ -296,7 +263,6 @@
     {"folderPath":"folders/Scripts/animation scripts.yy","order":17,"resourceVersion":"1.0","name":"animation scripts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/system scripts.yy","order":18,"resourceVersion":"1.0","name":"system scripts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/enemy scripts.yy","order":19,"resourceVersion":"1.0","name":"enemy scripts","tags":[],"resourceType":"GMFolder",},
-
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
@@ -312,7 +278,7 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"blocks-serif.ttf","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.7.606",
+    "IDEVersion": "2.3.7.603",
   },
   "resourceVersion": "1.4",
   "name": "sideScrollerMechanincs",
