@@ -133,8 +133,7 @@ if(weapon)
 		scr_aim();
 		
 	}else{		
-		weapon_hook = true;
-
+		
 			if (global.__shtpress && melee_cooldown == 0){	
 					
 				melee_cooldown = 1;					

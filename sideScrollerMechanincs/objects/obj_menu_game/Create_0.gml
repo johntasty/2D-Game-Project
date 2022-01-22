@@ -6,3 +6,4 @@ menu[2] = "Exit";
 
 _index = 0;
 global.__paused = 0;
+global._saved = 0;

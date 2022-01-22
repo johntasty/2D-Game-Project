@@ -1,12 +1,16 @@
 /// @description enemy that fires bullets, set the type of bullets your want
 knockback = 2;
 attacked = 0;
-clr = c_white;
 health_bar = 100;
 max_hp = 100;
 attack_dis = 180;
 knockingback = false;
 bounce_back = false;
+
+blink = false;
+blink_number = 3;
+blink_counter = 0;
+blink_duration = 3;
 //create type of bullet to shoot
 trigger_speed = 0.1;
 recoil = 50;
