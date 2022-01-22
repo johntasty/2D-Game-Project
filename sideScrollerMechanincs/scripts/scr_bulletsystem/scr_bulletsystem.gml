@@ -19,6 +19,8 @@ function bul_type() constructor
 	radial_number = 0;
 	radial_cutoff = 360;
 	
+	hook = false;
+	
 	flamethrower = false;
 	
 	life = -1;
@@ -81,6 +83,10 @@ function bul_type_set_radial (ind, num, co, tf)
 	ind.radial_number = num;
 	ind.radial_cutoff = co;
 }
+function bul_type_set_hook(ind, tf)
+{
+	ind.hook = tf;
+}
 function bul_type_set_flame (ind,tf)
 {
 	ind.flamethrower = tf;
@@ -102,6 +108,7 @@ function bul_type_create(ind, _x, _y, dir, spd)
 	///@func bul_type_create(bullet_id, x, y, direction, speed)
 	var ret = noone;
 	var bullet_object= obj_bullet;
+	var hook_object = obj_hook;
 	//create radial bullets
 	if(ind.radial)
 	{
@@ -109,10 +116,10 @@ function bul_type_create(ind, _x, _y, dir, spd)
 		var sdir = dir + (ind.radial_cutoff * 0.5);
 		for(var i = 0; i<ind.radial_number; i++)
 		{
-			var d = sdir - (i * adiv);
-			var xx = _x + lengthdir_x(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, d);
-			var yy = _y + lengthdir_y(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, d);
-			var bul = instance_create_layer(xx, yy, "Instances", bullet_object);
+			var d = sdir - (i * adiv);			
+			var xx = x + lengthdir_x(sprite_get_width(ind.sprite_index) * 5 *ind.image_xscale - 8, d);
+			var yy = y + lengthdir_y(sprite_get_width(ind.sprite_index) * 5 *ind.image_xscale - 8, d);
+			var bul = instance_create_layer(xx, yy+global.__vsdex, "Instances", obj_melee_bul);
 			
 			bul.direction = d;
 			bul.image_angle = d;
@@ -122,22 +129,66 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			ret[i] = bul;
 		}
 	}
+	if (ind.hook)
+	{
+		var xx = _x + lengthdir_x(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
+		var yy = _y + lengthdir_y(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
+		if (instance_exists(obj_hook)){
+			with(obj_hook){
+				instance_destroy();
+			}
+		}
+		var bul = instance_create_layer(xx, yy, "Instances", hook_object);
+		with(bul){
+		
+			owner = other.id;
+		}
+		
+		bul.direction = dir;
+		bul.image_angle = dir;
+		bul.speed = spd;
+			
+		ind.bul_type_set_attributes(bul);
+		ret[3] = bul;
+	}
 	if (ind.flamethrower)
 	{
 	
-		var xx = x + lengthdir_x(400, direction);
-		var yy = y + lengthdir_y(400, direction);
+		look_direction_draw = point_direction(x,y,mouse_x,mouse_y);
+		var xx = x + lengthdir_x(400, look_direction_draw);
+		var yy = y + lengthdir_y(400, look_direction_draw);
 		var ldx = lengthdir_x(sprite_width*0.75, direction);		
 		var ldy = lengthdir_y(sprite_width*0.75, direction);
-		if(collision_line(obj_gun.x,obj_gun.y, xx, yy, obj_ground, false, true)){		
-			
-			var life_min = (distance_to_object(obj_ground)/4);
-			var life_max = (distance_to_object(obj_ground)/3);
+		/*if(collision_line(obj_gun.x,obj_gun.y, xx, yy, obj_wall, true, true)){
+			var _list_ = ds_list_create();
+			var _ground = collision_line_list(obj_gun.x,obj_gun.y, xx, yy, obj_wall, false, true,_list_, true);
+			if (_ground > 0){
+				for (var i = 0; i < _ground; i++){					
+					collision_found = (distance_to_object(_list_[|0]));					
+				}
+			}					
+			show_debug_message("wall");
+			var life_min = ((collision_found)/7);
+			var life_max = ((collision_found)/7);
 			part_type_life(global.__flame,life_min,life_max);
 			part_type_life(global.__smoke,life_min,life_max);
-			
-		}
-		
+			ds_list_destroy(_list_);
+			}*/
+		if(collision_line(obj_gun.x,obj_gun.y, xx, yy, obj_ground, true, true)){
+			var _list = ds_list_create();
+			var _ground = collision_line_list(obj_gun.x,obj_gun.y, xx, yy, obj_ground, false, true,_list, true);
+			if (_ground > 0){
+				for (var i = 0; i < _ground; i++){					
+					collision_found = (distance_to_object(_list[|0]));					
+				}
+			}		
+
+			var life_min = ((collision_found)/7);
+			var life_max = ((collision_found)/7);
+			part_type_life(global.__flame,life_min,life_max);
+			part_type_life(global.__smoke,life_min,life_max);
+			ds_list_destroy(_list);		
+		}		
 		else{
 			
 			part_type_life(global.__flame,global.__flame_lifemin,global.__flame_lifemax);
@@ -152,9 +203,10 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			var xxx = _x + lengthdir_x(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
 			var yyy = _y + lengthdir_y(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
 			var bul = instance_create_layer(xxx, yyy, "Instances", bullet_object);
+			 
 			with(bul){
 		
-			owner = other.id;
+				owner = other.id;
 			}
 		
 			bul.direction = dir;
