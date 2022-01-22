@@ -23,11 +23,14 @@ if (_select){
 		case 0: 
 		//continue
 		global.__paused = 0;
-		//instance_activate_all();
+		global._saved = 0;
+		instance_activate_all();
 		break;
 		case 1: 
-		//save game		
+		//save game	
+		instance_activate_all();
 		scr_save_game();
+		instance_deactivate_all(true);
 		break;	
 		case 2:
 		//exit

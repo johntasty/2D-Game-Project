@@ -20,3 +20,10 @@ if (global.__paused){
 		draw_text(view_wport[0]/2, view_hport[0] * 0.3 + _gap*i, menu[i]);
 	}
 }
+if (global._saved)
+{	
+	draw_set_halign(fa_center);
+	draw_set_font(fnt_menu);
+	draw_set_color(c_white);
+	draw_text(view_wport[0]/2, view_hport[0] * 0.1, "SAVED");	
+}

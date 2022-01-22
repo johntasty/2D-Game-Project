@@ -103,7 +103,9 @@ function scr_save_game()
 
 	if (_string == "[ null ]" || _string == "null" ){
 		show_debug_message("not saved ");
+		global._saved = false;
 	}else {
+		global._saved = true;
 		show_debug_message("saved "+ _string);
 	}
 }

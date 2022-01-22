@@ -3,9 +3,10 @@
 if (!global.__paused)
 {
 	global.__paused = 1;
-	//instance_deactivate_all(true);
+	instance_deactivate_all(true);
 }
 else {
 	global.__paused = 0;
-	//instance_activate_all();
+	instance_activate_all();
+	global._saved = 0;
 }
