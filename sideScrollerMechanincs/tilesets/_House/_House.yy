@@ -197,7 +197,7 @@
     "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
-  "name": "TileSet1",
+  "name": "_House",
   "tags": [],
   "resourceType": "GMTileSet",
 }
