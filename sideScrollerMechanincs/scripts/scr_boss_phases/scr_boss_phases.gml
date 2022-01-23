@@ -23,7 +23,7 @@ function scr_boss_phase_two()
 	{
 		attacking_player = true;
 		//alarm[6] = room_speed*4;
-		var _attack = choose(1,1,2,2,2,3,3,4);
+		var _attack = choose(3,3,3,3,3,3,3,3);
 		_attack_ = _attack;
 		switch (_attack_)
 		{
@@ -31,8 +31,7 @@ function scr_boss_phase_two()
 					state_boss = boss_state.jumping; 
 					shake_ground = true; break;
 			case 2: state_boss = boss_state.attacking; break;
-			case 3: state_boss = boss_state.charging; 
-					alarm[2] = room_speed *2;break;
+			case 3: state_boss = boss_state.power_up;  break;
 			case 4: state_boss = boss_state.rampage_state; break;
 		}		
 	}
@@ -51,8 +50,7 @@ function scr_boss_phase_three()
 					state_boss = boss_state.jumping; 
 					shake_ground = true; break;
 			case 2: state_boss = boss_state.attacking; break;
-			case 3: state_boss = boss_state.charging; 
-					alarm[2] = room_speed *2;break;
+			case 3: state_boss = boss_state.power_up;  break;
 			case 4: state_boss = boss_state.rampage_state; break;
 			case 5: state_boss = boss_state.hook_state; break
 		}		
@@ -70,8 +68,7 @@ function scr_boss_phase_four()
 		{
 			
 			case 1: state_boss = boss_state.attacking; break;
-			case 2: state_boss = boss_state.charging; 
-					alarm[2] = room_speed *2;break;
+			case 2: state_boss = boss_state.power_up;  break;
 			case 3: state_boss = boss_state.rampage_state; break;
 			case 4: state_boss = boss_state.hook_state; break
 		}		

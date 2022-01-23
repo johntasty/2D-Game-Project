@@ -20,6 +20,7 @@ enum boss_state
 	jumping,
 	landing,
 	charging,
+	power_up,
 	smash_attack,
 	rampage_state,
 	hook_state
