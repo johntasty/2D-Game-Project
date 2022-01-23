@@ -20,10 +20,9 @@ bul_type_set_damage (bullet_pistol,global.__bullet_dmg);
 
 //shotgun
 bul_type_set_life(bullet_shotgun,20);
-bul_type_set_sprite(bullet_shotgun,spr_bullet,0,0,1);
+bul_type_set_sprite(bullet_shotgun,spr_bullet,0,0,0);
 bul_type_set_radial(bullet_shotgun,5,45,true);
 bul_type_set_damage(bullet_shotgun,25);
-//bul_type_set_friction(bullet_shotgun,0.2);
 bul_type_set_scale(bullet_shotgun,1,1,0,0);
 //graplling
 bul_type_set_sprite(bullet_graplling,spr_graple,0,0,1);

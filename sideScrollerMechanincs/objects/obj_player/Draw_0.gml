@@ -31,7 +31,7 @@ draw_sprite_ext(MainCharacterLeg2,0,r_hip_x+spd,r_hip_y,1,-1,leg_dir,col,image_a
 }
 var draw_weapon = function()
 {
-	if (weapon && weapon.weapon_directory != 3)
+	if (weapon)
 	{
 		with(weapon){	
 			

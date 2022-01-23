@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_arm_gun",
-    "path": "sprites/spr_arm_gun/spr_arm_gun.yy",
+    "name": "inventory_melee124",
+    "path": "sprites/inventory_melee124/inventory_melee124.yy",
   },
   "solid": false,
   "visible": true,
