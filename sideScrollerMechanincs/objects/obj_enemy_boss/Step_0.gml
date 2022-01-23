@@ -55,6 +55,7 @@ if (max_health <= 27)
 }
 
 //charge attack	
+/*
 if (keyboard_check_pressed(vk_f1))
 { 
 	state_boss = boss_state.power_up;
@@ -64,19 +65,21 @@ if (keyboard_check_pressed(vk_f1))
 if (keyboard_check_pressed(vk_f2)){
 	state_boss = boss_state.jumping
 	shake_ground = true;	
-}
+}*/
 
 //attack
+/*
 if (keyboard_check_released(vk_f3))
 {		
 	state_boss = boss_state.attacking;
 }
-
+*/
 if ((_angle >= 200 || _angle <= -200) && cooldown_attack == 0)
 {
 	cooldown_attack = 1;
 	alarm[1] = room_speed;
 }
+/*
 if (keyboard_check_pressed(vk_f4))
 {	
 	state_boss = boss_state.hook_state;
