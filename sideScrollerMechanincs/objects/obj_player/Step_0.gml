@@ -41,10 +41,9 @@ switch state {
 cooldown += 0.1;
 if(cooldown >= 10){cooldown = 10;}
 if (global.__dash_key && cooldown == 10){ 
-	set_dash();
-	
-	//state = playerStates.dash;
-	alarm[0] = room_speed;
+	//set_dash();	
+	state = playerStates.dash;
+	alarm[0] = room_speed/5;
 	cooldown = 0;
 }
 if(vsp <= 10) vsp += grav;
