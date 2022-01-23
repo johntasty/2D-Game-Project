@@ -104,12 +104,19 @@ bul_type_set_scale(bullet_pistol, 1, 1, global.__bulletsize, 0);
 bul_type_set_damage (bullet_pistol,global.__bullet_dmg);
 
 if(weapon)
-{
-	
-	weapon.parent = id;
+{	
+	weapon.parent = id;	
+	active_weapon = (weapon.weapon_directory);	
 	if(weapon.weapon_directory == 2){
 		weapon.shoot = global.__sht;
-	}else{weapon.shoot = global.__shtrelease;}
+	}else if(weapon.weapon_directory == 3){
+		
+		weapon.shoot = global.__shtpress;
+	}		
+	else{
+		weapon.shoot = global.__shtrelease;
+		}
+	if(weapon.shoot){	
 	weapon.direction= weapon_dir;
 	
 		if (weapon.weapon_directory != 3){			
@@ -197,4 +204,12 @@ if (weapon_col > 0)
 
 
 
+
+if (!ds_list_empty(inventory)){
+	if(keyboard_check(ord("1"))){
+		weapon = inventory[|0];		
+		
+	}
+	if(keyboard_check(ord("2")) && !ds_list_find_index(inventory,1)){
+		weapon = inventory[|1];			
 		

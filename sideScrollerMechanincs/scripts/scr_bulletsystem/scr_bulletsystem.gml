@@ -109,11 +109,12 @@ function bul_type_create(ind, _x, _y, dir, spd)
 		var sdir = dir + (ind.radial_cutoff * 0.5);
 		for(var i = 0; i<ind.radial_number; i++)
 		{
-			var d = sdir - (i * adiv);
-			var xx = _x + lengthdir_x(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, d);
-			var yy = _y + lengthdir_y(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, d);
-			var bul = instance_create_layer(xx, yy, "Instances", bullet_object);
-			
+			var d = sdir - (i * adiv);			
+			var xx = x + lengthdir_x(sprite_get_width(ind.sprite_index) * 5 *ind.image_xscale - 8, d);
+			var yy = y + lengthdir_y(sprite_get_width(ind.sprite_index) * 5 *ind.image_xscale - 8, d);
+			var bul = instance_create_layer(xx, yy+global.__vsdex, "Instances", obj_melee_bul);
+			var _slash = audio_play_sound(slash,1,0);
+			audio_sound_pitch(_slash,0.8);			
 			bul.direction = d;
 			bul.image_angle = d;
 			bul.speed = spd;
@@ -129,10 +130,32 @@ function bul_type_create(ind, _x, _y, dir, spd)
 		var yy = y + lengthdir_y(400, direction);
 		var ldx = lengthdir_x(sprite_width*0.75, direction);		
 		var ldy = lengthdir_y(sprite_width*0.75, direction);
-		if(collision_line(obj_gun.x,obj_gun.y, xx, yy, obj_ground, false, true)){		
-			
-			var life_min = (distance_to_object(obj_ground)/4);
-			var life_max = (distance_to_object(obj_ground)/3);
+		/*if(collision_line(obj_gun.x,obj_gun.y, xx, yy, obj_wall, true, true)){
+			var _list_ = ds_list_create();
+			var _ground = collision_line_list(obj_gun.x,obj_gun.y, xx, yy, obj_wall, false, true,_list_, true);
+			if (_ground > 0){
+				for (var i = 0; i < _ground; i++){					
+					collision_found = (distance_to_object(_list_[|0]));					
+				}
+			}					
+			show_debug_message("wall");
+			var life_min = ((collision_found)/7);
+			var life_max = ((collision_found)/7);
+			part_type_life(global.__flame,life_min,life_max);
+			part_type_life(global.__smoke,life_min,life_max);
+			ds_list_destroy(_list_);
+			}*/
+		if(collision_line(obj_gun_flame.x,obj_gun_flame.y, xx, yy, obj_ground, true, true)){
+			var _list = ds_list_create();
+			var _ground = collision_line_list(obj_gun_flame.x,obj_gun_flame.y, xx, yy, obj_ground, false, true,_list, true);
+			if (_ground > 0){
+				for (var i = 0; i < _ground; i++){					
+					collision_found = (distance_to_object(_list[|0]));					
+				}
+			}		
+
+			var life_min = ((collision_found)/7);
+			var life_max = ((collision_found)/7);
 			part_type_life(global.__flame,life_min,life_max);
 			part_type_life(global.__smoke,life_min,life_max);
 			
