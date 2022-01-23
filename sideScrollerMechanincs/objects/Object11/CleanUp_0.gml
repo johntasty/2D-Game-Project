@@ -1,1 +1,0 @@
-part_system_destroy(global.__sword_part);

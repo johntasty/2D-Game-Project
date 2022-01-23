@@ -1,5 +1,5 @@
 global.__bullettype = [];
-global.__bullettypemax = 3;
+global.__bullettypemax = 4;
 global.__bulletsize = 0;
 global.__bullet_dmg = 5
 for(var i =0; i<global.__bullettypemax; i++){
@@ -10,12 +10,14 @@ for(var i =0; i<global.__bullettypemax; i++){
 #macro bullet_pistol global.__bullettype[0]
 #macro bullet_shotgun global.__bullettype[1]
 #macro bullet_laser global.__bullettype[2]
+#macro bullet_graplling global.__bullettype[3]
 
 //pistol bullet
 bul_type_set_life(bullet_pistol, -1);
 bul_type_set_sprite(bullet_pistol,spr_bullet,0,0,true);
 bul_type_set_scale(bullet_pistol, 1, 1, global.__bulletsize, 0);
 bul_type_set_damage (bullet_pistol,global.__bullet_dmg);
+
 //shotgun
 bul_type_set_life(bullet_shotgun,20);
 bul_type_set_sprite(bullet_shotgun,spr_bullet,0,0,0);

@@ -41,8 +41,8 @@ function gun_update()
 	//shooting
 	if(shoot && recoil_step < 1)
 	{
-		var ldx = lengthdir_x(sprite_width*0.75, direction);
-		var ldy = lengthdir_y(sprite_width*0.75, direction);
+		var ldx = lengthdir_x(sprite_width*0.6, direction);
+		var ldy = lengthdir_y(sprite_width*0.6, direction);
 		
 		bul_type_create(bullet, x+ldx, y + ldy, direction, bullet_speed);
 		recoil_step = recoil;

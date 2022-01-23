@@ -1,12 +1,26 @@
 /// @description foot variables
-curveAsset = animPlayerMelee;
+
 curvePosition = 0;
-curveSpeed = 0.05;
+exist = true;
+hp = 100;
+hp_max = 100;
+health_bar_width = 100;
+health_bar_height = 10;
+global.__paused = 0;	
+flash = false;
+col = image_blend;
+parent = -1;
+blink_number = 10;
+blink_counter = 0;
+blink_duration = 3;
 
 vsp = 0;
-grv = 0.3;
+grav = 0.5;
 jumpspeed = 10;
-
+spd = 0;
+//graple
+active = false;
+weapon_hook = false;
 //animation
 time= 0;
 timeSpeed = 0.1;
@@ -29,7 +43,11 @@ testing_list = noone;
 set_limps(43,25,13,12,7,20,7);
 
 dir = 0;
-cooldown = 0;
+cooldown = 10;
+
+
+global.__spdex = 0;
+global.__vsdex = 0;
 
 //look direction
 
