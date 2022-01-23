@@ -1,16 +1,10 @@
 {
-  "spriteId": {
-    "name": "X2",
-    "path": "sprites/X2/X2.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_ground",
-    "path": "objects/obj_ground/obj_ground.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -27,11 +21,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "floor tiles",
-    "path": "folders/Objects/floor tiles.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_b1_ground2",
+  "name": "test",
   "tags": [],
   "resourceType": "GMObject",
 }
