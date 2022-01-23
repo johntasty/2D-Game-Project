@@ -4,7 +4,7 @@ function gun_set_pistol()
 }
 function gun_set_shotgun()
 {
-	gun_set(spr_arm_gun,1,bullet_shotgun,global.__spdex,0,0);
+	gun_set(spr_arm_gun,1,bullet_shotgun,0,0,0);
 }
 function gun_set_laser()
 {

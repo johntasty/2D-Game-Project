@@ -25,4 +25,3 @@ for (var i = 0; i< dash_frames; i++){
 		}
 	}
 }
-

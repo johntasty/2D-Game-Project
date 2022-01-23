@@ -26,9 +26,7 @@
     {"x":-1.0,"y":64.0,},
   ],
   "eventList": [],
-  "properties": [
-    {"varType":1,"value":"0","rangeEnabled":true,"rangeMin":0.0,"rangeMax":1.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"moveable","tags":[],"resourceType":"GMObjectProperty",},
-  ],
+  "properties": [],
   "overriddenProperties": [],
   "parent": {
     "name": "enviroment objects",
