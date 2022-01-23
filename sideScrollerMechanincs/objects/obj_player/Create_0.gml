@@ -30,14 +30,17 @@ anim.sprite_index = sprite_index;
 anim.bind(true);
 moving = false;
 //weapon handler
-weapon = 100273;
+var _melee_id = obj_gun_melee.id;
+weapon = _melee_id;
 weapon_dir = 0;
 //inventory
-inventory = ds_list_create();
-ds_list_add(inventory,100273);
 active_weapon = noone;
+inventory = ds_list_create();
+
+ds_list_add(inventory,_melee_id);
+
 testing_list = noone;
-set_limps(43,25,13,20,7,20,7);
+set_limps(43,25,13,12,7,20,7);
 
 dir = 0;
 cooldown = 10;

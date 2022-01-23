@@ -120,7 +120,8 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			var xx = x + lengthdir_x(sprite_get_width(ind.sprite_index) * 5 *ind.image_xscale - 8, d);
 			var yy = y + lengthdir_y(sprite_get_width(ind.sprite_index) * 5 *ind.image_xscale - 8, d);
 			var bul = instance_create_layer(xx, yy+global.__vsdex, "Instances", obj_melee_bul);
-			
+			var _slash = audio_play_sound(slash,1,0);
+			audio_sound_pitch(_slash,0.8);			
 			bul.direction = d;
 			bul.image_angle = d;
 			bul.speed = spd;
@@ -174,9 +175,9 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			part_type_life(global.__smoke,life_min,life_max);
 			ds_list_destroy(_list_);
 			}*/
-		if(collision_line(obj_gun.x,obj_gun.y, xx, yy, obj_ground, true, true)){
+		if(collision_line(obj_gun_flame.x,obj_gun_flame.y, xx, yy, obj_ground, true, true)){
 			var _list = ds_list_create();
-			var _ground = collision_line_list(obj_gun.x,obj_gun.y, xx, yy, obj_ground, false, true,_list, true);
+			var _ground = collision_line_list(obj_gun_flame.x,obj_gun_flame.y, xx, yy, obj_ground, false, true,_list, true);
 			if (_ground > 0){
 				for (var i = 0; i < _ground; i++){					
 					collision_found = (distance_to_object(_list[|0]));					
