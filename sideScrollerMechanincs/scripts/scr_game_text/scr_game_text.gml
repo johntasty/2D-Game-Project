@@ -51,6 +51,7 @@ switch(_text_id) {
 			scr_text("Oh? So you want to fight eh?");
 			scr_text("Well then! Let's fight!");
 			//FIGHT
+			global.ethelFight = true;
 			break;
 		case "ethel - 1aa":
 			scr_text("Yes that is right! You should be apologizing! Now tell me what you were doing on my roof!");
@@ -65,6 +66,7 @@ switch(_text_id) {
 		case "ethel - 2a":
 			scr_text("NO!! He's still alive. You're a LIAR! You know what we do to liars here?!");
 			//FIGHT
+			global.ethelFight = true;
 			break;
 		case "ethel - 2b":
 			scr_text("You don't know what a grandson is? Where are you from?");
@@ -97,7 +99,7 @@ switch(_text_id) {
 			scr_text("[Ethel gives you a gamebro]");
 			scr_text("Thanks sweeite, you have a good day now!");
 			global.haveGamebro = true;
-			global.darveyStage = 2;
+			obj_NPC_darvey.npcName = "darveyStage2";
 			break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "harvey":
@@ -203,12 +205,8 @@ switch(_text_id) {
 			scr_text("You know... those terrible creatures just appeared! And you know what the worst part is?");
 			scr_text("I dropped my flamethrower while trying to escape those beasts!");
 			scr_text("[Having a flame thrower would be useful]");
-				scr_option("You want the flamethrower back?", "harvey - 2bc");
-				scr_option("So the flamethrower is down there?", "harvey - 2bd");
-			break;
-		case "harvey - 2bc":
 				scr_option("You want the flamethrower back?", "harvey - 3caa");
-				scr_option("So.. the flamethrower is in the basement?", "harvey - 3cb");
+				scr_option("So the flamethrower is down there?", "harvey - 2bd");
 			break;
 		case "harvey - 2bd":
 			scr_text("Yes! [Sob]... W-wait you don't plan on 'stealing' it do you?!?!");
@@ -227,9 +225,13 @@ switch(_text_id) {
 			break;
 		case "harvey - 4ce":
 			scr_text("I HATE THIEVES!");
+			//FIGHT
+			global.harveyFight = true;
 			break;
 		case "harvey - 4ca":
 			scr_text("I HATE LIARS!");
+			//FIGHT
+			global.harveyFight = true;
 			break;
 		case "harvey - 4cb":
 			scr_text("Ah well at least you're honest. I like that!");
@@ -241,6 +243,9 @@ switch(_text_id) {
 			break;
 		case "harvey - 5ca":
 			scr_text("You know what? If you kill the creatures in my basement you can keep the flamethrower! Anything for a fellow member of the final spark!");
+			break;
+		case "harvey - end":
+			scr_text("Thank you for clearing out my basement!");
 			break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "darveyStage1":
@@ -269,6 +274,7 @@ switch(_text_id) {
 	case "darveyStage2 - 1ba":
 		scr_text("GIVE MY GAMEBRO BACK!");
 		//FIGHT
+		global.darveyFight = true;
 		break;
 	case "darveyStage2 - 2aa":
 		scr_text("Harvey's my brother");
@@ -324,14 +330,17 @@ switch(_text_id) {
 		scr_text("You see, an online friend of mine told me they saw something weird fall down the city a couple days ago");
 		scr_text("It fits the discription you gave... Well the on fire falling down part at least");
 		scr_text("Big chance the object you are looking for is down there!");
-		scr_text("Oh but you have to watch out for the guard! He: [Information about the bossfight]");
+		scr_text("Oh but you have to watch out for the guard! I think he's causing the earthquakes");
+		scr_text("Look out for falling rocks");
 			scr_option("Thank you for the information", "darveyStage2 - 6aa");
 		break;
 	case "darveyStage2 - 5ba":
 		scr_text("Eep! O-okay! I-I'm sorry!");
 		break;
 	case "darveyStage2 - 6aa":
-		scr_text("It's okay! you are very welcome! Also, if you have time... come visit me again when you are done, I would love to hear about all the things you encounter!");
+		scr_text("It's okay! you are very welcome! Also, if you have time... ");
+		scr_text("come visit me again when you are done, I would love to hear about all the things you encounter!");
+		
 		break;
 	case "darveyStage3":
 		//Player has fought harvey
@@ -351,8 +360,13 @@ switch(_text_id) {
 		scr_text("Eep!");
 		scr_text("P-Please don't hurt me!");
 		scr_text("B-But... My brother...");
-		scr_text("No Darvey! You need to take revenge for your brother!");
+		scr_text("No Darvey! You need to avenge your brother!");
 		scr_text("Fight me, you monster!");
+		//FIGHT
+		global.darveyFight = true;
+		break;
+	case "darvey- end":
+		scr_text("Tell me of your adventures when you're done!");
 		break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "maudStage1":
@@ -385,6 +399,8 @@ switch(_text_id) {
 		scr_text("It doesn't even matter anymore...");
 		scr_text("Heh. I see you even stole from Harvey...");
 		scr_text("This place is better off without people like you...");
+		//FIGHT
+		global.maudFight = true;
 		break;
 	case "maudStage5":
 		//Player killed everyone
@@ -394,6 +410,8 @@ switch(_text_id) {
 		scr_text("It doesn't even matter anymore...");
 		scr_text("Heh. I see you even stole from Harvey...");
 		scr_text("This place is better off without people like you...");
+		//FIGHT
+		global.maudFight = true;
 		break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //TEMPLATE

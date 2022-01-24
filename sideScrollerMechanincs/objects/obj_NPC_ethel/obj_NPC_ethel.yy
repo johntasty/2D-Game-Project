@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_NPC_parent",
+    "path": "objects/obj_NPC_parent/obj_NPC_parent.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -33,7 +36,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_NPC",
+  "name": "obj_NPC_ethel",
   "tags": [],
   "resourceType": "GMObject",
 }
