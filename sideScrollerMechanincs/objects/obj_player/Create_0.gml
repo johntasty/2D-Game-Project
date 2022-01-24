@@ -30,14 +30,7 @@ weapon = -1;
 weapon_dir = 0;
 //inventory
 inventory = ds_list_create();
-<<<<<<< Updated upstream
 active_weapon = noone;
-=======
-
-ds_list_add(inventory,_melee_id);
-interacted = -1;
-
->>>>>>> Stashed changes
 testing_list = noone;
 set_limps(43,25,13,20,7,20,7);
 
