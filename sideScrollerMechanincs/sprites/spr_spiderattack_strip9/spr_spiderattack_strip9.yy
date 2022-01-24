@@ -101,8 +101,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "enemy sprites",
-    "path": "folders/Sprites/enemy sprites.yy",
+    "name": "spider",
+    "path": "folders/Sprites/enemy sprites/spider.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_spiderattack_strip9",

@@ -232,13 +232,13 @@ switch(_text_id) {
 			scr_text("I HATE THIEVES!");
 			//FIGHT
 			global.harveyFight = true;
-			instance_destroy(obj_hatch);
+			
 			break;
 		case "harvey - 4ca":
 			scr_text("I HATE LIARS!");
 			//FIGHT
 			global.harveyFight = true;
-			instance_destroy(obj_hatch);
+			
 			break;
 		case "harvey - 4cb":
 			scr_text("Ah well at least you're honest. I like that!");
@@ -381,7 +381,7 @@ switch(_text_id) {
 		scr_text("Harvey told me he gave you his flamethrower!");
 		scr_text("Harvey must really like you, he spoke highly of you!");
 		scr_text("You can pass into the mines if you want! But please, be careful!");
-		instance_destroy(obj_gate);
+		obj_gate.state_gate = gateStates.open;
 		break;
 	case "maudStage3":
 		//Player has not killed anybody
@@ -389,7 +389,7 @@ switch(_text_id) {
 		scr_text("Also, Harvey told me he gave you his flamethrower!");
 		scr_text("Harvey must really like you, he spoke highly of you!");
 		scr_text("You can pass into the mines if you want! But please, be careful!");
-		instance_destroy(obj_gate);
+		obj_gate.state_gate = gateStates.open;
 		break;
 	case "maudStage4":
 		//Player only killed harvey
@@ -403,7 +403,7 @@ switch(_text_id) {
 		scr_text("This place is better off without people like you...");
 		//FIGHT
 		global.maudFight = true;
-		instance_destroy(obj_gate);
+		
 		break;
 	case "maudStage5":
 		//Player killed everyone
@@ -415,7 +415,7 @@ switch(_text_id) {
 		scr_text("This place is better off without people like you...");
 		//FIGHT
 		global.maudFight = true;
-		instance_destroy(obj_gate);
+		
 		break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //TEMPLATE

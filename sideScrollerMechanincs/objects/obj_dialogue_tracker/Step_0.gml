@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 if(!global.haveFlamethrower)
-{
-	obj_NPC_maud.npcName = "maudStage1";
+{	if (instance_exists(obj_NPC_maud)){
+		obj_NPC_maud.npcName = "maudStage1";}
 }
 
 if(global.ethelDead && !global.harveyDead && !global.darveyDead && global.haveFlamethrower)
