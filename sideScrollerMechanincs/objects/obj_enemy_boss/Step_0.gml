@@ -23,6 +23,7 @@ switch (state_boss)
 	case boss_state.jumping: scr_jumpin_state(); break;
 	case boss_state.landing: scr_landing_state(); break;
 	case boss_state.charging: scr_charging_state(); break;
+	case boss_state.power_up: scr_power_up(); break;	
 	case boss_state.rampage_state: scr_rampage_state(); break;
 	case boss_state.hook_state: scr_hook(); break;
 }
@@ -54,28 +55,31 @@ if (max_health <= 27)
 }
 
 //charge attack	
+/*
 if (keyboard_check_pressed(vk_f1))
 { 
-	state_boss = boss_state.charging;
-	alarm[2] = room_speed *2;	
+	state_boss = boss_state.power_up;
+	//alarm[2] = room_speed *3;	
 }
 
 if (keyboard_check_pressed(vk_f2)){
 	state_boss = boss_state.jumping
 	shake_ground = true;	
-}
+}*/
 
 //attack
+/*
 if (keyboard_check_released(vk_f3))
 {		
 	state_boss = boss_state.attacking;
 }
-
+*/
 if ((_angle >= 200 || _angle <= -200) && cooldown_attack == 0)
 {
 	cooldown_attack = 1;
 	alarm[1] = room_speed;
 }
+/*
 if (keyboard_check_pressed(vk_f4))
 {	
 	state_boss = boss_state.hook_state;
