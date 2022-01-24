@@ -10,9 +10,9 @@ function scr_screenshake(_time,_magnitude, _fade){
 	}
 }
 
-function scr_boxshake (_time,_magnitude, _fade){
+function scr_boxshake (_time,_magnitude, _fade,_object){
 	
-	with(obj_breakable_box)
+	with(_object)
 	{
 		shake_box = true;
 	    shake_time_box = _time;
