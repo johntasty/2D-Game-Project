@@ -11,8 +11,25 @@ var _size = ds_list_size(inventory);
 	draw_text(_x, _y, string(_item));
 }*/
 
-var _xx = 20;
+var _xx = 150;
 var _y = 32;
-if(active_weapon!= noone){
-	draw_sprite(spr_arm_gun,active_weapon,_xx,_y);
+if (_size == 1 && active_weapon == 3)
+{
+	draw_sprite(inventory_melee,0,_xx,_y);
 }
+else if(active_weapon!= noone){
+	if (active_weapon == 3){
+		draw_sprite(inventory_meleeSelect,0,_xx,_y);
+	}
+	if(active_weapon == 2)
+	{
+		draw_sprite(inventory_gunSelect,0,_xx,_y);
+	}
+}
+var _x = 20;
+var _yy = 32;
+draw_sprite_ext(dash,0,_x,_yy,1,1,0,image_blend,global.__cooldown/10)
+
+
+
+

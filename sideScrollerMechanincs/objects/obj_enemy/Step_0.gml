@@ -24,14 +24,14 @@ if  (collision_circle(x,y,32,obj_bullet,1,1)){
 
 			knockingback = true;
 			attacked = 1;
-			clr = c_red;	
+			blink = true;
 			health_bar -= bullet_int.damage;		
 			alarm[0] = room_speed/6;	
 			alarm[1] = room_speed/6;
 			with bullet_int instance_destroy();				
 		}
 	}
-}else {clr = c_white;}
+}
 recoil_step = lerp(recoil_step,0,trigger_speed);
 if collision_circle(x,y,32,obj_melee_bul,false,true){
 	
@@ -63,7 +63,7 @@ if collision_circle(x,y,32,obj_melee_bul,false,true){
 			knockingback = true;
 			stuned = 1;
 			attacked = 1;
-			clr = c_red;			
+			blink = true;			
 			health_bar -= melee.damage/10;						
 			alarm[0] = room_speed/2;
 			alarm[1] = room_speed/6;

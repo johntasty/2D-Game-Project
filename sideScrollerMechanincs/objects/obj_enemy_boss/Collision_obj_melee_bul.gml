@@ -4,5 +4,5 @@ if (!hit){
 	hit = true;
 	alarm[5] = room_speed/3;
 	blink = true;
-	max_health -= 6;
+	max_health -= 1;
 }

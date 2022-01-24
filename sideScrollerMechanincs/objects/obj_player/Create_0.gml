@@ -3,6 +3,10 @@
 curvePosition = 0;
 exist = true;
 hp = 100;
+hp_max = 100;
+health_bar_width = 100;
+health_bar_height = 10;
+global.__paused = 0;	
 flash = false;
 col = image_blend;
 parent = -1;
@@ -26,16 +30,22 @@ anim.sprite_index = sprite_index;
 anim.bind(true);
 moving = false;
 //weapon handler
-weapon = -1;
+var _melee_id = obj_gun_melee.id;
+weapon = _melee_id;
 weapon_dir = 0;
 //inventory
-inventory = ds_list_create();
 active_weapon = noone;
+inventory = ds_list_create();
+
+ds_list_add(inventory,_melee_id);
+interacted = -1;
+
 testing_list = noone;
-set_limps(43,25,13,20,7,20,7);
+set_limps(43,25,13,12,7,20,7);
 
 dir = 0;
-cooldown = 0;
+cooldown = 10;
+
 
 global.__spdex = 0;
 global.__vsdex = 0;

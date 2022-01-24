@@ -61,11 +61,11 @@ global.__flame_lifemin = 40;
 	global.__dirc = 0;
 
 	global.__em = part_emitter_create(global.__fire);
-	//part_type_sprite(global.__flame,spr_fire,false,false,false);
+	part_type_sprite(global.__flame,sphere2123,false,false,false);
 	part_type_color3(global.__flame,c_white,c_orange,c_red);
 	part_type_life(global.__flame,global.__flame_lifemin,global.__flame_lifemax);
 	part_type_direction(global.__flame,direction-5,direction+5,0,0); 
-	part_type_shape(global.__flame,pt_shape_sphere);
+	//part_type_shape(global.__flame,pt_shape_sphere);
 	part_type_speed(global.__flame,10,12,0,0.25);
 	part_type_size(global.__flame,0.15,0.3,0.014,0.003);
 	part_type_alpha3(global.__flame,0.2,1,0);
@@ -74,7 +74,8 @@ global.__flame_lifemin = 40;
 	part_type_color2(global.__smoke,c_gray,c_black);
 	part_type_life(global.__smoke,global.__smoke_lifemin,global.__smoke_lifemax);
 	part_type_direction(global.__smoke,global.__dirc-1,global.__dirc+1,0,0); 
-	part_type_shape(global.__smoke,pt_shape_smoke);
+	//part_type_shape(global.__smoke,pt_shape_smoke);
+	part_type_sprite(global.__smoke,smoke1,false,false,false);
 	part_type_speed(global.__smoke,9,11,0,0.25);
 	part_type_size(global.__smoke,0.15,0.2,0.016,0.003);
 	part_type_alpha3(global.__smoke,1,0.8,0);
@@ -160,12 +161,19 @@ part_type_gravity(pt_flare_particles_testing, 0, 0);
 	part_type_shape(box_part, pt_shape_pixel);
 #endregion
 #region
-	star_dazed = part_system_create();
+	dust = part_system_create();
+	part_system_automatic_draw(dust, false);
 	
-	star_parts = part_type_create();
-	part_type_size(star_parts,1,1,0,0);
-	part_type_scale(star_parts,1,1);
-	part_type_life(star_parts,20,20);
-	part_type_speed(star_parts,2,2,0,0);
+	dust_part = part_type_create();
+	part_type_size(dust_part,1,1,-0.03,0);
+	part_type_scale(dust_part,1,1);
+	part_type_life(dust_part,40,40);
+	part_type_speed(dust_part,1,6,-0.1,0);
+	part_type_gravity(dust_part,0.2,270);
+	part_type_direction(dust_part,60,120,0,0);
+	part_type_blend(dust_part,1);
+	part_type_alpha3(dust_part,1,1,0); // 1,1,0
+	part_type_color3(dust_part,c_grey, c_grey, c_grey);
+	part_type_shape(dust_part, pt_shape_cloud);
 
 #endregion

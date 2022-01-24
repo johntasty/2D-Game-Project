@@ -21,13 +21,13 @@ function gun_update()
 	{
 		var ldx = lengthdir_x(recoil_step,direction+180);
 		var ldy = lengthdir_y(recoil_step, direction+180);
-		
-		//var ldx2 = lengthdir_x(parent.sprite_width*0.75,direction);
-		//var ldy2 = lengthdir_y(parent.sprite_width*0.75, direction);
-		
-		
-		x = obj_player.r_elbow_x; //+ ldx; //- ldx2;
-		y = obj_player.r_elbow_y; //+ ldy; // + ldy2;
+				
+		x = obj_player.r_shoulder_x; 
+		y = obj_player.r_shoulder_y; 
+		if (weapon_directory == 3){
+			x = obj_player.r_elbow_x; 
+			y = obj_player.r_elbow_y; 
+		}
 		
 		visible = false;
 	}
@@ -41,8 +41,8 @@ function gun_update()
 	//shooting
 	if(shoot && recoil_step < 1)
 	{
-		var ldx = lengthdir_x(sprite_width*0.75, direction);
-		var ldy = lengthdir_y(sprite_width*0.75, direction);
+		var ldx = lengthdir_x(sprite_width*0.6, direction);
+		var ldy = lengthdir_y(sprite_width*0.6, direction);
 		
 		bul_type_create(bullet, x+ldx, y + ldy, direction, bullet_speed);
 		recoil_step = recoil;

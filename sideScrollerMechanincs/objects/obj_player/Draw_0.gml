@@ -6,6 +6,7 @@ testing dont delete
 	//draw_sprite_stretched(test_stretc, 0, mouse_x, mouse_y, global.__bulletsize, sprite_height );
 	//draw_sprite_ext(test_stretc,0,mouse_x ,mouse_y,global.__bulletsize/60,1,global.__bulletsize,image_blend,image_alpha);
 }*/
+draw_circle(r_elbow_x,r_elbow_y,6,0);
 arm_dir = point_direction(r_shoulder_x,r_shoulder_y,r_elbow_x,r_elbow_y);
 arm_dir_l = point_direction(l_shoulder_x,l_shoulder_y,l_elbow_x,l_elbow_y);
 leg_dir = point_direction(r_hip_x,r_hip_y,r_knee_x,r_knee_y);
@@ -30,7 +31,7 @@ draw_sprite_ext(MainCharacterLeg2,0,r_hip_x+spd,r_hip_y,1,-1,leg_dir,col,image_a
 }
 var draw_weapon = function()
 {
-	if (weapon && weapon.weapon_directory != 3)
+	if (weapon)
 	{
 		with(weapon){	
 			
@@ -70,5 +71,6 @@ if (look_direction < 90 || look_direction > 275){
 		draw_sprite_ext(spr_right_arm,0,r_shoulder_x+spd,r_shoulder_y,1,-1,arm_dir,col,image_alpha);
 		
 	}
-
-
+//health bar
+draw_sprite_stretched(healthbar3,0,x-(health_bar_width/2)+5, y-sprite_height, (hp/hp_max)*health_bar_width,health_bar_height);
+draw_sprite_stretched(healthbar_empty,0,x-(health_bar_width/2)+5, y-sprite_height,health_bar_width,health_bar_height);
