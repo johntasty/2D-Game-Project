@@ -198,7 +198,7 @@ if (weapon_col > 0)
 
 //dialogue interact
 var interact_list = ds_list_create();
-var interact_col = collision_circle_list(x,y,sprite_width*0.5,obj_NPC,false,true,interact_list,true);
+var interact_col = collision_circle_list(x,y,sprite_width*0.5,obj_NPCparent,false,true,interact_list,true);
 
 if (interact_col > 0)
 {
@@ -211,7 +211,9 @@ if (interact_col > 0)
 			interacted = w;
 			with(w)
 			{
-				create_textbox("ethel");
+				var name = w.npcName;
+				w.ui_show = false;
+				create_textbox(name);
 			}
 		}
 	}
