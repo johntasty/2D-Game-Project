@@ -128,7 +128,7 @@ function create_textbox(_text_id) {
 			instance_destroy();
 		}
 	}
-	with (instance_create_depth(0,0,-9999, obj_textbox) )
+	with (instance_create_depth(obj_player.x,obj_player.y-150,-9999, obj_textbox) )
 	{
 		scr_game_text(_text_id);
 	}
