@@ -114,7 +114,11 @@ bul_type_set_damage (bullet_pistol,global.__bullet_dmg);
 if(weapon)
 {	
 	weapon.parent = id;	
-	active_weapon = (weapon.weapon_directory);	
+	active_weapon = (weapon.weapon_directory);
+	if(active_weapon == 2)
+	{
+		global.haveFlamethrower = true;
+	}
 	if(weapon.weapon_directory == 2){
 		weapon.shoot = global.__sht;
 	}else if(weapon.weapon_directory == 3){

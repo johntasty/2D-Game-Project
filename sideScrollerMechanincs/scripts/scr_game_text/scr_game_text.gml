@@ -51,6 +51,7 @@ switch(_text_id) {
 			scr_text("Oh? So you want to fight eh?");
 			scr_text("Well then! Let's fight!");
 			//FIGHT
+			global.ethelFight = true;
 			break;
 		case "ethel - 1aa":
 			scr_text("Yes that is right! You should be apologizing! Now tell me what you were doing on my roof!");
@@ -65,6 +66,7 @@ switch(_text_id) {
 		case "ethel - 2a":
 			scr_text("NO!! He's still alive. You're a LIAR! You know what we do to liars here?!");
 			//FIGHT
+			global.ethelFight = true;
 			break;
 		case "ethel - 2b":
 			scr_text("You don't know what a grandson is? Where are you from?");
@@ -224,16 +226,24 @@ switch(_text_id) {
 		case "harvey - 4cd":
 			scr_text("OH! YES! You are a great great person!");
 			scr_text("You know what? If you kill the creatures in my basement you can keep the flamethrower!");
+			instance_destroy(obj_hatch);
 			break;
 		case "harvey - 4ce":
 			scr_text("I HATE THIEVES!");
+			//FIGHT
+			global.harveyFight = true;
+			instance_destroy(obj_hatch);
 			break;
 		case "harvey - 4ca":
 			scr_text("I HATE LIARS!");
+			//FIGHT
+			global.harveyFight = true;
+			instance_destroy(obj_hatch);
 			break;
 		case "harvey - 4cb":
 			scr_text("Ah well at least you're honest. I like that!");
 			scr_text("You know what? If you kill the creatures you can keep the flamethrower!");
+			instance_destroy(obj_hatch);
 			break;
 		case "harvey - 4cc":
 			scr_text("HURRAY FOR THE FINAL SPARK!!!");
@@ -241,6 +251,7 @@ switch(_text_id) {
 			break;
 		case "harvey - 5ca":
 			scr_text("You know what? If you kill the creatures in my basement you can keep the flamethrower! Anything for a fellow member of the final spark!");
+			instance_destroy(obj_hatch);
 			break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "darveyStage1":
@@ -269,6 +280,7 @@ switch(_text_id) {
 	case "darveyStage2 - 1ba":
 		scr_text("GIVE MY GAMEBRO BACK!");
 		//FIGHT
+		global.darveyFight = true;
 		break;
 	case "darveyStage2 - 2aa":
 		scr_text("Harvey's my brother");
@@ -353,6 +365,8 @@ switch(_text_id) {
 		scr_text("B-But... My brother...");
 		scr_text("No Darvey! You need to take revenge for your brother!");
 		scr_text("Fight me, you monster!");
+		//FIGHT
+		global.harveyFight = true;
 		break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "maudStage1":
@@ -367,6 +381,7 @@ switch(_text_id) {
 		scr_text("Harvey told me he gave you his flamethrower!");
 		scr_text("Harvey must really like you, he spoke highly of you!");
 		scr_text("You can pass into the mines if you want! But please, be careful!");
+		instance_destroy(obj_gate);
 		break;
 	case "maudStage3":
 		//Player has not killed anybody
@@ -374,6 +389,7 @@ switch(_text_id) {
 		scr_text("Also, Harvey told me he gave you his flamethrower!");
 		scr_text("Harvey must really like you, he spoke highly of you!");
 		scr_text("You can pass into the mines if you want! But please, be careful!");
+		instance_destroy(obj_gate);
 		break;
 	case "maudStage4":
 		//Player only killed harvey
@@ -385,6 +401,9 @@ switch(_text_id) {
 		scr_text("It doesn't even matter anymore...");
 		scr_text("Heh. I see you even stole from Harvey...");
 		scr_text("This place is better off without people like you...");
+		//FIGHT
+		global.maudFight = true;
+		instance_destroy(obj_gate);
 		break;
 	case "maudStage5":
 		//Player killed everyone
@@ -394,6 +413,9 @@ switch(_text_id) {
 		scr_text("It doesn't even matter anymore...");
 		scr_text("Heh. I see you even stole from Harvey...");
 		scr_text("This place is better off without people like you...");
+		//FIGHT
+		global.maudFight = true;
+		instance_destroy(obj_gate);
 		break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //TEMPLATE
