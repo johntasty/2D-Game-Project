@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "unbreakable_box",
+    "path": "sprites/unbreakable_box/unbreakable_box.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
