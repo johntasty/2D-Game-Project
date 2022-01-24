@@ -16,7 +16,7 @@ if (global.__dead){
 	{
 		draw_set_color(c_white);
 	
-		if i == _index draw_set_color(c_teal);
+		if i == _index_dead draw_set_color(c_teal);
 	
 		draw_text(view_wport[0]/2, view_hport[0] * 0.3 + _gap*i, menu_dead[i]);
 	}

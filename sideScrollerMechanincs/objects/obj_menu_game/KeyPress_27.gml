@@ -2,6 +2,7 @@
 // You can write your code in this editor
 if (!global.__paused)
 {
+	instance_create_layer(x,y,"Base_Level",obj_menu_game);
 	global.__paused = 1;	
 	instance_deactivate_all(true);
 }
