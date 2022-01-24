@@ -35,7 +35,7 @@
     "spriteId": {"name":"spr_spideridle_strip2","path":"sprites/spr_spideridle_strip2/spr_spideridle_strip2.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 3.0,
+    "playbackSpeed": 8.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,

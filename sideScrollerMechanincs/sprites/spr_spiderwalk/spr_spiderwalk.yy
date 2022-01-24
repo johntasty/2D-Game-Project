@@ -41,7 +41,7 @@
     "spriteId": {"name":"spr_spiderwalk","path":"sprites/spr_spiderwalk/spr_spiderwalk.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 8.0,
+    "playbackSpeed": 5.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
