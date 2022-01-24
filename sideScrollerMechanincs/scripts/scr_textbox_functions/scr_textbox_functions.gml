@@ -130,6 +130,7 @@ function create_textbox(_text_id) {
 	}
 	with (instance_create_depth(obj_player.x,obj_player.y-150,-9999, obj_textbox) )
 	{
+		global.inDialogue = true;
 		scr_game_text(_text_id);
 	}
 	
