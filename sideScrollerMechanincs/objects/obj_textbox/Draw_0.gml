@@ -1,13 +1,10 @@
-accept_key = keyboard_check_pressed(ord("E"));
+accept_key = keyboard_check_pressed(vk_space);
 
 //textbox_x = camera_get_view_x(view_camera[0] );
 //textbox_y = camera_get_view_y(view_camera[0] ) + 144;
 
-//textbox_x = obj_player.x;
-//textbox_y = obj_player.y - 150;
-
-textbox_x = x;
-textbox_y = y;
+textbox_x = obj_NPC.x;
+textbox_y = obj_NPC.y - 150;
 
 //-----------------------setup-----------------------//
 if setup = false
