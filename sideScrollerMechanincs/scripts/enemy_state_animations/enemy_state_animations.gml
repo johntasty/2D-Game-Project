@@ -71,7 +71,6 @@ function enemy_state_moving(_sprite,_mask,_change)
 		spd_enemy = 3;
 	}else{spd_enemy = 0;}
 	spd_enemy = lengthdir_x(spd_enemy,dir);	
-	show_debug_message(spd_enemy);
 	if place_meeting(x+spd_enemy*2,y,obj_wall){
 		while(!place_meeting(round(x+sign(spd_enemy)),round(y),obj_wall)){
 			x +=sign(spd_enemy);

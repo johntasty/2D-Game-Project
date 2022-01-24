@@ -11,7 +11,11 @@ look_direction = point_direction(x,y,mouse_x,mouse_y);
 look_direction_draw = point_direction(x,y,mouse_x,mouse_y);
 look_direction_arm = point_direction(x,y - 94,mouse_x,mouse_y);
 
-
+if(hp <= 0)
+{
+	instance_create_layer(x,y,"Base_level",obj_menu_dead);
+	global.__dead = true;
+}
 
 if (look_direction < 90 || look_direction > 275){
 		look_direction = 0;
