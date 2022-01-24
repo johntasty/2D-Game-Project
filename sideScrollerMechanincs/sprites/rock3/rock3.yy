@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "sideScrollerMechanincs",
-    "path": "sideScrollerMechanincs.yyp",
+    "name": "enviroment sprites",
+    "path": "folders/Sprites/enviroment sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "rock3",

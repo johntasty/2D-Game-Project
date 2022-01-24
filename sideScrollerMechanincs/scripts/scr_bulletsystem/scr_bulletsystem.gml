@@ -120,8 +120,7 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			var xx = x + lengthdir_x(sprite_get_width(ind.sprite_index) * 5 *ind.image_xscale - 8, d);
 			var yy = y + lengthdir_y(sprite_get_width(ind.sprite_index) * 5 *ind.image_xscale - 8, d);
 			var bul = instance_create_layer(xx, yy+global.__vsdex, "Instances", obj_melee_bul);
-			var _slash = audio_play_sound(slash,1,0);
-			audio_sound_pitch(_slash,0.8);			
+		
 			bul.direction = d;
 			bul.image_angle = d;
 			bul.speed = spd;

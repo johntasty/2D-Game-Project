@@ -132,21 +132,12 @@ if(weapon)
 		
 	}else{		
 		
-			if (global.__shtpress && melee_cooldown == 0){	
-					
+			if (global.__shtpress && melee_cooldown == 0){						
 				melee_cooldown = 1;					
 				state = playerStates.attacking;					
 				alarm[1] = room_speed/30;
-			}
-
-				if (global.__shtpress && melee_cooldown == 0){	
-					
-					melee_cooldown = 1;					
-					state = playerStates.attacking;					
-					alarm[1] = room_speed/30;
-					}
-				
-				if(global.__r_sht_rel) {active = false;}				
+				alarm[4] = room_speed/2;
+			}						
 	}
 	if (weapon.weapon_directory == 1){
 		if (global.__r_sht)
@@ -210,9 +201,10 @@ if (interact_col > 0)
 	for (var i = 0; i<interact_col; i++)
 	{
 	var w = interact_list[|i];
-	
+	if (w == interacted){continue; }
 		if(interact)
 		{			
+			interacted = w;
 			with(w)
 			{
 				create_textbox("ethel");

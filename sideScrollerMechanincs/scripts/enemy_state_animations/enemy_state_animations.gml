@@ -14,9 +14,20 @@ function enemy_state_idle(_sprite)
 }
 function enemy_state_attacking(_sprite,_mask,_change)
 {/// @function enemy_state_attacking(sprite_index,mask_index,sprite_index_change)
+	if(place_meeting(x,y+spdier_ver,obj_ground)){
+		while (!place_meeting(x,y+sign(spdier_ver),obj_ground))
+		{	
+			y = y + sign(spdier_ver);
+			
+		}	
+		
+		spdier_ver = dodge* -8;		
+	}	
+	y += spdier_ver;
 	if (sprite_index != _sprite){
 		sprite_index = _sprite;
 		image_index = 0;		
+		
 		ds_list_clear(hit_by_attacking);
 	}
 	
@@ -57,22 +68,26 @@ function enemy_state_moving(_sprite,_mask,_change)
 	
 	dir = point_direction(x,y,obj_player.x,obj_player.y);
 	if(stuned == 0){		
-		spd_enemy = 2;
+		spd_enemy = 3;
 	}else{spd_enemy = 0;}
 	spd_enemy = lengthdir_x(spd_enemy,dir);	
+	show_debug_message(spd_enemy);
 	if place_meeting(x+spd_enemy*2,y,obj_wall){
-		while(!place_meeting(round(x+sign(spd_enemy)),round(y),obj_wall)) x +=sign(spd_enemy);		
+		while(!place_meeting(round(x+sign(spd_enemy)),round(y),obj_wall)){
+			x +=sign(spd_enemy);
+		}	
 		spd_enemy = 0;	
 	}		 
 	 x += spd_enemy;
-	if(place_meeting(x,y+verspd,obj_ground)){	
-		while (!place_meeting(x,y+sign(verspd),obj_ground))
+	if(place_meeting(x,y+spdier_ver,obj_ground)){
+		while (!place_meeting(x,y+sign(spdier_ver),obj_ground))
 		{	
-			y = y+ sign(verspd);
-		}		
-		verspd = 0;
+			y = y + sign(spdier_ver);
+			
+		}						
+		spdier_ver = dodge* -5;		
 	}	
-	y += verspd;
+	y += spdier_ver;
 	if(spd_enemy!=0){
 		if (sprite_index != _sprite){
 			sprite_index = _sprite;
