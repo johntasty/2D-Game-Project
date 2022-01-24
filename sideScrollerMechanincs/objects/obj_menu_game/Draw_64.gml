@@ -16,7 +16,8 @@ if (global.__paused){
 		draw_set_color(c_white);
 	
 		if i == _index draw_set_color(c_teal);
-	
+		draw_sprite(control_menu,0,view_wport[0]/4,view_hport[0] * 0.4);
+			
 		draw_text(view_wport[0]/2, view_hport[0] * 0.3 + _gap*i, menu[i]);
 	}
 }

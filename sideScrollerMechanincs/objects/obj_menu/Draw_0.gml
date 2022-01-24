@@ -8,6 +8,7 @@ draw_set_font(fnt_menu);
 //line spacing
 var _gap = 60;
 draw_sprite(spr_menu,0,room_width/2, room_height * 0.4+90);
+draw_sprite(control_menu,0,room_width*.7,room_height*.5 );
 //draw menu items
 for (var i = 0; i < array_length_2d(menu,submenu_index); i++)
 {

@@ -223,19 +223,16 @@ if (interact_col > 0)
 	}
 }
 
+var _size = ds_list_size(inventory);
+var _up = keyboard_check_pressed(ord("1"));
+var _swap = _up;
 
 if (!ds_list_empty(inventory)){
-	if(keyboard_check(ord("1"))){
-		weapon = inventory[|0];		
-		
-	}
-	if(keyboard_check(ord("2")) && !ds_list_find_index(inventory,1)){
-		weapon = inventory[|1];			
-		
-	}
-	if(keyboard_check(ord("3"))&& !ds_list_find_index(inventory,2)){
-		weapon = inventory[|2];		
-	
+	if (_swap != 0){
+		inventory_index += _swap;
+		if (inventory_index >= _size){inventory_index = 0;}
+		weapon = inventory[|inventory_index];
+
 	}
 }
 

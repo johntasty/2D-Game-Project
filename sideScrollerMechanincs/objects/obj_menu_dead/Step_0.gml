@@ -9,27 +9,31 @@ if (global.__dead){
 	if (_move != 0)
 	{
 		//move index position
-		_index += _move;
+		_index_dead += _move;
 	
 		//clamp values
 		var _size = array_length_1d(menu_dead);
-		if (_index < 0){_index = _size - 1;}
+		if (_index_dead < 0){_index_dead = _size - 1;}
 	
-		else if (_index >= _size){_index = 0;}
+		else if (_index_dead >= _size){_index_dead = 0;}
 	}
 	if (_select){
-		switch(_index)
+		switch(_index_dead)
 		{
-			case 0: 
-			//restart
-			global.__restart = true;							
+			case 0:
+			//main menu
+			room_goto(1);
 			break;
 			case 1: 
-			//load				
-			global.__load = true;
-			scr_load_room();			
+			//restart
+			room_restart();									
+			break;
+			case 2: 
+			//load			
+			global.__dead = 0;
+			scr_load_game_dead();			
 			break;	
-			case 2:
+			case 3:
 			//exit
 			game_end();
 			break;

@@ -18,7 +18,7 @@ function bul_type() constructor
 	radial = false;
 	radial_number = 0;
 	radial_cutoff = 360;
-	
+	owner = noone;
 	hook = false;
 	
 	flamethrower = false;
@@ -124,6 +124,10 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			bul.direction = d;
 			bul.image_angle = d;
 			bul.speed = spd;
+			with(bul){				
+				owner = other.id;
+
+			}
 			
 			ind.bul_type_set_attributes(bul);
 			ret[i] = bul;

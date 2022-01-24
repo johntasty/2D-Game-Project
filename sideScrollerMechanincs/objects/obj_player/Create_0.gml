@@ -36,6 +36,7 @@ weapon_dir = 0;
 //inventory
 active_weapon = noone;
 inventory = ds_list_create();
+inventory_index = 0;
 
 ds_list_add(inventory,_melee_id);
 interacted = -1;

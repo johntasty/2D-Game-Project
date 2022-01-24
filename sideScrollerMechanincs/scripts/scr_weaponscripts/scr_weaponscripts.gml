@@ -24,10 +24,6 @@ function gun_update()
 				
 		x = obj_player.r_shoulder_x; 
 		y = obj_player.r_shoulder_y; 
-		if (weapon_directory == 3){
-			x = obj_player.r_elbow_x; 
-			y = obj_player.r_elbow_y; 
-		}
 		
 		visible = false;
 	}

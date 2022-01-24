@@ -20,19 +20,22 @@ if (global.__paused){
 	if (_select){
 		switch(_index)
 		{
-			case 0: 
+			case 0:
+			room_goto(1);
+			break;
+			case 1: 
 			//continue
 			global.__paused = 0;
 			global._saved = 0;
 			instance_activate_all();
 			break;
-			case 1: 
+			case 2: 
 			//save game	
 			instance_activate_all();
 			scr_save_game();
 			instance_deactivate_all(true);
 			break;	
-			case 2:
+			case 3:
 			//exit
 			game_end();
 			break;
