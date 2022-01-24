@@ -1,13 +1,16 @@
 {
   "spriteId": {
-    "name": "unbreakable_box",
-    "path": "sprites/unbreakable_box/unbreakable_box.yy",
+    "name": "Basic11",
+    "path": "sprites/Basic11/Basic11.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_wall",
+    "path": "objects/obj_wall/obj_wall.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,11 +27,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "enviroment objects",
-    "path": "folders/Objects/enviroment objects.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_wall",
+  "name": "obj_b9_ground11",
   "tags": [],
   "resourceType": "GMObject",
 }
