@@ -26,9 +26,10 @@ function scr_init_boss()
 	blink_duration = 3;
 	hit = false;
 	shake_ground = false;
+	dazed = false;
 	_shake = false;
 	//health
-	max_health = 100;
+	max_health = 70;
 
 
 	//set moving parts
@@ -140,9 +141,11 @@ function scr_attacking_state()
 			if (ds_list_find_index(hit_by_attack, hitId) == -1)
 			{
 				ds_list_add(hit_by_attack,hitId);
-				with (hitId)
-				{
-					scr_got_hit(20);
+				if (obj_player.state != playerStates.dash){
+					with (hitId)
+					{
+						scr_got_hit(20);
+					}
 				}
 			}
 		}
@@ -159,27 +162,53 @@ function scr_attacking_state()
 }
 function scr_charging_state()
 {	mask_index = BossJumpAscend;
+	
 	var _boss_spd = 1;
 		if (direction == 180){
 			_boss_spd = -1;
 		}else {_boss_spd = 1;}
-		if(!place_meeting(x+speed*_boss_spd,y,obj_wall)){
-			
-			if (sprite_index != BossChargeactive){
-				sprite_index = BossChargeactive;
-				image_index = 0;		
-			}
-			_shake = false;
-		}
+		
 		if(place_meeting(x+speed*_boss_spd,y,obj_wall)){			
 			speed = 0;			
 			if(!_shake){
 				scr_screenshake(20, 5, 0.25);				
 			}
-			_shake = true;	
-			state_boss = boss_state.dazed;
-			
+			sprite_index = BossJumpLanding;			
+			image_index = 1;
+			dazed = true;
+			_shake = true;				
+			state_boss = boss_state.dazed;			
 		} 
+		if(!place_meeting(x+speed*_boss_spd,y,obj_wall)){
+			if (sprite_index != BossChargeactive){
+				sprite_index = BossChargeactive;
+				image_index = 0;
+				ds_list_clear(hit_by_attack);
+			}
+			_shake = false;
+		}
+	var hit_by_attack_ = ds_list_create();
+	var hits = instance_place_list(x,y,obj_player,hit_by_attack_,false);
+	
+	if (hits > 0)
+	{
+		for (var i = 0; i < hits; i++)
+		{
+			var hitId = hit_by_attack_[|i];
+			
+			if (ds_list_find_index(hit_by_attack, hitId) == -1)
+			{
+				ds_list_add(hit_by_attack,hitId);
+				if (obj_player.state != playerStates.dash){
+					with (hitId)
+					{
+						scr_got_hit(10);
+					}
+				}
+			}
+		}
+	}
+	ds_list_destroy(hit_by_attack_);
 	if (charge_state){
 		charge_state = false;
 		move_towards_point(obj_player.x,y,8);
@@ -195,8 +224,8 @@ function scr_hook()
  function scr_hook_create(_ind, _x, _y, dir, spd) 
  {
 	 ///@func bul_type_create(bullet_id, x, y, direction, speed)
-	var xx = _x + lengthdir_x(sprite_get_width(_ind.sprite_index) * 0.5 *_ind.image_xscale, dir);
-	var yy = _y + lengthdir_y(sprite_get_width(_ind.sprite_index) * 0.5 *_ind.image_xscale, dir);
+	var xx = _x + lengthdir_x(10, dir);
+	var yy = _y + lengthdir_y(10, dir);
 	if (instance_exists(obj_hook)){
 		with(obj_hook){
 			instance_destroy();
@@ -342,8 +371,24 @@ function scr_hook()
  }
  function scr_dazed_state()
  {	
-	sprite_index = BossJumpLanding;			
-	image_index = 1;
-	alarm[6] = room_speed*3;
+	 sprite_index = BossJumpLanding;
+	 image_index = 0;
+	 if(dazed){
+		 dazed = false;
+		 charge_state = true;		
+		alarm[6] = room_speed*3;
+	 }
 	
+ }
+ function scr_power_up()
+ {
+	 
+	if (sprite_index != chargebossstartup){
+		sprite_index = chargebossstartup;
+		image_index = 0;
+		}
+	if(image_index > image_number -1)
+		{			
+			state_boss = boss_state.charging;
+	}
  }
