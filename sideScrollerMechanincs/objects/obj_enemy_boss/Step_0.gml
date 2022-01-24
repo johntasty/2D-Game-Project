@@ -1,5 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+//draw health bar
+if (distance_to_object(obj_player) < 500){
+	boss_hp_show = true;
+}else{boss_hp_show = false;}
+
 //impose gravity
 if (max_health <= 0){
 	instance_destroy();
@@ -10,9 +16,11 @@ dir = point_direction(boss_r_shoulder, boss_r_shoulder_y, obj_player.r_shoulder_
 var hit_box = collision_circle(boss_r_hand_x,boss_r_hand_y,16,obj_ground,0,1);
 if (hit_box)
 {
-	obj_falling_rocks.falling_rock = true;
-	scr_screenshake(10, 5, 0.25);	
-}//else{obj_falling_rocks.falling_rock = false;}
+	if (object_exists(obj_enemy_boss)){
+		obj_falling_rocks.falling_rock = true;
+		scr_screenshake(10, 5, 0.25);	
+	}
+}
 
 switch (state_boss)
 {
@@ -39,14 +47,17 @@ switch(boss_phases_state)
 
 if (max_health >= 80)
 {
+	
 	boss_phases_state = boss_phases.phase_one;
 }
 if (max_health <= 79 && max_health >= 59)
 {
+	
 	boss_phases_state = boss_phases.phase_two;
 }
 if (max_health <= 58 && max_health >= 28)
 {
+	
 	boss_phases_state = boss_phases.phase_three;
 }
 if (max_health <= 27)
@@ -54,40 +65,9 @@ if (max_health <= 27)
 	boss_phases_state = boss_phases.phase_four;
 }
 
-//charge attack	
-/*
-if (keyboard_check_pressed(vk_f1))
-{ 
-	state_boss = boss_state.power_up;
-	//alarm[2] = room_speed *3;	
-}
 
-if (keyboard_check_pressed(vk_f2)){
-	state_boss = boss_state.jumping
-	shake_ground = true;	
-}*/
-
-//attack
-/*
-if (keyboard_check_released(vk_f3))
-{		
-	state_boss = boss_state.attacking;
-}
-*/
 if ((_angle >= 200 || _angle <= -200) && cooldown_attack == 0)
 {
 	cooldown_attack = 1;
 	alarm[1] = room_speed;
-}
-/*
-if (keyboard_check_pressed(vk_f4))
-{	
-	state_boss = boss_state.hook_state;
-}
-if (keyboard_check(vk_f5))
-{
-	state_boss = boss_state.rampage_state;
-}
-if (keyboard_check(vk_f6)){
-	state_boss = boss_state.idle;
 }

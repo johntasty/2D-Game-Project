@@ -29,9 +29,11 @@ function scr_init_boss()
 	dazed = false;
 	_shake = false;
 	//health
-	max_health = 70;
+	max_health = 100;
+	max_bar_health = 100;
 
-
+	starting_x = x;
+	starting_y = y;
 	//set moving parts
 	r_moving = 0;
 	shoulder_length = sprite_get_width(spr_mace_test);
@@ -382,11 +384,16 @@ function scr_hook()
  }
  function scr_power_up()
  {
-	 
+	var _point_towards = point_direction(x,y,obj_player.x,obj_player.y);
 	if (sprite_index != chargebossstartup){
 		sprite_index = chargebossstartup;
 		image_index = 0;
 		}
+	if (_point_towards < 91 || _point_towards > 271){
+			image_xscale = 1;
+	}else{
+			image_xscale = -1;
+	}
 	if(image_index > image_number -1)
 		{			
 			state_boss = boss_state.charging;
