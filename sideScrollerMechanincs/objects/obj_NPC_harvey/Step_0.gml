@@ -37,7 +37,7 @@ if (global.harveyFight)
 				harvey_state = enemyState.flameAttack;
 			}
 		}
-	else {harvey_state = enemyState.idle;}
+	else {harvey_state = enemyState.idle;}	
 	if collision_circle(x,y,32,obj_melee_bul,false,true){	
 		dir_knock = point_direction( obj_player.x, obj_player.y, x, y );
 		var melee = collision_circle(x,y,32,obj_melee_bul,false,true);
