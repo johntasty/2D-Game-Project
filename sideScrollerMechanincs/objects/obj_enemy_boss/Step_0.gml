@@ -4,7 +4,12 @@
 //draw health bar
 if (distance_to_object(obj_player) < 500){
 	boss_hp_show = true;
-}else{boss_hp_show = false;}
+	audio_stop_sound(Down_Town_V2);
+	audio_play_sound(Boss_Battle,1,1);
+	
+}else{boss_hp_show = false;
+		audio_stop_sound(Boss_Battle);
+	}
 
 //impose gravity
 if (max_health <= 0){

@@ -41,7 +41,8 @@ if (global.darveyFight)
 		dir_knock = point_direction( obj_player.x, obj_player.y, x, y );
 		var melee = collision_circle(x,y,32,obj_melee_bul,false,true);
 		if (melee){		
-			if(attacked == 0){			
+			if(attacked == 0){		
+				audio_play_sound(slash_hit,1,0);
 				attacked = 1;						
 				health_bar -= (melee.damage/3);
 				blink = true;
