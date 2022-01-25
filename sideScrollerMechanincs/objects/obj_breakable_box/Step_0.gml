@@ -5,6 +5,7 @@ if collision_circle(x,y,32,obj_melee_bul,false,true)
 	var melee = collision_circle(x,y,32,obj_melee_bul,false,true);
 	if (attacked == 0 )
 	{
+		audio_play_sound(slash_hit,1,0);
 		//particles when attacked
 		repeat(50) {			
 				part_particles_create(obj_particle_controller.box_parts,x,y,obj_particle_controller.box_part,1);

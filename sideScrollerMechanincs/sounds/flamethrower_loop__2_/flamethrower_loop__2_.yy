@@ -11,14 +11,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "flamethrower_loop.wav",
-  "duration": 0.836531,
+  "soundFile": "flamethrower_loop__2_.wav",
+  "duration": 0.341338,
   "parent": {
     "name": "sfx",
     "path": "folders/Sounds/sfx.yy",
   },
   "resourceVersion": "1.0",
-  "name": "flamethrower_loop",
+  "name": "flamethrower_loop__2_",
   "tags": [],
   "resourceType": "GMSound",
 }
