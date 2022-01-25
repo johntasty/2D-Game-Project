@@ -28,6 +28,7 @@ if (_select)
 				case 0: 
 				//start
 					global.__load = false;
+					global.played = true;
 					room_goto_next();
 					break;
 				case 1: 
