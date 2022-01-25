@@ -20,7 +20,7 @@ if (health_bar <= 0 && !dead){
 if(_ver < 10) _ver += grav;
 switch (harvey_state)
 {
-	case enemyState.idle: enemy_state_idle_npc(Harveybewalkingtho); break;
+	case enemyState.idle: enemy_state_idle_npc(HarveyIdle); break;
 	case enemyState.walking: enemy_state_move(Harveybewalkingtho,Harveybewalkingtho,Harveybewalkingtho); break;
 	case enemyState.attacking: enemy_state_attack(HarveyFireAttackMelee,harvey_hit_box,Harveybewalkingtho,harvey_state,enemyState.walking); break;	
 	case enemyState.flameAttack: flame_state_create(HarveyBigFlamethrower,harvey_mask,harvey_state,enemyState.walking)break;
