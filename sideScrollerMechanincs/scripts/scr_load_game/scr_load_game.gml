@@ -93,7 +93,6 @@ function scr_save_game()
 	
 	}
 
-
 	//turn into JSON and stringify
 	var _string = json_stringify(_save_data);
 	var _buffer = buffer_create(string_byte_length(_string)+1,buffer_fixed, 1);

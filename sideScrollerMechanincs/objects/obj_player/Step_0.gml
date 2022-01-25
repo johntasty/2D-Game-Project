@@ -202,7 +202,26 @@ if (weapon_col > 0)
 	}
 
 }
-
+//interact with potion
+var potion_list = ds_list_create();
+var potion_col = collision_circle_list(x,y,sprite_width,obj_potion,false,true,potion_list,true);
+if (potion_list > 0)
+{
+	for (var i = 0; i<potion_col; i++){
+		var w = potion_list[|i];
+		if (pickup){
+			if (hp != 100){
+				hp += 20;
+			}
+			if (hp > 100){
+				hp = 100;
+			}
+			with(w){
+				instance_destroy();
+			}
+		}
+	}
+}
 //dialogue interact
 var interact_list = ds_list_create();
 var interact_col = collision_circle_list(x,y,sprite_width*1.1,obj_NPCparent,false,true,interact_list,true);

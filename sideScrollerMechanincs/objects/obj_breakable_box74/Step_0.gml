@@ -1,5 +1,9 @@
 /// @description collision and shake
-if (health_bar <= 0) instance_destroy();
+if (health_bar <= 0) 
+{
+	instance_create_layer(x,y,"Base_Level", obj_potion);
+	instance_destroy();
+}
 if collision_circle(x,y,32,obj_melee_bul,false,true)
 {
 	var melee = collision_circle(x,y,32,obj_melee_bul,false,true);
@@ -14,7 +18,7 @@ if collision_circle(x,y,32,obj_melee_bul,false,true)
 			
 		//box shake when attacked
 		shake_box = true;
-		scr_boxshake(2,0.8,0.2,obj_breakable_box57);
+		scr_boxshake(2,0.8,0.2,_objectinstance);
 		//set box attack cooldown, hp reduction
 		attacked = 1;
 		health_bar -= melee.damage;

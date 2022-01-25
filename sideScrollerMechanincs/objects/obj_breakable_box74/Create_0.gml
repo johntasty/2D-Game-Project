@@ -8,3 +8,4 @@ shake_magnitude_box = 0;
 shake_fade_box = 0.25;
 xprev = x;
 yprev = y;
+_objectinstance = id;
