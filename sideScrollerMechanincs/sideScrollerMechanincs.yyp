@@ -198,7 +198,6 @@
     {"id":{"name":"spr_door","path":"sprites/spr_door/spr_door.yy",},"order":2,},
     {"id":{"name":"GrannyAttack","path":"sprites/GrannyAttack/GrannyAttack.yy",},"order":0,},
     {"id":{"name":"laddern","path":"sprites/laddern/laddern.yy",},"order":17,},
-    
     {"id":{"name":"slash_hit","path":"sounds/slash_hit/slash_hit.yy",},"order":6,},
     {"id":{"name":"MaudIdle","path":"sprites/MaudIdle/MaudIdle.yy",},"order":4,},
     {"id":{"name":"spr_chimney1","path":"sprites/spr_chimney1/spr_chimney1.yy",},"order":16,},
