@@ -34,5 +34,5 @@ bul_type_set_life(bullet_laser,50);
 bul_type_set_sprite(bullet_laser, spr_bullet, 0, 0,false);
 bul_type_set_flame(bullet_laser,true);
 bul_type_set_scale(bullet_laser, 3, 1, 0.1, 0.1);
-bul_type_set_damage(bullet_laser,0.5);
+bul_type_set_damage(bullet_laser,1.5);
 
