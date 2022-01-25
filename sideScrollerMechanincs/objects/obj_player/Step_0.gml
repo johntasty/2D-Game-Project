@@ -46,6 +46,7 @@ cooldown += 0.1;
 if(cooldown >= 10){cooldown = 10;}
 if (global.__dash_key && cooldown == 10){ 
 	//set_dash();	
+	audio_play_sound(player_dash,0,0);
 	state = playerStates.dash;
 	alarm[0] = room_speed/5;
 	cooldown = 0;
@@ -82,6 +83,7 @@ if(place_meeting(x,y+vsp,obj_ground) ){
 	while (!place_meeting(x,y+sign(vsp),obj_ground))
 	{
 		y = y + sign(vsp);
+
 		
 	}	
 	vsp = key_jump * - jumpspeed;
@@ -91,7 +93,7 @@ if (place_meeting(x,y+vsp,obj_wall)) {
 	while (!place_meeting(x,y+sign(vsp),obj_wall))
 	{
 		y = y + sign(vsp);
-		
+
 		
 	}	
 	vsp = key_jump * - jumpspeed;
@@ -234,6 +236,7 @@ var _swap = _up;
 
 if (!ds_list_empty(inventory)){
 	if (_swap != 0){
+		audio_play_sound(player_switch_item,0,0);
 		inventory_index += _swap;
 		if (inventory_index >= _size){inventory_index = 0;}
 		weapon = inventory[|inventory_index];
