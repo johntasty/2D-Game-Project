@@ -1,7 +1,7 @@
 
 
 //Checking Stage in Dialogue
-//npcName = global.darveyStage;
+npcName = global.darveyStage;
 
 ui_show = false;
  if (collision_circle(x,y,sprite_width , obj_player, false , true) && !global.inDialogue && !global.darveyFight && !global.darveyFin)

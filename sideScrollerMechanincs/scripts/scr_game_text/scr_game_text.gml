@@ -32,6 +32,7 @@ switch(_text_id) {
 	case "ethel":
 		scr_text("Hey you! Yes you! Why are you on my roof!? Don't you know that this is MY ROOF?!?!");
 		scr_text("I hate people walking on my roof! It's noisy and incredibly bad for my roof!");
+		global.darveyStage = "darveyStage1";
 			scr_option("[Apologize]","ethel - 1a");
 			scr_option("Tone it down!","ethel - 1b");
 			scr_option("I was thrown down here!","ethel - 1c");
@@ -149,7 +150,7 @@ switch(_text_id) {
 		case "harvey - 6aa":
 			scr_text("OH you!... The final spark is mad at you now! and I'm... I'm never going to get my flamethrower back...");
 			scr_text("[Having a flamethrower would be useful]");
-				scr_option("You want the flamethrower back?", "harvey - 2bc");
+				scr_option("You want the flamethrower back?", "harvey - 3caa");
 				scr_option("Sooo... the flamethrower is in the basement?", "harvey - 2bd");
 			break;
 		case "harvey - 6bb":
