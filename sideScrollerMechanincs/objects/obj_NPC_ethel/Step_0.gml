@@ -21,7 +21,7 @@ switch (ethel_state)
 {
 	case enemyState.idle: enemy_state_idle_npc(GrannyIdle); break;
 	case enemyState.walking: enemy_state_move(GrannyWalk,GrannyWalk,GrannyIdle); break;
-	case enemyState.attacking: enemy_state_attack(GrannyAttack,granny_hit_box,GrannyIdle,ethel_state,enemyState.walking); break;	
+	case enemyState.attacking: enemy_state_attack(GrannyAttack,granny_hit_box,GrannyIdle,ethel_state,enemyState.walking,ethel_attack); break;	
 }
 if (global.ethelFight)
 {

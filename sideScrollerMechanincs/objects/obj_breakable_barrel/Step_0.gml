@@ -1,5 +1,9 @@
 /// @description collision and shake
-if (health_bar <= 0) instance_destroy();
+if (health_bar <= 0) {
+	if (!audio_is_playing(wood_break)){
+			audio_play_sound(wood_break,0,0);
+		}	
+	instance_destroy();}
 if collision_circle(x,y,32,obj_melee_bul,false,true)
 {
 	var melee = collision_circle(x,y,32,obj_melee_bul,false,true);

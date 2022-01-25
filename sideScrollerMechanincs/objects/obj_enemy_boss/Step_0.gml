@@ -16,6 +16,9 @@ if (distance_to_object(obj_player) < 500){
 
 //impose gravity
 if (max_health <= 0){
+	if (!audio_is_playing(boss_dying)){
+		audio_play_sound(boss_dying,1,0);
+	}	
 	obj_gate_boss.engaged = false;
 	instance_destroy();
 	
@@ -27,6 +30,9 @@ var hit_box = collision_circle(boss_r_hand_x,boss_r_hand_y,16,obj_ground,0,1);
 if (hit_box)
 {
 	if (object_exists(obj_enemy_boss)){
+		if (!audio_is_playing(rocks_start_falling)){
+			audio_play_sound(rocks_start_falling,1,0);
+		}	
 		obj_falling_rocks.falling_rock = true;
 		scr_screenshake(10, 5, 0.25);	
 	}

@@ -6,7 +6,7 @@ if (layer_exists("Cutscenes")){
 else{
 	curSeqLayer = "Instances";
 }
-if(!global.played){
+
 	//if (sequenceState == seqState.playing){
 		var _camX = camera_get_view_x(view_camera[0])+floor(camera_get_view_width(view_camera[0])*.5);
 		var _camY = camera_get_view_y(view_camera[0])+floor(camera_get_view_height(view_camera[0])*.5);
@@ -18,5 +18,3 @@ if(!global.played){
 				layer_depth(curSeqLayer,-10000);
 			}
 		}
-	//}
-}

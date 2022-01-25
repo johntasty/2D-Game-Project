@@ -126,7 +126,11 @@ function scr_attacking_state()
 	
 	if (sprite_index != BossAttackHorizontal){
 		sprite_index = BossAttackHorizontal;
-		image_index = 0;		
+		image_index = 0;	
+		if (!audio_is_playing(boss_swing)){
+			audio_play_sound(boss_swing,1,0);
+			show_debug_message("play");
+		}
 		ds_list_clear(hit_by_attack);
 	}
 	
@@ -156,6 +160,7 @@ function scr_attacking_state()
 	
 	if (image_index > image_number -1)
 	{
+		
 		mask_index = BossJumpAscend;
 		state_boss = boss_state.moving;
 		alarm[6] = room_speed*3;
@@ -287,6 +292,9 @@ function scr_hook()
 	if (sprite_index != BossOverheadSwing){
 		sprite_index = BossOverheadSwing;
 		image_index = 0;	
+		if (!audio_is_playing(boss_slam)){
+			audio_play_sound(boss_slam,0,0);
+		}
 		ds_list_clear(hit_by_overhead);
 		image_xscale = _angle_x;
 	}

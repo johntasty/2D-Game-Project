@@ -157,7 +157,7 @@ function enemy_state_idle_npc(_sprite)
 			image_xscale = -1;
 		}
 }
-function enemy_state_attack(_sprite,_mask,_change,_stateAfter,_stateChange)
+function enemy_state_attack(_sprite,_mask,_change,_stateAfter,_stateChange,_sound)
 {/// @function enemy_state_attacking(sprite_index,mask_index,sprite_index_change)
 	
 	if (sprite_index != _sprite){
@@ -190,7 +190,10 @@ function enemy_state_attack(_sprite,_mask,_change,_stateAfter,_stateChange)
 	ds_list_destroy(hit_by_attack_);
 	
 	if (image_index > image_number -1)
-	{
+	{	
+		if (!audio_is_playing(_sound)){
+			audio_play_sound(_sound,0,0);
+		}	
 		mask_index = _change;
 		_stateAfter = _stateChange;
 		alarm[5] = room_speed*3;
