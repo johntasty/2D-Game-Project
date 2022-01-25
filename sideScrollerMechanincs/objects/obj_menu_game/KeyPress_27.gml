@@ -3,6 +3,9 @@
 if (!global.__paused)
 {
 	instance_create_layer(x,y,"Base_Level",obj_menu_game);
+	instance_destroy(obj_textbox);
+	global.inDialogue = false;	
+	obj_player.interacted = -1;
 	global.__paused = 1;	
 	instance_deactivate_all(true);
 }

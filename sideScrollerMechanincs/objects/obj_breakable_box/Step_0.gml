@@ -14,7 +14,7 @@ if collision_circle(x,y,32,obj_melee_bul,false,true)
 			
 		//box shake when attacked
 		shake_box = true;
-		scr_boxshake(2,0.8,0.2,obj_breakable_box);
+		scr_boxshake(2,0.8,0.2,_objectinstance);
 		//set box attack cooldown, hp reduction
 		attacked = 1;
 		health_bar -= melee.damage;

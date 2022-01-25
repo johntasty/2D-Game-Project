@@ -195,7 +195,7 @@ if draw_char == text_length[page] && page == page_number -1
 	{
 		
 	//option selection
-	option_pos += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
+	option_pos += keyboard_check_pressed(ord("S")) - keyboard_check_pressed(ord("W"));
 	option_pos = clamp(option_pos, 0, option_number-1);
 		
 	//drawing the options

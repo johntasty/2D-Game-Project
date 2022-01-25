@@ -1,4 +1,5 @@
 /// @description box variables
+_objectinstance = id;
 health_bar = 100;
 max_hp = 100;
 attacked = 0;
