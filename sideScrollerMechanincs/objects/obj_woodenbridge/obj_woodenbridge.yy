@@ -1,10 +1,16 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_woodenplank",
+    "path": "sprites/spr_woodenplank/spr_woodenplank.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_groundstone",
+    "path": "objects/obj_groundstone/obj_groundstone.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -17,17 +23,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "enviroment objects",
+    "path": "folders/Objects/enviroment objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_parallaxcamera",
+  "name": "obj_woodenbridge",
   "tags": [],
   "resourceType": "GMObject",
 }
