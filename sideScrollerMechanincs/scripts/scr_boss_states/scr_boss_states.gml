@@ -29,7 +29,7 @@ function scr_init_boss()
 	dazed = false;
 	_shake = false;
 	//health
-	max_health = 100;
+	max_health = 75;
 	max_bar_health = 100;
 
 	starting_x = x;
@@ -175,17 +175,7 @@ function scr_charging_state()
 			_boss_spd = -1;
 		}else {_boss_spd = 1;}
 		
-		if(place_meeting(x+speed*_boss_spd,y,obj_wall73)){			
-			speed = 0;			
-			if(!_shake){
-				scr_screenshake(20, 5, 0.25);				
-			}
-			sprite_index = BossJumpLanding;			
-			image_index = 1;
-			dazed = true;
-			_shake = true;				
-			state_boss = boss_state.dazed;			
-		} 
+		
 		if(!place_meeting(x+speed*_boss_spd,y,obj_wall73)){
 			if (sprite_index != BossChargeactive){
 				sprite_index = BossChargeactive;
@@ -194,6 +184,18 @@ function scr_charging_state()
 			}
 			_shake = false;
 		}
+		if(place_meeting(x+speed*_boss_spd,y,obj_wall73)){			
+			speed = 0;			
+			if(!_shake){
+				scr_screenshake(20, 5, 0.25);				
+			}
+			sprite_index = BossJumpLanding;			
+			image_index = 1;
+			charge_state = false;
+			dazed = true;
+			_shake = true;				
+			state_boss = boss_state.dazed;			
+		} 
 	var hit_by_attack_ = ds_list_create();
 	var hits = instance_place_list(x,y,obj_player,hit_by_attack_,false);
 	

@@ -25,7 +25,7 @@ function scr_boss_phase_two()
 	{
 		attacking_player = true;
 		//alarm[6] = room_speed*4;
-		var _attack = choose(1,1,2,2,2,3,3,4);
+		var _attack = choose(1,1,2,2,2,2,3,3,3,4);
 		_attack_ = _attack;
 		switch (_attack_)
 		{

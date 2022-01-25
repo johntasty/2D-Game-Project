@@ -3,7 +3,7 @@
 
 //draw health bar
 point_towards = point_direction(x,y,obj_player.x,obj_player.y);
-if (distance_to_object(obj_player) < 500){
+if (distance_to_object(obj_player) < 600){
 	obj_gate_boss.engaged = true;
 	boss_hp_show = true;
 	audio_stop_sound(Down_Town_V2);
@@ -13,7 +13,10 @@ if (distance_to_object(obj_player) < 500){
 }else{boss_hp_show = false;
 		audio_stop_sound(Boss_Battle);
 	}
-
+if(!boss_begin && distance_to_object(obj_player) < 600){
+	boss_begin = true;
+	state_boss = boss_state.moving;
+}
 //impose gravity
 if (max_health <= 0){
 	if (!audio_is_playing(boss_dying)){
@@ -72,8 +75,7 @@ if (max_health <= 79 && max_health >= 59)
 	boss_phases_state = boss_phases.phase_two;
 }
 if (max_health <= 58 && max_health >= 28)
-{
-	
+{	
 	boss_phases_state = boss_phases.phase_three;
 }
 if (max_health <= 27)

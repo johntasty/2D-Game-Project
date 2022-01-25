@@ -11,6 +11,7 @@ if (blink)
 		alarm[3] = blink_duration;
 	}
 }else {draw_self();}
+//draw_rectangle_colour(bbox_left,bbox_top,bbox_right,bbox_bottom,c_red,c_red,c_red,c_red,false);
 
 if (boss_hp_show){
 	draw_sprite_stretched(healthbar3,0,x-(health_bar_boss_width/2)+5, y-200, (max_health/max_bar_health)*health_bar_boss_width,health_bar_boss_height);
