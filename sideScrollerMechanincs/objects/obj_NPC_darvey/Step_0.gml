@@ -13,7 +13,7 @@ if (health_bar <= 0 && !dead){
 if(_ver < 10) _ver += grav;
 switch (darvey_state)
 {
-	case enemyState.idle: enemy_state_idle_npc(Darveybewalkingtho); break;
+	case enemyState.idle: enemy_state_idle_npc(arveyIdle); break;
 	case enemyState.walking: enemy_state_move(Darveybewalkingtho,Darveybewalkingtho,Darveybewalkingtho); break;
 	case enemyState.attacking: enemy_state_attack(DarveyAcidAttackMelee,darvey_hit_box,Darveybewalkingtho,darvey_state,enemyState.walking); break;	
 }

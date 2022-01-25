@@ -23,6 +23,7 @@ if (global.__dead){
 			case 0:
 			//main menu
 			room_goto(1);
+			global.played = true;
 			break;
 			case 1: 
 			//restart
