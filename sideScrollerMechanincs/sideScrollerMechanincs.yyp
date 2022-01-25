@@ -42,6 +42,7 @@
     {"id":{"name":"spr_mace_test","path":"sprites/spr_mace_test/spr_mace_test.yy",},"order":5,},
     {"id":{"name":"obj_NPC_ethel","path":"objects/obj_NPC_ethel/obj_NPC_ethel.yy",},"order":1,},
     {"id":{"name":"slash_no_hit","path":"sounds/slash_no_hit/slash_no_hit.yy",},"order":7,},
+    {"id":{"name":"obj_controller_var","path":"objects/obj_controller_var/obj_controller_var.yy",},"order":7,},
     {"id":{"name":"obj_c_groundLR","path":"objects/obj_c_groundLR/obj_c_groundLR.yy",},"order":27,},
     {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy",},"order":0,},
     {"id":{"name":"obj_b1_ground2","path":"objects/obj_b1_ground2/obj_b1_ground2.yy",},"order":31,},

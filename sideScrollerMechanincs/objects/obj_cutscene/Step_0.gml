@@ -7,9 +7,9 @@ switch sequenceState {
 		//remove sequence
 		if (layer_sequence_exists(curSeqLayer,curSeq)){
 			layer_sequence_destroy(curSeq);
-		}
-		
+		}		
 		sequenceState = seqState.notPlaying;
 		curSeq = noone;
 	}; break;
 }
+

@@ -11,6 +11,7 @@ enum seqState
 }
 
 // variables seq
-sequenceState = seqState.notPlaying;
+sequenceState = seqState.playing;
 curSeqLayer = noone;
 curSeq = noone;
+
