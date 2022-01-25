@@ -292,6 +292,14 @@ switch(_text_id) {
 		scr_text("GIVE MY GAMEBRO BACK!");
 			scr_option("[Fight Darvey]", "darvey - fight");
 		break;
+	case "darveyStage2 - 2ba":
+		scr_text("You should go meet him when you have time... B-but don't tell him I told you to!");
+		scr_text("Harvey's my brother");
+		scr_text("I don't see him often, even though he lives 2 houses away from me...");
+		scr_text("I wish I'd visit him more often... However g-going outside scares me deeply...");
+			scr_option("But you're outside right now?", "darveyStage2 - 3aa");
+			scr_option("Why does it scare you?", "darveyStage2 - 3ab");
+		break;
 	case "darveyStage2 - 2aa":
 		scr_text("Harvey's my brother");
 		scr_text("I don't see him often, even though he lives 2 houses away from me...");
