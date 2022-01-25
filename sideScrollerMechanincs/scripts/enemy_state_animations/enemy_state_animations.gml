@@ -120,6 +120,19 @@ function enemy_state_dead(_sprite)
 		instance_destroy();
 	}
 }
+function gate_state_open(_sprite, _maskchange)
+{/// @function enemy_state_dead(sprite_index)
+	if (sprite_index != _sprite){
+		sprite_index = _sprite;
+		image_index = 0;		
+		
+	}
+	if (image_index > image_number -1)
+	{
+		image_index = image_number -1;
+		mask_index = _maskchange;
+	}
+}
 
 function enemy_state_idle_npc(_sprite)
 {/// @function enemy_state_idle(sprite_index)

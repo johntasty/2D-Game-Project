@@ -2,18 +2,23 @@
 // You can write your code in this editor
 
 //draw health bar
+point_towards = point_direction(x,y,obj_player.x,obj_player.y);
 if (distance_to_object(obj_player) < 500){
+	obj_gate_boss.engaged = true;
 	boss_hp_show = true;
 	audio_stop_sound(Down_Town_V2);
+	if (!audio_is_playing(Boss_Battle)){
 	audio_play_sound(Boss_Battle,1,1);
-	
+}	
 }else{boss_hp_show = false;
 		audio_stop_sound(Boss_Battle);
 	}
 
 //impose gravity
 if (max_health <= 0){
+	obj_gate_boss.engaged = false;
 	instance_destroy();
+	
 }
 if(verspd < 10) verspd += grav;
 dir = point_direction(boss_r_shoulder, boss_r_shoulder_y, obj_player.r_shoulder_x, obj_player.r_shoulder_y);

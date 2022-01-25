@@ -29,7 +29,7 @@ if (global.harveyFight)
 {
 	if collision_rectangle(x-400,y-200,x+400,y+100,obj_player,false,true){
 			harvey_state = enemyState.walking;
-			if (distance_to_object(obj_player) < 65){
+			if (distance_to_object(obj_player) < 45){
 				harvey_state = enemyState.attacking;
 			}
 			if (distance_to_object(obj_player) > 105)
