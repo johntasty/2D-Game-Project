@@ -24,11 +24,20 @@
     {"id":{"name":"Basic32","path":"sprites/Basic32/Basic32.yy",},"order":36,},
     {"id":{"name":"scr_dash_state","path":"scripts/scr_dash_state/scr_dash_state.yy",},"order":0,},
     {"id":{"name":"obj_b9_ground33","path":"objects/obj_b9_ground33/obj_b9_ground33.yy",},"order":25,},
+<<<<<<< Updated upstream
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":8,},
     {"id":{"name":"spr_spiderattack_strip9","path":"sprites/spr_spiderattack_strip9/spr_spiderattack_strip9.yy",},"order":5,},
     {"id":{"name":"dash","path":"sprites/dash/dash.yy",},"order":16,},
     {"id":{"name":"font_modern_no_20","path":"fonts/font_modern_no_20/font_modern_no_20.yy",},"order":2,},
     {"id":{"name":"obj_breakable_box57","path":"objects/obj_breakable_box57/obj_breakable_box57.yy",},"order":21,},
+=======
+    {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},"order":2,},
+    {"id":{"name":"spr_spiderattack_strip9","path":"sprites/spr_spiderattack_strip9/spr_spiderattack_strip9.yy",},"order":2,},
+    {"id":{"name":"dash","path":"sprites/dash/dash.yy",},"order":16,},
+    {"id":{"name":"font_modern_no_20","path":"fonts/font_modern_no_20/font_modern_no_20.yy",},"order":2,},
+    {"id":{"name":"Darveybewalkingtho","path":"sprites/Darveybewalkingtho/Darveybewalkingtho.yy",},"order":0,},
+    {"id":{"name":"obj_breakable_box57","path":"objects/obj_breakable_box57/obj_breakable_box57.yy",},"order":8,},
+>>>>>>> Stashed changes
     {"id":{"name":"snd_voice_mid","path":"sounds/snd_voice_mid/snd_voice_mid.yy",},"order":0,},
     {"id":{"name":"inventory_melee124","path":"sprites/inventory_melee124/inventory_melee124.yy",},"order":9,},
     {"id":{"name":"spr_spiderdeath_strip9","path":"sprites/spr_spiderdeath_strip9/spr_spiderdeath_strip9.yy",},"order":3,},
@@ -52,7 +61,7 @@
     {"id":{"name":"sphere2123","path":"sprites/sphere2123/sphere2123.yy",},"order":12,},
     {"id":{"name":"spr_bridge","path":"sprites/spr_bridge/spr_bridge.yy",},"order":0,},
     {"id":{"name":"Classic_10_strip","path":"sprites/Classic_10_strip/Classic_10_strip.yy",},"order":2,},
-    {"id":{"name":"obj_breakable_box","path":"objects/obj_breakable_box/obj_breakable_box.yy",},"order":18,},
+    {"id":{"name":"obj_breakable_box","path":"objects/obj_breakable_box/obj_breakable_box.yy",},"order":5,},
     {"id":{"name":"obj_bY_ground2","path":"objects/obj_bY_ground2/obj_bY_ground2.yy",},"order":34,},
     {"id":{"name":"MainCharacterArm2","path":"sprites/MainCharacterArm2/MainCharacterArm2.yy",},"order":2,},
     {"id":{"name":"maskguy","path":"sprites/maskguy/maskguy.yy",},"order":50,},
@@ -90,16 +99,21 @@
     {"id":{"name":"scr_melee","path":"scripts/scr_melee/scr_melee.yy",},"order":4,},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},"order":0,},
     {"id":{"name":"scr_textbox_functions","path":"scripts/scr_textbox_functions/scr_textbox_functions.yy",},"order":6,},
+<<<<<<< Updated upstream
     {"id":{"name":"Basic33","path":"sprites/Basic33/Basic33.yy",},"order":37,},
     {"id":{"name":"obj_falling_rocks","path":"objects/obj_falling_rocks/obj_falling_rocks.yy",},"order":19,},
+=======
+    {"id":{"name":"Basic33","path":"sprites/Basic33/Basic33.yy",},"order":19,},
+    {"id":{"name":"obj_falling_rocks","path":"objects/obj_falling_rocks/obj_falling_rocks.yy",},"order":6,},
+>>>>>>> Stashed changes
     {"id":{"name":"obj_save_game","path":"objects/obj_save_game/obj_save_game.yy",},"order":1,},
-    {"id":{"name":"spr_textbox","path":"sprites/spr_textbox/spr_textbox.yy",},"order":3,},
+    {"id":{"name":"spr_textbox","path":"sprites/spr_textbox/spr_textbox.yy",},"order":13,},
     {"id":{"name":"obj_enemy_boss","path":"objects/obj_enemy_boss/obj_enemy_boss.yy",},"order":16,},
     {"id":{"name":"spr_menu","path":"sprites/spr_menu/spr_menu.yy",},"order":26,},
     {"id":{"name":"obj_b9_ground22","path":"objects/obj_b9_ground22/obj_b9_ground22.yy",},"order":21,},
     {"id":{"name":"inventory_melee","path":"sprites/inventory_melee/inventory_melee.yy",},"order":21,},
-    {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},"order":1,},
-    {"id":{"name":"obj_sidewall","path":"objects/obj_sidewall/obj_sidewall.yy",},"order":17,},
+    {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},"order":0,},
+    {"id":{"name":"obj_sidewall","path":"objects/obj_sidewall/obj_sidewall.yy",},"order":4,},
     {"id":{"name":"spr_chimney2","path":"sprites/spr_chimney2/spr_chimney2.yy",},"order":17,},
     {"id":{"name":"obj_b1_ground3","path":"objects/obj_b1_ground3/obj_b1_ground3.yy",},"order":32,},
     {"id":{"name":"spr_test","path":"sprites/spr_test/spr_test.yy",},"order":16,},
@@ -108,8 +122,15 @@
     {"id":{"name":"spr_rooftile1R","path":"sprites/spr_rooftile1R/spr_rooftile1R.yy",},"order":10,},
     {"id":{"name":"spr_walls","path":"sprites/spr_walls/spr_walls.yy",},"order":0,},
     {"id":{"name":"obj_c_groundUL","path":"objects/obj_c_groundUL/obj_c_groundUL.yy",},"order":28,},
+<<<<<<< Updated upstream
     {"id":{"name":"obj_NPC_harvey","path":"objects/obj_NPC_harvey/obj_NPC_harvey.yy",},"order":41,},
     {"id":{"name":"ladder","path":"sprites/ladder/ladder.yy",},"order":25,},
+=======
+    {"id":{"name":"ladder","path":"sprites/ladder/ladder.yy",},"order":5,},
+    {"id":{"name":"Harveybewalkingtho","path":"sprites/Harveybewalkingtho/Harveybewalkingtho.yy",},"order":1,},
+    {"id":{"name":"TileSet_Floor","path":"tilesets/TileSet_Floor/TileSet_Floor.yy",},"order":1,},
+    {"id":{"name":"obj_trapdoor","path":"objects/obj_trapdoor/obj_trapdoor.yy",},"order":12,},
+>>>>>>> Stashed changes
     {"id":{"name":"flamethrower_start","path":"sounds/flamethrower_start/flamethrower_start.yy",},"order":0,},
     {"id":{"name":"MainCharacterLeg2","path":"sprites/MainCharacterLeg2/MainCharacterLeg2.yy",},"order":6,},
     {"id":{"name":"spr_flamethrower","path":"sprites/spr_flamethrower/spr_flamethrower.yy",},"order":3,},
@@ -128,6 +149,10 @@
     {"id":{"name":"obj_bY_ground3","path":"objects/obj_bY_ground3/obj_bY_ground3.yy",},"order":35,},
     {"id":{"name":"obj_camerashake","path":"objects/obj_camerashake/obj_camerashake.yy",},"order":12,},
     {"id":{"name":"Alternative_1_03_copy","path":"sprites/Alternative_1_03_copy/Alternative_1_03_copy.yy",},"order":2,},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"obj_gate","path":"objects/obj_gate/obj_gate.yy",},"order":11,},
+>>>>>>> Stashed changes
     {"id":{"name":"spr_factories","path":"sprites/spr_factories/spr_factories.yy",},"order":1,},
     {"id":{"name":"flamethrower_end","path":"sounds/flamethrower_end/flamethrower_end.yy",},"order":3,},
     {"id":{"name":"X1","path":"sprites/X1/X1.yy",},"order":15,},
@@ -176,10 +201,18 @@
     {"id":{"name":"Y2","path":"sprites/Y2/Y2.yy",},"order":42,},
     {"id":{"name":"flamethrower_loop","path":"sounds/flamethrower_loop/flamethrower_loop.yy",},"order":2,},
     {"id":{"name":"spr_exit","path":"sprites/spr_exit/spr_exit.yy",},"order":25,},
+<<<<<<< Updated upstream
     {"id":{"name":"obj_ceiling","path":"objects/obj_ceiling/obj_ceiling.yy",},"order":11,},
     {"id":{"name":"BossWalkCycle","path":"sprites/BossWalkCycle/BossWalkCycle.yy",},"order":0,},
     {"id":{"name":"CornerUL","path":"sprites/CornerUL/CornerUL.yy",},"order":46,},
     {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},"order":20,},
+=======
+    {"id":{"name":"obj_ceiling","path":"objects/obj_ceiling/obj_ceiling.yy",},"order":3,},
+    {"id":{"name":"texture_set","path":"sprites/texture_set/texture_set.yy",},"order":17,},
+    {"id":{"name":"BossWalkCycle","path":"sprites/BossWalkCycle/BossWalkCycle.yy",},"order":0,},
+    {"id":{"name":"CornerUL","path":"sprites/CornerUL/CornerUL.yy",},"order":24,},
+    {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},"order":7,},
+>>>>>>> Stashed changes
     {"id":{"name":"spr_spideridle_strip2","path":"sprites/spr_spideridle_strip2/spr_spideridle_strip2.yy",},"order":6,},
     {"id":{"name":"spr_npc_1_sad","path":"sprites/spr_npc_1_sad/spr_npc_1_sad.yy",},"order":12,},
     {"id":{"name":"spr_ui_e","path":"sprites/spr_ui_e/spr_ui_e.yy",},"order":15,},
@@ -196,9 +229,15 @@
     {"id":{"name":"test_stretc","path":"sprites/test_stretc/test_stretc.yy",},"order":7,},
     {"id":{"name":"spr_pipewithhat","path":"sprites/spr_pipewithhat/spr_pipewithhat.yy",},"order":15,},
     {"id":{"name":"spr_statue","path":"sprites/spr_statue/spr_statue.yy",},"order":4,},
+<<<<<<< Updated upstream
     {"id":{"name":"Basic13","path":"sprites/Basic13/Basic13.yy",},"order":31,},
     {"id":{"name":"obj_NPC_darvey","path":"objects/obj_NPC_darvey/obj_NPC_darvey.yy",},"order":43,},
     {"id":{"name":"Basic12","path":"sprites/Basic12/Basic12.yy",},"order":30,},
+=======
+    {"id":{"name":"Basic13","path":"sprites/Basic13/Basic13.yy",},"order":13,},
+    {"id":{"name":"Basic12","path":"sprites/Basic12/Basic12.yy",},"order":12,},
+    {"id":{"name":"obj_breakable_barrel","path":"objects/obj_breakable_barrel/obj_breakable_barrel.yy",},"order":9,},
+>>>>>>> Stashed changes
     {"id":{"name":"wormhole_linetest","path":"sprites/wormhole_linetest/wormhole_linetest.yy",},"order":3,},
     {"id":{"name":"obj_music","path":"objects/obj_music/obj_music.yy",},"order":4,},
     {"id":{"name":"scr_load_game","path":"scripts/scr_load_game/scr_load_game.yy",},"order":1,},
@@ -207,11 +246,16 @@
     {"id":{"name":"shd_hit_flash","path":"shaders/shd_hit_flash/shd_hit_flash.yy",},"order":2,},
     {"id":{"name":"config_bulletprofiles","path":"scripts/config_bulletprofiles/config_bulletprofiles.yy",},"order":0,},
     {"id":{"name":"inventory_gunSelect","path":"sprites/inventory_gunSelect/inventory_gunSelect.yy",},"order":18,},
-    {"id":{"name":"obj_ladder","path":"objects/obj_ladder/obj_ladder.yy",},"order":2,},
+    {"id":{"name":"obj_ladder","path":"objects/obj_ladder/obj_ladder.yy",},"order":1,},
     {"id":{"name":"obj_state_control","path":"objects/obj_state_control/obj_state_control.yy",},"order":1,},
     {"id":{"name":"scr_weaponscripts","path":"scripts/scr_weaponscripts/scr_weaponscripts.yy",},"order":5,},
     {"id":{"name":"spr_fire","path":"sprites/spr_fire/spr_fire.yy",},"order":1,},
+<<<<<<< Updated upstream
     {"id":{"name":"CornerUR","path":"sprites/CornerUR/CornerUR.yy",},"order":47,},
+=======
+    {"id":{"name":"CornerUR","path":"sprites/CornerUR/CornerUR.yy",},"order":25,},
+    {"id":{"name":"obj_hatch","path":"objects/obj_hatch/obj_hatch.yy",},"order":10,},
+>>>>>>> Stashed changes
     {"id":{"name":"obj_speakblock","path":"objects/obj_speakblock/obj_speakblock.yy",},"order":8,},
     {"id":{"name":"spr_rooftile2L","path":"sprites/spr_rooftile2L/spr_rooftile2L.yy",},"order":12,},
     {"id":{"name":"spr_ui","path":"sprites/spr_ui/spr_ui.yy",},"order":14,},

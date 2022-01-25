@@ -204,13 +204,18 @@ if (weapon_col > 0)
 
 //dialogue interact
 var interact_list = ds_list_create();
+<<<<<<< Updated upstream
 var interact_col = collision_circle_list(x,y,sprite_width*0.5,obj_NPC_parent,false,true,interact_list,true);
+=======
+var interact_col = collision_circle_list(x,y,sprite_width*1.1,obj_NPCparent,false,true,interact_list,true);
+>>>>>>> Stashed changes
 
 if (interact_col > 0)
 {
 	for (var i = 0; i<interact_col; i++)
 	{
 	var w = interact_list[|i];
+<<<<<<< Updated upstream
 	if(w == interacted) {continue; }
 		if(interact)
 		{		
@@ -220,8 +225,24 @@ if (interact_col > 0)
 				var name = w.npcName;
 				w.ui_show=false;
 				create_textbox(name);
+=======
+	if (w == interacted){continue; }
+		if(!w.fighting && !w.fin)
+		{
+			if(interact)
+			{			
+				interacted = w;
+				with(w)
+				{
+					var name = w.npcName;
+					w.ui_show = false;
+
+					create_textbox(name);
+				}
+>>>>>>> Stashed changes
 			}
 		}
+
 	}
 }
 

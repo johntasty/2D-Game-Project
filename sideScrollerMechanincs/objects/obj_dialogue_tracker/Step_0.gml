@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 //Maud
 if(!global.haveFlamethrower)
 {
@@ -29,3 +30,5 @@ if(global.harveyDead)
 {
 	obj_NPC_darvey.npcName = "darveyStage3";
 }
+=======
+>>>>>>> Stashed changes
