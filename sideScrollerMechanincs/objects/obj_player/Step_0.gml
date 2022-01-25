@@ -144,7 +144,7 @@ if(weapon)
 				melee_cooldown = 1;					
 				state = playerStates.attacking;					
 				alarm[1] = room_speed/30;
-				alarm[4] = room_speed/2;
+				alarm[4] = room_speed/4;
 			}						
 	}
 	if (weapon.weapon_directory == 1){
