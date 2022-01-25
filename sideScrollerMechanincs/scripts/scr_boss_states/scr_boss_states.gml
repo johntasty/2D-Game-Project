@@ -48,7 +48,7 @@ function scr_moving_state()
 {
 	mask_index = BossJumpAscend;
 	//move towards player
-	point_towards = point_direction(x,y,obj_player.x,obj_player.y);
+	
 	var _point_towards = point_direction(x,y,obj_player.x,obj_player.y);
 	if(point_towards > 10 && point_towards < 91){point_towards = 0;}
 	if(point_towards > 91 && point_towards < 175){point_towards = 180;}
@@ -65,8 +65,8 @@ function scr_moving_state()
 		boss_spd = 0;
 		show_debug_message(boss_spd);
 	}	*/
-	if place_meeting(x+boss_spd,y,obj_wall){
-			while(!place_meeting(round(x+sign(boss_spd)),round(y),obj_wall)) x +=sign(boss_spd);
+	if place_meeting(x+boss_spd,y,obj_wall73){
+			while(!place_meeting(round(x+sign(boss_spd)),round(y),obj_wall73)) x +=sign(boss_spd);
 			boss_spd = 0;	
 		}
 	x += boss_spd;
@@ -170,7 +170,7 @@ function scr_charging_state()
 			_boss_spd = -1;
 		}else {_boss_spd = 1;}
 		
-		if(place_meeting(x+speed*_boss_spd,y,obj_wall)){			
+		if(place_meeting(x+speed*_boss_spd,y,obj_wall73)){			
 			speed = 0;			
 			if(!_shake){
 				scr_screenshake(20, 5, 0.25);				
@@ -181,7 +181,7 @@ function scr_charging_state()
 			_shake = true;				
 			state_boss = boss_state.dazed;			
 		} 
-		if(!place_meeting(x+speed*_boss_spd,y,obj_wall)){
+		if(!place_meeting(x+speed*_boss_spd,y,obj_wall73)){
 			if (sprite_index != BossChargeactive){
 				sprite_index = BossChargeactive;
 				image_index = 0;

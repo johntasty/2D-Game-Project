@@ -3,8 +3,9 @@ scr_init_boss();
 boss_hp_show = false;
 health_bar_boss_width = 400;
 health_bar_boss_height = 30;
+boss_begin = false;
 
-state_boss = boss_state.moving;
+state_boss = boss_state.idle;
 
 boss_phases_state = noone;
 enum boss_phases 

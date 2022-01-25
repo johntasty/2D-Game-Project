@@ -31,7 +31,7 @@ if (global.darveyFight)
 {
 	if collision_rectangle(x-400,y-200,x+400,y+100,obj_player,false,true){
 			darvey_state = enemyState.walking;
-			if (distance_to_object(obj_player) < 65){
+			if (distance_to_object(obj_player) < 45){
 				darvey_state = enemyState.attacking;
 			}
 		}

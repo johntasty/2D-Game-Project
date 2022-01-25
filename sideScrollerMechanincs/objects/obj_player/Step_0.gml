@@ -113,6 +113,7 @@ weapon_dir_idle = point_direction(r_shoulder_x,r_shoulder_y,r_elbow_x,r_elbow_y)
 bul_type_set_scale(bullet_pistol, 1, 1, global.__bulletsize, 0);
 bul_type_set_damage (bullet_pistol,global.__bullet_dmg);
 
+
 if(weapon)
 {	
 	weapon.parent = id;	
@@ -233,9 +234,9 @@ if (interact_col > 0)
 var _size = ds_list_size(inventory);
 var _up = keyboard_check_pressed(ord("1"));
 var _swap = _up;
-
 if (!ds_list_empty(inventory)){
 	if (_swap != 0){
+		weapon.shoot = false;
 		audio_play_sound(player_switch_item,0,0);
 		inventory_index += _swap;
 		if (inventory_index >= _size){inventory_index = 0;}
