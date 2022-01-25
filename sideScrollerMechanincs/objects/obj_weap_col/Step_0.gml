@@ -32,6 +32,9 @@ if collision_circle(x,y,32,obj_melee_bul,false,true){
 	dir_knock = point_direction( obj_player.x, obj_player.y, x, y );
 	var melee = collision_circle(x,y,32,obj_melee_bul,false,true);
 	if (melee){		
+		if (!audio_is_playing(slash_hit)){
+			audio_play_sound(slash_hit,1,0);
+		}
 		if(attacked == 0){			
 			knockingback = true;
 			stuned = true;

@@ -13,7 +13,7 @@ function scr_melee(){
 		//part_type_orientation(obj_particle_controller.pt_flare_particles_trail, _value,_value, 0, 0, 0);
 		//part_type_direction(obj_particle_controller.melee_part,(_value*direction_face)-90,(_value*direction_face)-90,0,0);
 		part_particles_create(obj_particle_controller.melee_upper,r_hand_x+(spd*6),r_hand_y+vsp,obj_particle_controller.melee_part,1);	
-		var _slash = audio_play_sound(slash,1,0);
+		var _slash = audio_play_sound(slash_no_hit,1,0);
 		audio_sound_pitch(_slash,0.8);	
 }	
 
