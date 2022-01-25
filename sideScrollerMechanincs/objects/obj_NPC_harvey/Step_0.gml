@@ -12,7 +12,7 @@ fin = global.harveyFin;
 
 if (health_bar <= 0 && !dead){
 	dead = true;
-	obj_NPC_darvey.npcName = "darveyStage3";
+	global.darveyStage = "darveyStage3";
 	global.harveyDead = true;
 	instance_destroy(obj_hatch);
 	instance_destroy();
