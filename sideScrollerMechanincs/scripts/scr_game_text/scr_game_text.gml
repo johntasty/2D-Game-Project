@@ -249,7 +249,7 @@ switch(_text_id) {
 			break;
 		case "harvey - 4cc":
 			scr_text("HURRAY FOR THE FINAL SPARK!!!");
-				scr_option("HURRAY!", "harvey - 5ca");
+				scr_option("HURRAY!", "harvey - 4cd");
 			break;
 		case "harvey - fight":
 			instance_destroy(obj_textbox);
@@ -265,6 +265,12 @@ switch(_text_id) {
 		scr_text("...");
 		scr_text("Oh, hi there...");
 		scr_text("I'm sorry I don't feel like talking today...");
+			scr_option("Okay","darvey - end");
+		break;
+	case "darvey - end":
+		instance_destroy(obj_textbox);
+		global.inDialogue = false;
+		obj_player.interacted = -1;
 		break;
 	case "darveyStage2":
 		//Player has gamebro
