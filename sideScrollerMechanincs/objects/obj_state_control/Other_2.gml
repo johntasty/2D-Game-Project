@@ -11,6 +11,6 @@ enum playerStates {
 enum enemyState {
 	idle,
 	walking,
-	alert,
-	attacking
+	attacking,
+	flameAttack
 }

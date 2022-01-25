@@ -123,37 +123,15 @@ function scr_option(_option, _link_id) {
 
 /// @param text_id
 function create_textbox(_text_id) {
-
-	if (instance_exists(obj_textbox))
-	{
-		with(obj_textbox)
-		{
-			instance_destroy();	
+	if (instance_exists(obj_textbox)){
+		with (obj_textbox){
+			instance_destroy();
 		}
 	}
-	with (instance_create_depth(obj_player.x,obj_player.y - 150,-9999, obj_textbox))
+	with (instance_create_depth(obj_player.x,obj_player.y-150,-9999, obj_textbox) )
 	{
 		global.inDialogue = true;
 		scr_game_text(_text_id);
 	}
-
-	//if(!instance_exists(obj_textbox))
-	//{
-		
-	//	var instance_i = (instance_create_depth(obj_player.x,obj_player.y - 150,-9999, obj_textbox))
-	//	show_debug_message(instance_i);
-	//	with(instance_i)
-	//	{
-	//		global.inDialogue = true;
-	//		scr_game_text(_text_id);
-	//	}
-		
-	//	with(obj_textbox)
-	//	{
-	//		instance_destroy();	
-	//	}
-
-	//}
 	
-
 }

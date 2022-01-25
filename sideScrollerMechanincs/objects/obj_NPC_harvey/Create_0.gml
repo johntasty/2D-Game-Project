@@ -1,8 +1,5 @@
 ui_show = false;
 ui_alpha = 0;
-<<<<<<< Updated upstream
-npcName = "harvey";
-=======
 npcName = "harvey";
 
 //set variables 
@@ -37,4 +34,3 @@ bul_type_set_scale(bullet, 3, 1, 0.1, 0.1);
 bul_type_set_damage (bullet, 0.2);
 bullet_speed = 5;
 _width = sprite_get_width(harvey_mask);
->>>>>>> Stashed changes

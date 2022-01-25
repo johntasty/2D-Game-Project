@@ -11,7 +11,11 @@ look_direction = point_direction(x,y,mouse_x,mouse_y);
 look_direction_draw = point_direction(x,y,mouse_x,mouse_y);
 look_direction_arm = point_direction(x,y - 94,mouse_x,mouse_y);
 
-
+if(hp <= 0)
+{
+	instance_create_layer(x,y,"Base_level",obj_menu_dead);
+	global.__dead = true;
+}
 
 if (look_direction < 90 || look_direction > 275){
 		look_direction = 0;
@@ -41,10 +45,9 @@ switch state {
 cooldown += 0.1;
 if(cooldown >= 10){cooldown = 10;}
 if (global.__dash_key && cooldown == 10){ 
-	set_dash();
-	
-	//state = playerStates.dash;
-	alarm[0] = room_speed;
+	//set_dash();	
+	state = playerStates.dash;
+	alarm[0] = room_speed/5;
 	cooldown = 0;
 }
 if(vsp <= 10) vsp += grav;
@@ -111,7 +114,11 @@ bul_type_set_damage (bullet_pistol,global.__bullet_dmg);
 if(weapon)
 {	
 	weapon.parent = id;	
-	active_weapon = (weapon.weapon_directory);	
+	active_weapon = (weapon.weapon_directory);
+	if(active_weapon == 2)
+	{
+		global.haveFlamethrower = true;
+	}
 	if(weapon.weapon_directory == 2){
 		weapon.shoot = global.__sht;
 	}else if(weapon.weapon_directory == 3){
@@ -133,21 +140,12 @@ if(weapon)
 		
 	}else{		
 		
-			if (global.__shtpress && melee_cooldown == 0){	
-					
+			if (global.__shtpress && melee_cooldown == 0){						
 				melee_cooldown = 1;					
 				state = playerStates.attacking;					
 				alarm[1] = room_speed/30;
-			}
-
-				if (global.__shtpress && melee_cooldown == 0){	
-					
-					melee_cooldown = 1;					
-					state = playerStates.attacking;					
-					alarm[1] = room_speed/30;
-					}
-				
-				if(global.__r_sht_rel) {active = false;}				
+				alarm[4] = room_speed/4;
+			}						
 	}
 	if (weapon.weapon_directory == 1){
 		if (global.__r_sht)
@@ -204,28 +202,13 @@ if (weapon_col > 0)
 
 //dialogue interact
 var interact_list = ds_list_create();
-<<<<<<< Updated upstream
-var interact_col = collision_circle_list(x,y,sprite_width*0.5,obj_NPC_parent,false,true,interact_list,true);
-=======
 var interact_col = collision_circle_list(x,y,sprite_width*1.1,obj_NPCparent,false,true,interact_list,true);
->>>>>>> Stashed changes
 
 if (interact_col > 0)
 {
 	for (var i = 0; i<interact_col; i++)
 	{
 	var w = interact_list[|i];
-<<<<<<< Updated upstream
-	if(w == interacted) {continue; }
-		if(interact)
-		{		
-			interacted = w;
-			with(w)
-			{
-				var name = w.npcName;
-				w.ui_show=false;
-				create_textbox(name);
-=======
 	if (w == interacted){continue; }
 		if(!w.fighting && !w.fin)
 		{
@@ -239,26 +222,22 @@ if (interact_col > 0)
 
 					create_textbox(name);
 				}
->>>>>>> Stashed changes
 			}
 		}
 
 	}
 }
 
+var _size = ds_list_size(inventory);
+var _up = keyboard_check_pressed(ord("1"));
+var _swap = _up;
 
 if (!ds_list_empty(inventory)){
-	if(keyboard_check(ord("1"))){
-		weapon = inventory[|0];		
-		
-	}
-	if(keyboard_check(ord("2")) && !ds_list_find_index(inventory,1)){
-		weapon = inventory[|1];			
-		
-	}
-	if(keyboard_check(ord("3"))&& !ds_list_find_index(inventory,2)){
-		weapon = inventory[|2];		
-	
+	if (_swap != 0){
+		inventory_index += _swap;
+		if (inventory_index >= _size){inventory_index = 0;}
+		weapon = inventory[|inventory_index];
+
 	}
 }
 

@@ -101,14 +101,10 @@ switch(_text_id) {
 			scr_text("[Ethel gives you a gamebro]");
 			scr_text("Thanks sweeite, you have a good day now!");
 			global.haveGamebro = true;
-<<<<<<< Updated upstream
-			obj_NPC_darvey.npcName = "darveyStage2";
-=======
 			global.darveyStage = "darveyStage2";
 			instance_destroy(obj_trapdoor);
 			global.ethelFin = true;
 			global.inDialogue = false;
->>>>>>> Stashed changes
 			break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "harvey":
@@ -231,18 +227,6 @@ switch(_text_id) {
 		case "harvey - 4cd":
 			scr_text("OH! YES! You are a great great person!");
 			scr_text("You know what? If you kill the creatures in my basement you can keep the flamethrower!");
-<<<<<<< Updated upstream
-			break;
-		case "harvey - 4ce":
-			scr_text("I HATE THIEVES!");
-			//FIGHT
-			global.harveyFight = true;
-			break;
-		case "harvey - 4ca":
-			scr_text("I HATE LIARS!");
-			//FIGHT
-			global.harveyFight = true;
-=======
 			instance_destroy(obj_hatch);
 			global.inDialogue = false;
 			global.harveyFin = true;
@@ -254,36 +238,24 @@ switch(_text_id) {
 		case "harvey - 4ca":
 			scr_text("I HATE LIARS!");
 				scr_option("[Fight Harvey]", "harvey - fight");
->>>>>>> Stashed changes
 			break;
 		case "harvey - 4cb":
 			scr_text("Ah well at least you're honest. I like that!");
 			scr_text("You know what? If you kill the creatures you can keep the flamethrower!");
-<<<<<<< Updated upstream
-=======
 			instance_destroy(obj_hatch);
 			global.inDialogue = false;
 			global.harveyFin = true;
->>>>>>> Stashed changes
 			break;
 		case "harvey - 4cc":
 			scr_text("HURRAY FOR THE FINAL SPARK!!!");
 				scr_option("HURRAY!", "harvey - 5ca");
 			break;
-<<<<<<< Updated upstream
-		case "harvey - 5ca":
-			scr_text("You know what? If you kill the creatures in my basement you can keep the flamethrower! Anything for a fellow member of the final spark!");
-			break;
-		case "harvey - end":
-			scr_text("Thank you for clearing out my basement!");
-=======
 		case "harvey - fight":
 			instance_destroy(obj_textbox);
 			//FIGHT
 			global.harveyFight = true;
 			global.inDialogue = false;
 			global.harveyFin = true;
->>>>>>> Stashed changes
 			break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "darveyStage1":
@@ -361,12 +333,7 @@ switch(_text_id) {
 		scr_text("You see, an online friend of mine told me they saw something weird fall down the city a couple days ago");
 		scr_text("It fits the discription you gave... Well the on fire falling down part at least");
 		scr_text("Big chance the object you are looking for is down there!");
-<<<<<<< Updated upstream
-		scr_text("Oh but you have to watch out for the guard! I think he's causing the earthquakes");
-		scr_text("Look out for falling rocks");
-=======
 		scr_text("Oh but you have to watch out for the guard! I hear he's the reason we have earthquakes now");
->>>>>>> Stashed changes
 			scr_option("Thank you for the information", "darveyStage2 - 6aa");
 		break;
 	case "darveyStage2 - 5ba":
@@ -375,17 +342,11 @@ switch(_text_id) {
 		global.darveyFin = true;
 		break;
 	case "darveyStage2 - 6aa":
-<<<<<<< Updated upstream
-		scr_text("It's okay! you are very welcome! Also, if you have time... ");
-		scr_text("come visit me again when you are done, I would love to hear about all the things you encounter!");
-		
-=======
 		scr_text("It's okay! you are very welcome! Also, if you have time...");
 		scr_text("Come visit me again when you are done!");
 		scr_text("I would love to hear about all the things you encounter!");
 		global.inDialogue = false;
 		global.darveyFin = true;
->>>>>>> Stashed changes
 		break;
 	case "darveyStage3":
 		//Player has fought harvey
@@ -411,22 +372,15 @@ switch(_text_id) {
 		scr_text("Eep!");
 		scr_text("P-Please don't hurt me!");
 		scr_text("B-But... My brother...");
-		scr_text("No Darvey! You need to avenge your brother!");
+		scr_text("No Darvey! You need to take revenge for your brother!");
 		scr_text("Fight me, you monster!");
 			scr_option("[Fight Darvey]", "darvey - fight");
 		break;
 	case "darvey - fight":
 		//FIGHT
-<<<<<<< Updated upstream
-		global.darveyFight = true;
-		break;
-	case "darvey- end":
-		scr_text("Tell me of your adventures when you're done!");
-=======
 		instance_destroy(obj_textbox);
 		global.darveyFight = true;
 		global.inDialogue = false;
->>>>>>> Stashed changes
 		break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "maudStage1":
@@ -443,12 +397,9 @@ switch(_text_id) {
 		scr_text("Harvey told me he gave you his flamethrower!");
 		scr_text("Harvey must really like you, he spoke highly of you!");
 		scr_text("You can pass into the mines if you want! But please, be careful!");
-<<<<<<< Updated upstream
-=======
 		global.inDialogue = false;
 		global.maudFin = true;
 		obj_gate.state_gate = gateStates.open;
->>>>>>> Stashed changes
 		break;
 	case "maudStage3":
 		//Player has not killed anybody
@@ -456,12 +407,9 @@ switch(_text_id) {
 		scr_text("Also, Harvey told me he gave you his flamethrower!");
 		scr_text("Harvey must really like you, he spoke highly of you!");
 		scr_text("You can pass into the mines if you want! But please, be careful!");
-<<<<<<< Updated upstream
-=======
 		global.inDialogue = false;
 		global.maudFin = true;
 		obj_gate.state_gate = gateStates.open;
->>>>>>> Stashed changes
 		break;
 	case "maudStage4":
 		//Player only killed harvey
@@ -473,12 +421,7 @@ switch(_text_id) {
 		scr_text("It doesn't even matter anymore...");
 		scr_text("Heh. I see you even stole from Harvey...");
 		scr_text("This place is better off without people like you...");
-<<<<<<< Updated upstream
-		//FIGHT
-		global.maudFight = true;
-=======
 			scr_option("[Fight Maud]", "maud - Fight");
->>>>>>> Stashed changes
 		break;
 	case "maudStage5":
 		//Player killed everyone
@@ -494,10 +437,7 @@ switch(_text_id) {
 		instance_destroy(obj_textbox);
 		//FIGHT
 		global.maudFight = true;
-<<<<<<< Updated upstream
-=======
 		global.inDialogue = false;
->>>>>>> Stashed changes
 		break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //TEMPLATE

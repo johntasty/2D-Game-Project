@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "crate",
-    "path": "sprites/crate/crate.yy",
+    "name": "unbreakable_box",
+    "path": "sprites/unbreakable_box/unbreakable_box.yy",
   },
   "solid": false,
   "visible": true,

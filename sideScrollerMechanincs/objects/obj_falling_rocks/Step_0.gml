@@ -8,4 +8,4 @@ if (falling_rock && delay_step < 1)
 	instance_create_layer(x+x_create, y, "Instances", obj_rock);
 	delay_step = delay;
 }
-delay_step = lerp(delay_step,0,0.3);
+delay_step = lerp(delay_step,0,0.2);

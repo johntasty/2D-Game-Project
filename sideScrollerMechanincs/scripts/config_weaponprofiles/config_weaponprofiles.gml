@@ -4,7 +4,7 @@ function gun_set_pistol()
 }
 function gun_set_shotgun()
 {
-	gun_set(inventory_melee124,0,bullet_shotgun,global.__spdex,0,0);
+	gun_set(inventory_melee124,0,bullet_shotgun,global.__spdex,0.1,20);
 }
 function gun_set_laser()
 {

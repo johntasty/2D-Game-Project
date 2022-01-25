@@ -13,9 +13,13 @@ if (health_bar <= 0 && !dead){
 	dead = true;
 	state_enemy = enemy_state.dead;
 }				
-if(verspd < 10) verspd += grav;
+if(spdier_ver < 10) spdier_ver += grav;
+
+if(distance_to_object(obj_player) > 80 && distance_to_object(obj_player) < 150){
+	dodge = 1;
+}else{dodge = 0;}
 if (!dead){
-	if collision_rectangle(x-400,y-200,x+400,y,obj_player,false,true){
+	if collision_rectangle(x-400,y-200,x+400,y+100,obj_player,false,true){
 		state_enemy = enemy_state.moving;
 		if (distance_to_object(obj_player) < 5){
 			state_enemy = enemy_state.attacking;
@@ -30,7 +34,7 @@ if collision_circle(x,y,32,obj_melee_bul,false,true){
 	if (melee){		
 		if(attacked == 0){			
 			knockingback = true;
-			stuned = 1;
+			stuned = true;
 			attacked = 1;						
 			health_bar -= melee.damage;
 			blink = true;

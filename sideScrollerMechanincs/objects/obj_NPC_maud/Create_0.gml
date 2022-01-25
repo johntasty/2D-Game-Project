@@ -1,8 +1,5 @@
 ui_show = false;
 ui_alpha = 0;
-<<<<<<< Updated upstream
-npcName = "maudStage1";
-=======
 npcName = "maudStage1"
 
 //set variables 
@@ -27,4 +24,3 @@ _ver = 0;
 dead = false;
 hit_by_attacking = ds_list_create();
 attacking_player_ = true;
->>>>>>> Stashed changes

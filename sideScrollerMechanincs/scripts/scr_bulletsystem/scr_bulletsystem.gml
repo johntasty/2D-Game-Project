@@ -18,7 +18,7 @@ function bul_type() constructor
 	radial = false;
 	radial_number = 0;
 	radial_cutoff = 360;
-	
+	owner = noone;
 	hook = false;
 	
 	flamethrower = false;
@@ -119,12 +119,15 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			var d = sdir - (i * adiv);			
 			var xx = x + lengthdir_x(sprite_get_width(ind.sprite_index) * 5 *ind.image_xscale - 8, d);
 			var yy = y + lengthdir_y(sprite_get_width(ind.sprite_index) * 5 *ind.image_xscale - 8, d);
-			var bul = instance_create_layer(xx, yy+global.__vsdex, "Instances", obj_melee_bul);
-			var _slash = audio_play_sound(slash,1,0);
-			audio_sound_pitch(_slash,0.8);			
+			var bul = instance_create_layer(xx, yy+global.__vsdex, "Base_Level", obj_melee_bul);
+		
 			bul.direction = d;
 			bul.image_angle = d;
 			bul.speed = spd;
+			with(bul){				
+				owner = other.id;
+
+			}
 			
 			ind.bul_type_set_attributes(bul);
 			ret[i] = bul;
@@ -139,7 +142,7 @@ function bul_type_create(ind, _x, _y, dir, spd)
 				instance_destroy();
 			}
 		}
-		var bul = instance_create_layer(xx, yy, "Instances", hook_object);
+		var bul = instance_create_layer(xx, yy, "Base_Level", hook_object);
 		with(bul){
 		
 			owner = other.id;
@@ -203,7 +206,7 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			
 			var xxx = _x + lengthdir_x(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
 			var yyy = _y + lengthdir_y(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
-			var bul = instance_create_layer(xxx, yyy, "Instances", bullet_object);
+			var bul = instance_create_layer(xxx, yyy, "Base_Level", bullet_object);
 			 
 			with(bul){
 		
@@ -223,7 +226,7 @@ function bul_type_create(ind, _x, _y, dir, spd)
 	{
 		var xx = _x + lengthdir_x(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
 		var yy = _y + lengthdir_y(sprite_get_width(ind.sprite_index) * 0.5 *ind.image_xscale, dir);
-		var bul = instance_create_layer(xx, yy, "Instances", bullet_object);
+		var bul = instance_create_layer(xx, yy, "Base_Level", bullet_object);
 		with(bul){
 		
 			owner = other.id;

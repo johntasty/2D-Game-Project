@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "ladder",
-    "path": "sprites/ladder/ladder.yy",
+    "name": "laddern",
+    "path": "sprites/laddern/laddern.yy",
   },
   "solid": false,
   "visible": true,

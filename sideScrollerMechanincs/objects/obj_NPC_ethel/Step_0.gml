@@ -3,9 +3,6 @@ ui_show = false;
  {
 	ui_show = true;
  }
-<<<<<<< Updated upstream
-ui_alpha = lerp(ui_alpha, ui_show, 0.2);
-=======
 ui_alpha = lerp(ui_alpha, ui_show, 0.2);
 
 //Checking for fight
@@ -63,4 +60,3 @@ if (global.ethelFight)
 		}
 	}
 }
->>>>>>> Stashed changes

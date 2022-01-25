@@ -11,6 +11,11 @@ if (blink)
 		alarm[3] = blink_duration;
 	}
 }else {draw_self();}
+
+if (boss_hp_show){
+	draw_sprite_stretched(healthbar3,0,x-(health_bar_boss_width/2)+5, y-200, (max_health/max_bar_health)*health_bar_boss_width,health_bar_boss_height);
+	
+}
 //draw_circle(boss_r_shoulder,boss_r_shoulder_y,6,false);
 
 //draw_sprite_ext(spr_mace_test,1,boss_r_shoulder,boss_r_shoulder_y,1,1,point_towards_draw,image_blend,image_alpha);

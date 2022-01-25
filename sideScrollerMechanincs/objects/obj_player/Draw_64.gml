@@ -11,7 +11,7 @@ var _size = ds_list_size(inventory);
 	draw_text(_x, _y, string(_item));
 }*/
 
-var _xx = 150;
+var _xx = 202;
 var _y = 32;
 if (_size == 1 && active_weapon == 3)
 {

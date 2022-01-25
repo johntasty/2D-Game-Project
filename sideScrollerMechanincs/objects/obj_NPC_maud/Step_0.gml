@@ -26,13 +26,6 @@ if (global.harveyDead && global.ethelDead && global.darveyDead)
 }
 
 ui_show = false;
-<<<<<<< Updated upstream
- if (collision_circle(x,y,sprite_width , obj_player, false , true))
- {
-	ui_show = true;
- }
-ui_alpha = lerp(ui_alpha, ui_show, 0.2);
-=======
  if (collision_circle(x,y,sprite_width , obj_player, false , true) && !global.inDialogue && !global.maudFight && !global.maudFin)
  {
 	ui_show = true;
@@ -91,4 +84,3 @@ if (global.maudFight)
 		}
 	}
 }
->>>>>>> Stashed changes
