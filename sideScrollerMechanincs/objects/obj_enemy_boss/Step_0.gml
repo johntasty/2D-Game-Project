@@ -13,6 +13,7 @@ if (distance_to_object(obj_player) < 500){
 
 //impose gravity
 if (max_health <= 0){
+	audio_play_sound(boss_dying,0,0);
 	instance_destroy();
 }
 if(verspd < 10) verspd += grav;

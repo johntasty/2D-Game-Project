@@ -8,6 +8,7 @@ var _select = keyboard_check_pressed(vk_enter);
 var _move = _down - _up;
 if (_move != 0)
 {
+	audio_play_sound(menu_switch,0,0);
 	//move index position
 	menu_index += _move;
 	
@@ -20,6 +21,7 @@ if (_move != 0)
 
 if (_select)
 {
+	audio_play_sound(menu_select,0,0);
 	switch(submenu_index)
 	{
 		case 0: 
