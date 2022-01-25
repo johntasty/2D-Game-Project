@@ -9,3 +9,5 @@ enum gateStatesBoss
 engaged = false;
 
 state_gate = gateStatesBoss.closed;
+checking = false;
+checked  = true;
