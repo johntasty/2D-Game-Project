@@ -22,7 +22,10 @@ if (hits > 0)
 	}
 }
 	ds_list_destroy(hit_by_attack_);
-if(place_meeting(x,y+_vsp,obj_ground) ){	
+if(place_meeting(x,y+_vsp,obj_ground) ){
+	if (!audio_is_playing(rock_hit)){
+	audio_play_sound(rock_hit,0,0);
+}	
 	while (!place_meeting(x,y+sign(_vsp),obj_ground))
 	{
 		y = y + sign(_vsp);

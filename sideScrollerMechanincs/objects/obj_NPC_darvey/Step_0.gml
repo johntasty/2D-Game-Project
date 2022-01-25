@@ -25,7 +25,7 @@ switch (darvey_state)
 {
 	case enemyState.idle: enemy_state_idle_npc(arveyIdle); break;
 	case enemyState.walking: enemy_state_move(Darveybewalkingtho,Darveybewalkingtho,Darveybewalkingtho); break;
-	case enemyState.attacking: enemy_state_attack(DarveyAcidAttackMelee,darvey_hit_box,Darveybewalkingtho,darvey_state,enemyState.walking); break;	
+	case enemyState.attacking: enemy_state_attack(DarveyAcidAttackMelee,darvey_hit_box,Darveybewalkingtho,darvey_state,enemyState.walking,ethel_attack); break;	
 }
 if (global.darveyFight)
 {

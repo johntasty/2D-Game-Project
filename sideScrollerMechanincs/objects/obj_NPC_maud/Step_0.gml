@@ -45,7 +45,7 @@ switch (maud_state)
 {
 	case enemyState.idle: enemy_state_idle_npc(MaudIdle); break;
 	case enemyState.walking: enemy_state_move(MaudWalkcycle,MaudWalkcycle,MaudWalkcycle); break;
-	case enemyState.attacking: enemy_state_attack(MaudAttack,maud_hit_box,MaudWalkcycle,maud_state,enemyState.walking); break;	
+	case enemyState.attacking: enemy_state_attack(MaudAttack,maud_hit_box,MaudWalkcycle,maud_state,enemyState.walking,ethel_attack); break;	
 }
 if (global.maudFight)
 {
