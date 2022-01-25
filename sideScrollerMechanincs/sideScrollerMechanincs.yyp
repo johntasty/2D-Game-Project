@@ -110,6 +110,7 @@
     {"id":{"name":"scr_melee","path":"scripts/scr_melee/scr_melee.yy",},"order":4,},
     {"id":{"name":"darvey_hit_box","path":"sprites/darvey_hit_box/darvey_hit_box.yy",},"order":3,},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},"order":0,},
+    {"id":{"name":"testtting","path":"sprites/testtting/testtting.yy",},"order":3,},
     {"id":{"name":"scr_textbox_functions","path":"scripts/scr_textbox_functions/scr_textbox_functions.yy",},"order":6,},
     {"id":{"name":"Basic33","path":"sprites/Basic33/Basic33.yy",},"order":19,},
     {"id":{"name":"obj_falling_rocks","path":"objects/obj_falling_rocks/obj_falling_rocks.yy",},"order":19,},
