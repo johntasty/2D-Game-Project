@@ -22,6 +22,7 @@ if (global.__paused){
 		{
 			case 0:
 			room_goto(1);
+			global.played = true;
 			break;
 			case 1: 
 			//continue
