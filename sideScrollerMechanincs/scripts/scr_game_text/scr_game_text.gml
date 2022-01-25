@@ -385,7 +385,7 @@ switch(_text_id) {
 		scr_text("Harvey's my brother");
 		scr_text_float(0,8);
 		scr_text_color(0,8,c_orange,c_orange,c_orange,c_orange);
-		scr_text("I don't see him often, even though he lives 2 houses away from me...");
+		scr_text("I don't see him often, even though he lives next door...");
 		scr_text("I wish I'd visit him more often... However g-going outside scares me deeply...");
 		scr_text_shake(69,78);
 			scr_option("But you're outside right now?", "darveyStage2 - 3aa");
@@ -473,6 +473,7 @@ switch(_text_id) {
 		//Player has fought harvey
 		scr_text("W-wait... Just now I saw you figth with Harvey!");
 		scr_text_shake(0,47);
+		scr_text_color(40,47,c_orange,c_orange,c_orange,c_orange);
 			scr_option("[Lie] What? No I did not", "darveyStage3 - 1aa");
 			scr_option("Yes I did", "darveyStage3 - 1ba");
 		break;
