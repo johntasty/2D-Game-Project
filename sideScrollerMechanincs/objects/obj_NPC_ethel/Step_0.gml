@@ -1,13 +1,19 @@
 ui_show = false;
- if (collision_circle(x,y,sprite_width , obj_player, false , true) && !global.inDialogue)
+ if (collision_circle(x,y,sprite_width , obj_player, false , true) && !global.inDialogue && !global.ethelFight && !global.ethelFin)
  {
 	ui_show = true;
  }
 ui_alpha = lerp(ui_alpha, ui_show, 0.2);
 
+//Checking for fight
+fighting = global.ethelFight;
+//Checking for end of dialogue
+fin = global.ethelFin;
+
 if (health_bar <= 0 && !dead){
 	dead = true;
 	global.ethelDead = true;
+	instance_destroy(obj_trapdoor);
 	instance_destroy();
 }	
 if(_ver < 10) _ver += grav;

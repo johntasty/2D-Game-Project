@@ -1,13 +1,19 @@
 ui_show = false;
- if (collision_circle(x,y,sprite_width , obj_player, false , true) && !global.inDialogue)
+ if (collision_circle(x,y,sprite_width , obj_player, false , true) && !global.inDialogue && !global.harveyFight && !global.harveyFin)
  {
 	ui_show = true;
  }
 ui_alpha = lerp(ui_alpha, ui_show, 0.2);
 
+//Checking for fight
+fighting = global.harveyFight;
+//Checking for end of dialogue
+fin = global.harveyFin;
+
 if (health_bar <= 0 && !dead){
 	dead = true;
-	global.harveyDead = false;
+	obj_NPC_darvey.npcName = "darveyStage3";
+	global.harveyDead = true;
 	instance_destroy(obj_hatch);
 	instance_destroy();
 }	

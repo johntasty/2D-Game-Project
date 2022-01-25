@@ -45,13 +45,13 @@ switch(_text_id) {
 			scr_text("You're tell me to tone it DOWN? You're telling ME?!?!");
 			scr_text("[The woman seems to be getting more aggressive]");
 				scr_option("[Apologize]","ethel - 1aa");
-				scr_option("[Draw your weapon]", "ethel- 1bb");
+				scr_option("[Draw your weapon]","ethel - fight");
 			break;
-		case "ethel - 1bb":
-			scr_text("Oh? So you want to fight eh?");
-			scr_text("Well then! Let's fight!");
+		case "ethel - fight":
+			instance_destroy(obj_textbox);
 			//FIGHT
 			global.ethelFight = true;
+			global.inDialogue = false;
 			break;
 		case "ethel - 1aa":
 			scr_text("Yes that is right! You should be apologizing! Now tell me what you were doing on my roof!");
@@ -65,8 +65,7 @@ switch(_text_id) {
 			break;
 		case "ethel - 2a":
 			scr_text("NO!! He's still alive. You're a LIAR! You know what we do to liars here?!");
-			//FIGHT
-			global.ethelFight = true;
+				scr_option("[Draw your weapon]","ethel - fight");
 			break;
 		case "ethel - 2b":
 			scr_text("You don't know what a grandson is? Where are you from?");
@@ -93,13 +92,19 @@ switch(_text_id) {
 			break;
 		case "ethel - 3c":
 			scr_text("Bah. Okay, okay. Just don't go on my roof ever again!");
+			instance_destroy(obj_trapdoor);
+			global.ethelFin = true;
+			global.inDialogue = false;
 			break;
 		case "ethel - 4a":
 			scr_text("Thanks sweetie, here");
 			scr_text("[Ethel gives you a gamebro]");
 			scr_text("Thanks sweeite, you have a good day now!");
 			global.haveGamebro = true;
-			global.darveyStage = 2;
+			global.darveyStage = "darveyStage2";
+			instance_destroy(obj_trapdoor);
+			global.ethelFin = true;
+			global.inDialogue = false;
 			break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "harvey":
@@ -205,12 +210,8 @@ switch(_text_id) {
 			scr_text("You know... those terrible creatures just appeared! And you know what the worst part is?");
 			scr_text("I dropped my flamethrower while trying to escape those beasts!");
 			scr_text("[Having a flame thrower would be useful]");
-				scr_option("You want the flamethrower back?", "harvey - 2bc");
-				scr_option("So the flamethrower is down there?", "harvey - 2bd");
-			break;
-		case "harvey - 2bc":
 				scr_option("You want the flamethrower back?", "harvey - 3caa");
-				scr_option("So.. the flamethrower is in the basement?", "harvey - 3cb");
+				scr_option("So the flamethrower is down there?", "harvey - 2bd");
 			break;
 		case "harvey - 2bd":
 			scr_text("Yes! [Sob]... W-wait you don't plan on 'stealing' it do you?!?!");
@@ -227,31 +228,34 @@ switch(_text_id) {
 			scr_text("OH! YES! You are a great great person!");
 			scr_text("You know what? If you kill the creatures in my basement you can keep the flamethrower!");
 			instance_destroy(obj_hatch);
+			global.inDialogue = false;
+			global.harveyFin = true;
 			break;
 		case "harvey - 4ce":
 			scr_text("I HATE THIEVES!");
-			//FIGHT
-			global.harveyFight = true;
-			
+				scr_option("[Fight Harvey]", "harvey - fight");
 			break;
 		case "harvey - 4ca":
 			scr_text("I HATE LIARS!");
-			//FIGHT
-			global.harveyFight = true;
-			
+				scr_option("[Fight Harvey]", "harvey - fight");
 			break;
 		case "harvey - 4cb":
 			scr_text("Ah well at least you're honest. I like that!");
 			scr_text("You know what? If you kill the creatures you can keep the flamethrower!");
 			instance_destroy(obj_hatch);
+			global.inDialogue = false;
+			global.harveyFin = true;
 			break;
 		case "harvey - 4cc":
 			scr_text("HURRAY FOR THE FINAL SPARK!!!");
 				scr_option("HURRAY!", "harvey - 5ca");
 			break;
-		case "harvey - 5ca":
-			scr_text("You know what? If you kill the creatures in my basement you can keep the flamethrower! Anything for a fellow member of the final spark!");
-			instance_destroy(obj_hatch);
+		case "harvey - fight":
+			instance_destroy(obj_textbox);
+			//FIGHT
+			global.harveyFight = true;
+			global.inDialogue = false;
+			global.harveyFin = true;
 			break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "darveyStage1":
@@ -279,15 +283,14 @@ switch(_text_id) {
 		break;
 	case "darveyStage2 - 1ba":
 		scr_text("GIVE MY GAMEBRO BACK!");
-		//FIGHT
-		global.darveyFight = true;
+			scr_option("[Fight Darvey]", "darvey - fight");
 		break;
 	case "darveyStage2 - 2aa":
 		scr_text("Harvey's my brother");
 		scr_text("I don't see him often, even though he lives 2 houses away from me...");
 		scr_text("I wish I'd visit him more often... However g-going outside scares me deeply...");
 			scr_option("But you're outside right now?", "darveyStage2 - 3aa");
-			scr_option("Why does it scare you?", "darveyStage2 - 3ba");
+			scr_option("Why does it scare you?", "darveyStage2 - 3ab");
 		break;
 	case "darveyStage2 - 3aa":
 		scr_text("Ah... Yes...");
@@ -295,13 +298,7 @@ switch(_text_id) {
 		scr_text("Because people freak me out! But for whatever reason you don't");
 		scr_text("Uhm... just a weird question... are you you know... human?");
 			scr_option("[Tell Darvey what you are]", "darveyStage2 - 4aa");
-			scr_option("[Lie] Yes I am human", "darveyStage2 - 4ba");
-		break;
-	case "darveyStage2 - 3ab":
-		scr_text("Because people freak me out! But for whatever reason you don't");
-		scr_text("Uhm... just a weird question... are you you know... human?");
-			scr_option("[Tell Darvey what you are]", "darveyStage2 - 4aa");
-			scr_option("[Lie] Yes I am human", "darveyStage2 - 4ba");
+			scr_option("[Lie] Yes I am human", "darveyStage2 - 4ab");
 		break;
 	case "darveyStage2 - 4aa":
 		scr_text("Woah! That's the reason! You must've travled far then. I always dreamed of traveling you know?");
@@ -336,14 +333,20 @@ switch(_text_id) {
 		scr_text("You see, an online friend of mine told me they saw something weird fall down the city a couple days ago");
 		scr_text("It fits the discription you gave... Well the on fire falling down part at least");
 		scr_text("Big chance the object you are looking for is down there!");
-		scr_text("Oh but you have to watch out for the guard! He: [Information about the bossfight]");
+		scr_text("Oh but you have to watch out for the guard! I hear he's the reason we have earthquakes now");
 			scr_option("Thank you for the information", "darveyStage2 - 6aa");
 		break;
 	case "darveyStage2 - 5ba":
 		scr_text("Eep! O-okay! I-I'm sorry!");
+		global.inDialogue = false;
+		global.darveyFin = true;
 		break;
 	case "darveyStage2 - 6aa":
-		scr_text("It's okay! you are very welcome! Also, if you have time... come visit me again when you are done, I would love to hear about all the things you encounter!");
+		scr_text("It's okay! you are very welcome! Also, if you have time...");
+		scr_text("Come visit me again when you are done!");
+		scr_text("I would love to hear about all the things you encounter!");
+		global.inDialogue = false;
+		global.darveyFin = true;
 		break;
 	case "darveyStage3":
 		//Player has fought harvey
@@ -357,7 +360,13 @@ switch(_text_id) {
 		scr_text("I don't see him often, even though he lives 2 houses away from me...");
 		scr_text("I wish I'd visit him more often... However g-going outside scares me deeply...");
 			scr_option("But you're outside right now?", "darveyStage2 - 3aa");
-			scr_option("Why does it scare you?", "darveyStage2 - 3ba");
+			scr_option("Why does it scare you?", "darveyStage2 - 3ab");
+		break;
+	case "darveyStage2 - 3ab":
+		scr_text("Because people freak me out! But for whatever reason you don't");
+		scr_text("Uhm... just a weird question... are you you know... human?");
+			scr_option("[Tell Darvey what you are]", "darveyStage2 - 4aa");
+			scr_option("[Lie] Yes I am human", "darveyStage2 - 4ab");
 		break;
 	case "darveyStage3 - 1ba":
 		scr_text("Eep!");
@@ -365,14 +374,21 @@ switch(_text_id) {
 		scr_text("B-But... My brother...");
 		scr_text("No Darvey! You need to take revenge for your brother!");
 		scr_text("Fight me, you monster!");
+			scr_option("[Fight Darvey]", "darvey - fight");
+		break;
+	case "darvey - fight":
 		//FIGHT
-		global.harveyFight = true;
+		instance_destroy(obj_textbox);
+		global.darveyFight = true;
+		global.inDialogue = false;
 		break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "maudStage1":
 		//Player does not have flamethrower
-		scr_text("I'm sorry but I can't let you pass, it's dangerous in the mines");
-		scr_text("Talk to some of the people that live here, they might give you something useful!");
+		scr_text("Sorry, can't let you pass, too dangerous. I'll only let you pass if you have a flamethrower");
+		global.inDialogue = false;
+		obj_NPC_maud.npcName = "maudStage1";
+		obj_player.interacted = -1;
 		break;
 	case "maudStage2":
 		//Player has flamethrower
@@ -381,6 +397,8 @@ switch(_text_id) {
 		scr_text("Harvey told me he gave you his flamethrower!");
 		scr_text("Harvey must really like you, he spoke highly of you!");
 		scr_text("You can pass into the mines if you want! But please, be careful!");
+		global.inDialogue = false;
+		global.maudFin = true;
 		obj_gate.state_gate = gateStates.open;
 		break;
 	case "maudStage3":
@@ -389,6 +407,8 @@ switch(_text_id) {
 		scr_text("Also, Harvey told me he gave you his flamethrower!");
 		scr_text("Harvey must really like you, he spoke highly of you!");
 		scr_text("You can pass into the mines if you want! But please, be careful!");
+		global.inDialogue = false;
+		global.maudFin = true;
 		obj_gate.state_gate = gateStates.open;
 		break;
 	case "maudStage4":
@@ -401,9 +421,7 @@ switch(_text_id) {
 		scr_text("It doesn't even matter anymore...");
 		scr_text("Heh. I see you even stole from Harvey...");
 		scr_text("This place is better off without people like you...");
-		//FIGHT
-		global.maudFight = true;
-		
+			scr_option("[Fight Maud]", "maud - Fight");
 		break;
 	case "maudStage5":
 		//Player killed everyone
@@ -413,9 +431,13 @@ switch(_text_id) {
 		scr_text("It doesn't even matter anymore...");
 		scr_text("Heh. I see you even stole from Harvey...");
 		scr_text("This place is better off without people like you...");
+			scr_option("[Fight Maud]", "maud - Fight");
+		break;
+	case "maud - Fight":
+		instance_destroy(obj_textbox);
 		//FIGHT
 		global.maudFight = true;
-		
+		global.inDialogue = false;
 		break;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 //TEMPLATE

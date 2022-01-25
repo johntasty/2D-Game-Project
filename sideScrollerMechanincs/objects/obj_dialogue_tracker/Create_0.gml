@@ -13,3 +13,8 @@ global.haveFlamethrower = false;
 global.ethelDead = false;
 global.harveyDead = false;
 global.darveyDead = false;
+
+global.ethelFin = false;
+global.harveyFin = false;
+global.darveyFin = false;
+global.maudFin = false;

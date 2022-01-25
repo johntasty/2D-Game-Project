@@ -1,9 +1,40 @@
+//Diaglogue conditions
+
+if (!global.haveFlamethrower && !global.harveyDead && !global.ethelDead && !global.darveyDead)
+{
+	npcName = "maudStage1"
+}
+
+if (global.haveFlamethrower && !global.harveyDead && global.ethelDead && !global.darveyDead)
+{
+	npcName = "maudStage2"
+}
+
+if (global.haveFlamethrower && !global.harveyDead && !global.ethelDead && !global.darveyDead)
+{
+	npcName = "maudStage3"
+}
+
+if (global.harveyDead && !global.ethelDead && !global.darveyDead)
+{
+	npcName = "maudStage4"
+}
+
+if (global.harveyDead && global.ethelDead && global.darveyDead)
+{
+	npcName = "maudStage5"
+}
+
 ui_show = false;
- if (collision_circle(x,y,sprite_width , obj_player, false , true) && !global.inDialogue)
+ if (collision_circle(x,y,sprite_width , obj_player, false , true) && !global.inDialogue && !global.maudFight && !global.maudFin)
  {
 	ui_show = true;
  }
 ui_alpha = lerp(ui_alpha, ui_show, 0.2);
+
+//Checking for fight
+fighting = global.maudFight;
+
 if (health_bar <= 0 && !dead){
 	dead = true;
 	obj_gate.state_gate = gateStates.open;

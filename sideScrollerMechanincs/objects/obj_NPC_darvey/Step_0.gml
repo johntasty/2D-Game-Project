@@ -1,13 +1,23 @@
+
+
+//Checking Stage in Dialogue
+//npcName = global.darveyStage;
+
 ui_show = false;
- if (collision_circle(x,y,sprite_width , obj_player, false , true) && !global.inDialogue)
+ if (collision_circle(x,y,sprite_width , obj_player, false , true) && !global.inDialogue && !global.darveyFight && !global.darveyFin)
  {
 	ui_show = true;
  }
 ui_alpha = lerp(ui_alpha, ui_show, 0.2);
 
+//Checking for fight
+fighting = global.darveyFight;
+//Checking for end of dialogue
+fin = global.darveyFin;
+
 if (health_bar <= 0 && !dead){
 	dead = true;
-	global.darveyDead = false;
+	global.darveyDead = true;
 	instance_destroy();
 }	
 if(_ver < 10) _ver += grav;

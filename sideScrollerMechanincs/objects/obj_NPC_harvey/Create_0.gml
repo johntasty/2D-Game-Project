@@ -11,6 +11,9 @@ health_bar = 100;
 max_hp = 100;
 spd_enemy = 3;
 
+fighting = global.harveyFight;
+fin = global.harveyFin;
+
 blink = false;
 blink_number = 3;
 blink_counter = 0;

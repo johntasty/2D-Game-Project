@@ -121,8 +121,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Dialogue System",
-    "path": "folders/Dialogue System.yy",
+    "name": "enviroment objects",
+    "path": "folders/Objects/enviroment objects.yy",
   },
   "resourceVersion": "1.0",
   "name": "spr_textbox",
