@@ -36,7 +36,7 @@ if (global.__dead){
 					break;
 					case 2: 
 					//load			
-					global.__dead = 0;
+					global.__dead = 0;					
 					scr_load_game_dead();			
 					break;	
 					case 3:

@@ -16,7 +16,13 @@ if (distance_to_object(obj_player) < 600){
 if(!boss_begin && distance_to_object(obj_player) < 600){
 	boss_begin = true;
 	state_boss = boss_state.moving;
-}
+}if(global.__dead) {	
+	x = starting_x;
+	y = starting_y;
+	boss_begin = false;
+	max_health = 100;
+	obj_gate_boss.engaged = false;
+	}
 //impose gravity
 if (max_health <= 0){
 	if (!audio_is_playing(boss_dying)){

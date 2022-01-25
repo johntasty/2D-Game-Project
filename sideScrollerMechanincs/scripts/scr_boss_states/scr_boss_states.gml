@@ -240,7 +240,7 @@ function scr_hook()
 			instance_destroy();
 		}
 	}
-	var bul = instance_create_layer(xx, yy, "Instances", obj_hook);
+	var bul = instance_create_layer(xx, yy, "Base_Level", obj_hook);
 	with(bul){
 		
 		owner = other.id;
