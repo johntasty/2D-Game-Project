@@ -31,6 +31,7 @@ switch(_text_id) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 	case "ethel":
 		scr_text("Hey you! Yes you! Why are you on my roof!? Don't you know that this is MY ROOF?!?!");
+		scr_text_shake(0,82);
 		scr_text("I hate people walking on my roof! It's noisy and incredibly bad for my roof!");
 		global.darveyStage = "darveyStage1";
 			scr_option("[Apologize]","ethel - 1a");
@@ -302,7 +303,7 @@ switch(_text_id) {
 		break;
 	case "darveyStage2 - 2aa":
 		scr_text("Harvey's my brother");
-		scr_text("I don't see him often, even though he lives 2 houses away from me...");
+		scr_text("I don't see him often, even though he lives next door...");
 		scr_text("I wish I'd visit him more often... However g-going outside scares me deeply...");
 			scr_option("But you're outside right now?", "darveyStage2 - 3aa");
 			scr_option("Why does it scare you?", "darveyStage2 - 3ab");
