@@ -233,7 +233,7 @@ function scr_hook()
 		hook_created = true;
 		state_boss = boss_state.attacking;
 		alarm[5] = room_speed*3; 
-		scr_hook_create(spr_graple, boss_r_shoulder, boss_r_shoulder_y, dir, 5);
+		scr_hook_create(spr_graple, boss_r_shoulder, boss_r_shoulder_y, dir, 10);
 		
 	}
 }
