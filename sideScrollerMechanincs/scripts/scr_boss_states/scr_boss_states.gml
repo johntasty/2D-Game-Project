@@ -323,7 +323,6 @@ function scr_hook()
 				ds_list_add(hit_by_overhead,hitId);
 				with (hitId)
 				{
-					show_debug_message("here");
 					scr_got_hit(20);
 				}
 			}
@@ -334,6 +333,7 @@ function scr_hook()
 	
 	if (image_index > image_number -1)
 	{
+		ds_list_clear(hit_by_overhead);
 		sprite_index = BossJumpAscend;		
 	}
 	

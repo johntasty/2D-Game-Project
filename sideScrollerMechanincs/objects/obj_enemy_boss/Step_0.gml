@@ -16,7 +16,6 @@ if (distance_to_object(obj_player) < 600){
 if(!boss_begin && distance_to_object(obj_player) < 600){
 	boss_begin = true;
 	state_boss = boss_state.moving;	
-	show_debug_message("engaged");
 }
 
 if(global.__dead) {	
@@ -25,7 +24,7 @@ if(global.__dead) {
 	max_health = 100;
 	obj_gate_boss.engaged = false;
 	//global.__dead = false;
-	show_debug_message("here");
+
 	}
 //impose gravity
 if (max_health <= 0){
@@ -96,7 +95,4 @@ if ((_angle >= 200 || _angle <= -200) && cooldown_attack == 0)
 {
 	cooldown_attack = 1;
 	alarm[1] = room_speed;
-}
-if(keyboard_check(vk_f1)){
-	state_boss = boss_state.hook_state;
 }

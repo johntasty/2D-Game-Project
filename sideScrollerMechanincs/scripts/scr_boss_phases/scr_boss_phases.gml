@@ -44,7 +44,6 @@ function scr_boss_phase_three()
 	if (boss_phases_state == boss_phases.phase_three){
 		if (distance_to_object(obj_player) > 250 && (distance_to_object(obj_player) < 400) && !attacking_player)
 		{
-			show_debug_message("here");
 			attacking_player = true;
 			state_boss = boss_state.hook_state;
 		}

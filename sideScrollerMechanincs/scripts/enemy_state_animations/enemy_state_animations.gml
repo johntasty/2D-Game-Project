@@ -27,8 +27,6 @@ function enemy_state_attacking(_sprite,_mask,_change)
 	if (sprite_index != _sprite){
 		sprite_index = _sprite;
 		image_index = 0;		
-		
-		ds_list_clear(hit_by_attacking);
 	}
 	
 	mask_index = _mask;
@@ -46,7 +44,7 @@ function enemy_state_attacking(_sprite,_mask,_change)
 				ds_list_add(hit_by_attacking,hitId);
 				with (hitId)
 				{
-					scr_got_hit(20);
+					scr_got_hit(10);
 				}
 				ds_list_delete(hit_by_attacking,hitId);
 			}
@@ -57,6 +55,7 @@ function enemy_state_attacking(_sprite,_mask,_change)
 	if (image_index > image_number -1)
 	{
 		mask_index = _change;
+		ds_list_clear(hit_by_attacking);
 		state_enemy = enemy_state.moving;
 		alarm[5] = room_speed*3;
 	}
@@ -163,9 +162,8 @@ function enemy_state_attack(_sprite,_mask,_change,_stateAfter,_stateChange,_soun
 	
 	if (sprite_index != _sprite){
 		sprite_index = _sprite;
-		image_index = 0;		
+		image_index = 0;				
 		
-		ds_list_clear(hit_by_attacking);
 	}
 	
 	mask_index = _mask;
@@ -199,8 +197,8 @@ function enemy_state_attack(_sprite,_mask,_change,_stateAfter,_stateChange,_soun
 			audio_play_sound(_sound,0,0);
 		}	
 		mask_index = _change;
+		ds_list_clear(hit_by_attacking);
 		_stateAfter = _stateChange;
-		alarm[5] = room_speed*3;
 	}
 }
 function enemy_state_move(_sprite,_mask,_change)
