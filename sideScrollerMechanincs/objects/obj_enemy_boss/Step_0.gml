@@ -15,13 +15,17 @@ if (distance_to_object(obj_player) < 600){
 	}
 if(!boss_begin && distance_to_object(obj_player) < 600){
 	boss_begin = true;
-	state_boss = boss_state.moving;
-}if(global.__dead) {	
-	x = starting_x;
-	y = starting_y;
+	state_boss = boss_state.moving;	
+	show_debug_message("engaged");
+}
+
+if(global.__dead) {	
+	
 	boss_begin = false;
 	max_health = 100;
 	obj_gate_boss.engaged = false;
+	//global.__dead = false;
+	show_debug_message("here");
 	}
 //impose gravity
 if (max_health <= 0){
@@ -71,13 +75,11 @@ switch(boss_phases_state)
 
 
 if (max_health >= 80)
-{
-	
+{	
 	boss_phases_state = boss_phases.phase_one;
 }
 if (max_health <= 79 && max_health >= 59)
-{
-	
+{	
 	boss_phases_state = boss_phases.phase_two;
 }
 if (max_health <= 58 && max_health >= 28)

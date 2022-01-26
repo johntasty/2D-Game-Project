@@ -150,7 +150,7 @@ function scr_attacking_state()
 				if (obj_player.state != playerStates.dash){
 					with (hitId)
 					{
-						scr_got_hit(20);
+						scr_got_hit(15);
 					}
 				}
 			}
@@ -226,7 +226,7 @@ function scr_charging_state()
 }
 function scr_hook()
 {
-	scr_hook_create(spr_graple, boss_r_shoulder, boss_r_shoulder_y, dir, 10);
+	scr_hook_create(spr_graple, boss_r_shoulder, boss_r_shoulder_y, dir, 5);
 	state_boss = boss_state.attacking;
 	
 }

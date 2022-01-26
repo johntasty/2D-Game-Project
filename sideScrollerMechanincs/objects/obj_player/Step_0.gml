@@ -13,6 +13,7 @@ look_direction_arm = point_direction(x,y - 94,mouse_x,mouse_y);
 
 if(hp <= 0)
 {
+	show_debug_message("dead");
 	instance_create_layer(x,y,"Base_level",obj_menu_dead);
 	global.__dead = true;
 }
@@ -211,7 +212,7 @@ if (potion_list > 0)
 		var w = potion_list[|i];
 		if (pickup){
 			if (hp != 100){
-				hp += 20;
+				hp += 50;
 			}
 			if (hp > 100){
 				hp = 100;

@@ -48,6 +48,7 @@ function enemy_state_attacking(_sprite,_mask,_change)
 				{
 					scr_got_hit(20);
 				}
+				ds_list_delete(hit_by_attacking,hitId);
 			}
 		}
 	}
@@ -170,7 +171,7 @@ function enemy_state_attack(_sprite,_mask,_change,_stateAfter,_stateChange,_soun
 	mask_index = _mask;
 	var hit_by_attack_ = ds_list_create();
 	var hits = instance_place_list(x,y,obj_player,hit_by_attack_,false);
-	
+
 	if (hits > 0)
 	{
 		for (var i = 0; i < hits; i++)
@@ -179,14 +180,17 @@ function enemy_state_attack(_sprite,_mask,_change,_stateAfter,_stateChange,_soun
 			
 			if (ds_list_find_index(hit_by_attacking, hitId) == -1)
 			{
+				
 				ds_list_add(hit_by_attacking,hitId);
 				with (hitId)
 				{
 					scr_got_hit(45);
 				}
+				ds_list_delete(hit_by_attacking,hitId);
 			}
 		}
 	}
+	
 	ds_list_destroy(hit_by_attack_);
 	
 	if (image_index > image_number -1)

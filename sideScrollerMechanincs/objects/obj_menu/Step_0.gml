@@ -3,7 +3,7 @@
 
 var _up = keyboard_check_pressed(ord("W"));
 var _down = keyboard_check_pressed(ord("S"));
-var _select = keyboard_check_pressed(ord("E"));
+var _select = (keyboard_check_pressed(ord("E")) || keyboard_check_pressed(vk_enter));
 
 var _move = _down - _up;
 if (_move != 0)

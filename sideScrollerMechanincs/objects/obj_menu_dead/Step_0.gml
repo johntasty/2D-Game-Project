@@ -1,9 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 if (global.__dead){
+	instance_deactivate_all(true);
 	var _up = keyboard_check_pressed(ord("W"));
 	var _down = keyboard_check_pressed(ord("S"));
-	var _select = keyboard_check_pressed(ord("E"));
+	var _select = (keyboard_check_pressed(ord("E")) || keyboard_check_pressed(vk_enter));
 
 	var _move = _down - _up;
 	if (_move != 0)
@@ -35,9 +36,14 @@ if (global.__dead){
 					room_restart();									
 					break;
 					case 2: 
-					//load			
-					global.__dead = 0;					
-					scr_load_game_dead();			
+					//load						
+					global.__dead = 0;
+					instance_activate_all();
+					obj_enemy_boss.x = obj_enemy_boss.starting_x;
+					obj_enemy_boss.y = obj_enemy_boss.starting_y;
+					
+					scr_load_game_dead();
+					//instance_destroy(obj_menu_dead);
 					break;	
 					case 3:
 					//exit
