@@ -18,22 +18,21 @@ function scr_load_game(){
 				var _loadEntity = array_pop(_loadData);
 			
 					with(instance_create_layer(0,0,layer,asset_get_index(_loadEntity.obj)))
-					{	
-					
+					{					
 						x = _loadEntity.x;
 						y = _loadEntity.y;					
 						image_blend = _loadEntity.image_blend;
 						image_index = _loadEntity.image_index;
-							var temp_list = _loadEntity.inventory;						
-							spd = _loadEntity.spd;
-							hp = _loadEntity.hp;		
-							r_elbow_x = _loadEntity.r_elbow_x;
-							r_elbow_y = _loadEntity.r_elbow_y;
-							inventory = ds_list_create();
-							weapon_dir = _loadEntity.weapon_dir;
-							//weapon = _loadEntity.weapon;
-							ds_list_read(inventory, temp_list);
-							active_weapon = _loadEntity.active_weapon;	
+						var temp_list = _loadEntity.inventory;						
+						spd = _loadEntity.spd;
+						hp = _loadEntity.hp;		
+						r_elbow_x = _loadEntity.r_elbow_x;
+						r_elbow_y = _loadEntity.r_elbow_y;
+						inventory = ds_list_create();
+						weapon_dir = _loadEntity.weapon_dir;
+						//weapon = _loadEntity.weapon;
+						ds_list_read(inventory, temp_list);
+						active_weapon = _loadEntity.active_weapon;	
 												
 									
 					}		
@@ -86,11 +85,8 @@ function scr_save_game()
 			weapon_dir: weapon_dir,
 			inventory: testing_list,
 			active_weapon: active_weapon,		
-		}
-
-	
-		array_push(_save_data, _save_entity);
-	
+		}	
+		array_push(_save_data, _save_entity);	
 	}
 
 	//turn into JSON and stringify

@@ -237,7 +237,7 @@ for (var c = 0; c < draw_char; c++)
 	var _shake_y = 0;
 	if shake_text[c,page] == true
 		{
-		shake_timer[c,page]--;
+		/*shake_timer[c,page]--;
 		if shake_timer[c,page] <= 0 {
 			shake_timer[c,page] = irandom_range (4,8);
 			shake_dir[c,page] = irandom(360);
@@ -246,7 +246,7 @@ for (var c = 0; c < draw_char; c++)
 		if shake_timer[c,page] <=2 {
 			_shake_x = lengthdir_x(1,shake_dir[c, page]);
 			_shake_y = lengthdir_y(1,shake_dir[c, page]);
-			}
+			}*/
 		}
 	
 	//the text

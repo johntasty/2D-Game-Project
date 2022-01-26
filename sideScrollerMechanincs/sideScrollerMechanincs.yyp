@@ -208,6 +208,7 @@
     {"id":{"name":"wormhole_line","path":"sprites/wormhole_line/wormhole_line.yy",},"order":5,},
     {"id":{"name":"BossAttackHorizontal","path":"sprites/BossAttackHorizontal/BossAttackHorizontal.yy",},"order":2,},
     {"id":{"name":"scr_boss_phases","path":"scripts/scr_boss_phases/scr_boss_phases.yy",},"order":0,},
+    {"id":{"name":"obj_ground76","path":"objects/obj_ground76/obj_ground76.yy",},"order":30,},
     {"id":{"name":"HarveyFireAttackMelee","path":"sprites/HarveyFireAttackMelee/HarveyFireAttackMelee.yy",},"order":2,},
     {"id":{"name":"boss_throw","path":"sounds/boss_throw/boss_throw.yy",},"order":16,},
     {"id":{"name":"menu_select","path":"sounds/menu_select/menu_select.yy",},"order":12,},
