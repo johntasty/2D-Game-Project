@@ -5,6 +5,7 @@ function scr_init_boss()
 	verspd = 0;
 	grav = 0.3;
 	//attacking
+	hook_created = false;
 	hit_by_attack = ds_list_create();
 	hit_by_overhead = ds_list_create();
 	attacking_player = false;
@@ -150,6 +151,7 @@ function scr_attacking_state()
 				if (obj_player.state != playerStates.dash){
 					with (hitId)
 					{
+						show_debug_message("here");
 						scr_got_hit(15);
 					}
 				}
@@ -211,6 +213,7 @@ function scr_charging_state()
 				if (obj_player.state != playerStates.dash){
 					with (hitId)
 					{
+						show_debug_message("here");
 						scr_got_hit(10);
 					}
 				}
@@ -226,12 +229,17 @@ function scr_charging_state()
 }
 function scr_hook()
 {
-	scr_hook_create(spr_graple, boss_r_shoulder, boss_r_shoulder_y, dir, 5);
-	state_boss = boss_state.attacking;
-	
+	if(!hook_created){
+		hook_created = true;
+		state_boss = boss_state.attacking;
+		alarm[5] = room_speed*3; 
+		scr_hook_create(spr_graple, boss_r_shoulder, boss_r_shoulder_y, dir, 5);
+		
+	}
 }
  function scr_hook_create(_ind, _x, _y, dir, spd) 
  {
+	 
 	 ///@func bul_type_create(bullet_id, x, y, direction, speed)
 	var xx = _x + lengthdir_x(10, dir);
 	var yy = _y + lengthdir_y(10, dir);
@@ -241,10 +249,7 @@ function scr_hook()
 		}
 	}
 	var bul = instance_create_layer(xx, yy, "Base_Level", obj_hook);
-	with(bul){
-		
-		owner = other.id;
-	}
+	
 		
 	bul.direction = dir;
 	bul.image_angle = dir;
@@ -318,7 +323,7 @@ function scr_hook()
 				ds_list_add(hit_by_overhead,hitId);
 				with (hitId)
 				{
-					
+					show_debug_message("here");
 					scr_got_hit(20);
 				}
 			}

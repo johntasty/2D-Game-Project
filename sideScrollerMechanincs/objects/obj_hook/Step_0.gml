@@ -8,8 +8,7 @@ direct = point_direction(x,y,obj_enemy_boss.x, obj_enemy_boss.y);
 direct_chain = point_direction(obj_enemy_boss.boss_r_shoulder,obj_enemy_boss.boss_r_shoulder_y,x,y);
 
 var collision_all = collision_point(x-xx*2,y-yy*2,obj_player,1,0);
-if (collision_all && instance_exists(obj_hook)){	
-
+if (collision_all && instance_exists(obj_hook)){
 	speed = 0;	
 	pull = true;
 }
@@ -57,8 +56,6 @@ var collision_one_wall = collision_point(x+xx,y+yy,obj_ground,1,0);
 var collision_two = collision_point(x-xx/2,y-yy/2,obj_wall,1,0);
 var collision_two_wall = collision_point(x-xx/2,y-yy/2,obj_ground,1,0);
 if (collision_one || collision_one_wall){
-	instance_destroy();
-	
-	
+	instance_destroy();	
 }
 
