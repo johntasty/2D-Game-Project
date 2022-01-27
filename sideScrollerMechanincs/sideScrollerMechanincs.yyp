@@ -203,6 +203,7 @@
     {"id":{"name":"spr_speakblock","path":"sprites/spr_speakblock/spr_speakblock.yy",},"order":7,},
     {"id":{"name":"spr_spiderattack","path":"sprites/spr_spiderattack/spr_spiderattack.yy",},"order":1,},
     {"id":{"name":"Y1","path":"sprites/Y1/Y1.yy",},"order":8,},
+    {"id":{"name":"obj_enviroment_par","path":"objects/obj_enviroment_par/obj_enviroment_par.yy",},"order":31,},
     {"id":{"name":"heavyslash","path":"sprites/heavyslash/heavyslash.yy",},"order":1,},
     {"id":{"name":"obj_b9_ground13","path":"objects/obj_b9_ground13/obj_b9_ground13.yy",},"order":19,},
     {"id":{"name":"wormhole_line","path":"sprites/wormhole_line/wormhole_line.yy",},"order":5,},

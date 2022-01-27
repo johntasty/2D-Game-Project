@@ -178,17 +178,17 @@ function bul_type_create(ind, _x, _y, dir, spd)
 			part_type_life(global.__smoke,life_min,life_max);
 			ds_list_destroy(_list_);
 			}*/
-		if(collision_line(obj_gun_flame.x,obj_gun_flame.y, xx, yy, obj_ground, true, true)){
+		if(collision_line(obj_gun_flame.x,obj_gun_flame.y, xx, yy, obj_enviroment_par, true, true)){
 			var _list = ds_list_create();
-			var _ground = collision_line_list(obj_gun_flame.x,obj_gun_flame.y, xx, yy, obj_ground, false, true,_list, true);
+			var _ground = collision_line_list(obj_gun_flame.x,obj_gun_flame.y, xx, yy, obj_enviroment_par, false, true,_list, true);
 			if (_ground > 0){
 				for (var i = 0; i < _ground; i++){					
 					collision_found = (distance_to_object(_list[|0]));					
 				}
 			}		
 
-			var life_min = ((collision_found)/7);
-			var life_max = ((collision_found)/7);
+			var life_min = ((collision_found)/8);
+			var life_max = ((collision_found)/8);
 			part_type_life(global.__flame,life_min,life_max);
 			part_type_life(global.__smoke,life_min,life_max);
 			ds_list_destroy(_list);		

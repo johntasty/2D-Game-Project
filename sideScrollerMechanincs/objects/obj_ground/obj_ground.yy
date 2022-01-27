@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_enviroment_par",
+    "path": "objects/obj_enviroment_par/obj_enviroment_par.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

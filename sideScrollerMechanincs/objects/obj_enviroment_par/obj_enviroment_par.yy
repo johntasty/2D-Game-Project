@@ -1,16 +1,10 @@
 {
-  "spriteId": {
-    "name": "unbreakable_box",
-    "path": "sprites/unbreakable_box/unbreakable_box.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_enviroment_par",
-    "path": "objects/obj_enviroment_par/obj_enviroment_par.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -31,7 +25,7 @@
     "path": "folders/Objects/enviroment objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_wall",
+  "name": "obj_enviroment_par",
   "tags": [],
   "resourceType": "GMObject",
 }

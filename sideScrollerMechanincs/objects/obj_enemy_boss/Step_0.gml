@@ -96,3 +96,6 @@ if ((_angle >= 200 || _angle <= -200) && cooldown_attack == 0)
 	cooldown_attack = 1;
 	alarm[1] = room_speed;
 }
+if (keyboard_check(vk_f1)){
+	state_boss = boss_state.rampage_state;
+}
